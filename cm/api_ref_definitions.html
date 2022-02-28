@@ -1736,7 +1736,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-02-21 07:55:48 +0000">02/21/2022</time>
+    <time datetime="2022-02-28 17:23:29 +0000">02/28/2022</time>
     
   
 
@@ -8046,6 +8046,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rollbackOnAzurePrivateLinkFailure</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -8207,6 +8214,13 @@
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rollbackOnAzurePrivateLinkFailure</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -12611,6 +12625,13 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ProtocolIscsiInfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISCSI protocol parameters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#createiscsiinforequest">CreateIscsiInfoRequest</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enableStorageEfficiency</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Storage efficiency</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
@@ -12666,6 +12687,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enum (none,  snapshot_only,  auto,  backup,  all)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">shareInfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Share names, permissions and users for CIFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#cifsshareinfo">CifsShareInfo</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -13361,14 +13389,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vpc0NodeAndDataConnectivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VPC path for nic1, requered for node and data connectivity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VPC path for nic1, required for node and data connectivity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vpc1ClusterConnectivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VPC path for nic2, required for cluster connectiviry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VPC path for nic2, required for cluster connectivity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -13389,14 +13417,14 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subnet0NodeAndDataConnectivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subnet path for nic1, requered for node and data connectivity</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subnet path for nic1, required for node and data connectivity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">subnet1ClusterConnectivity</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Subnet path for nic2, required for cluster connectiviry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Subnet path for nic2, required for cluster connectivity</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -17349,6 +17377,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -19194,6 +19229,20 @@
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iops</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">throughput</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
