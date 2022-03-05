@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Understanding the workflow processes</title>
+  <title>Cloud Volumes ONTAP workflow processes</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Understanding the workflow processes" />
+  <meta property="og:title" content="Cloud Volumes ONTAP workflow processes" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cm/workflow_processes.html" />
 	<meta property="og:description" content="You should be familiar with the high-level organization and format of the Cloud Manager workflow processes before using them with a live cloud deployment." />
@@ -342,7 +342,7 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
-        <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/fullsite-sidebar/Cloud_Manager_API_documentation.pdf" >
+        <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/fullsite-sidebar/Cloud_Manager_platform_API_documentation.pdf" >
           <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
 
@@ -367,15 +367,26 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/REST_implementation.pdf" 
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Common_REST_implementation.pdf" 
             
           >
             <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            REST implementation
+            Common REST implementation
           </a>
           
 
 
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
 
 
 
@@ -395,11 +406,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Identity_and_authorization.pdf" 
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Common_workflows_and_tasks.pdf" 
             
           >
             <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Identity and authorization
+            Common workflows and tasks
           </a>
           
 
@@ -417,28 +428,6 @@
   
 
 
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Storage_services_APIs.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Storage services APIs
-          </a>
-          
 
     
       <ul class="subfolders" style="display:none;">
@@ -469,6 +458,10 @@
           
 
 
+
+
+
+
     <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
   <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/pages/cm/workflow_processes.pdf" >
     <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
@@ -481,8 +474,6 @@
 
 
 
-
-
           
         </li>
       </ul>
@@ -493,63 +484,6 @@
 
 
 
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/API_reference.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            API reference
-          </a>
-          
-
-
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Storage_workflows.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Storage workflows
-          </a>
-          
 
     
       <ul class="subfolders" style="display:none;">
@@ -1271,6 +1205,58 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/API_reference.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
+            API reference
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Automation_technologies.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
+            Automation technologies
+          </a>
+          
+
+
+
+
+
           
         </li>
       </ul>
@@ -1348,9 +1334,9 @@
         <div class="na-navbar-padding"> Get started</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/overview.html">
-        Overview
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/platform/rest_implementation.html">
-        <div class="na-navbar-padding"> REST implementation</div>
+        Platform overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Common REST implementation</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/concepts.html">
         Basic concepts
@@ -1358,8 +1344,10 @@
         HTTP details
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/additional_considerations.html">
         Additional considerations
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/workflows_tasks.html">
+        Workflow processes and tasks
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Identity and authorization</div>
+        <div class="na-navbar-padding"> Common workflows and tasks</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_nss_key.html">
         Generate NSS user ID
@@ -1367,39 +1355,28 @@
         Get client and account IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_user_token.html">
         Create user token
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Storage services APIs</div>
-      </a>
-      <ul><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Volumes ONTAP</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/overview.html">
         Overview
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/getting_started.html">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/hello_world.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/prepare.html">
+        Prepare
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/cloud_manager_deployment.html">
+        Typical deployment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/hello_world.html">
         Hello world
       </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/workflow_processes.html">
-        Understand the workflow processes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/cloud_manager_deployment.html">
-        Typical Cloud Manager deployment
+        Workflow processes
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/rest_implementation.html">
         REST implementation details
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
-        <div class="na-navbar-padding"> API reference</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_resources.html">
-        Resources
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_definitions.html">
-        Definitions
-      </a></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Storage workflows</div>
-      </a>
-      <ul><li class="subfolders "><a href="#">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> AWS workflows</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_before.html">
         Before you begin
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Working environments</div>
@@ -1628,7 +1605,7 @@
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_before.html">
         Before you begin
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Identity and access</div>
@@ -1679,7 +1656,21 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
-      </a></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
+        <div class="na-navbar-padding"> API reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_resources.html">
+        Resources
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_definitions.html">
+        Definitions
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Automation technologies</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/blogs.html">
+        Automation blogs
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/support/additional_resources_cm.html">
@@ -1720,7 +1711,7 @@
           <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Understanding the workflow processes
+          Cloud Volumes ONTAP workflow processes
         </li>
       </ul>
     </div>
@@ -1729,14 +1720,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Understanding the workflow processes</h1>
+  <h1 class="n-doc__component-detail-heading">Cloud Volumes ONTAP workflow processes</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-02-28 17:23:29 +0000">02/28/2022</time>
+    <time datetime="2022-03-05 04:15:44 +0000">03/05/2022</time>
     
   
 
@@ -1766,31 +1757,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You should be familiar with the high-level organization and format of the Cloud Volumes ONTAP workflow processes before using them with a live cloud deployment.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="introduction">Introduction</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A <strong><em>workflow</em></strong> is a sequence of one or more steps needed to accomplish a specific administrative task or goal. With the Cloud Volumes ONTAP workflows, each step can be one of the following:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>REST API call</p>
-</li>
-<li>
-<p>Invocation of another workflow</p>
-</li>
-<li>
-<p>Miscellaneous task such as deciding on the size of a new volume</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The workflows provided include the minimum steps and parameters needed to accomplish each task. You can use these workflows as a starting point and customize them for your environment as needed.</p>
+<p>You should be familiar with the organization and format of the Cloud Volumes ONTAP workflow processes before using them with a live deployment.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1799,7 +1766,7 @@
 <img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
 </td>
 <td class="content">
-All the workflow examples are designed to be used with NetApp Cloud Volumes ONTAP.
+Before getting started with the Cloud Volumes ONTAP workflows, see <a href="../platform/workflows_tasks.html">Workflow processes and tasks</a> for an introduction to how workflows and tasks are generally used with the Cloud Manager platform.
 </td>
 </tr>
 </table>
@@ -1810,7 +1777,7 @@ All the workflow examples are designed to be used with NetApp Cloud Volumes ONTA
 <h2 id="high-level-organization-of-the-workflows">High level organization of the workflows</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>At a high level, the workflows are organized based on three primary attributes. The organization is reflected in the navigation sidebar.</p>
+<p>At a high level, the Cloud Volumes ONTAP workflows are organized based on three primary attributes. The organization is reflected in the navigation sidebar.</p>
 </div>
 <div class="sect2">
 <h3 id="1-cloud-provider">1. Cloud provider</h3>
@@ -1843,7 +1810,7 @@ All the workflow examples are designed to be used with NetApp Cloud Volumes ONTA
 <img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
 </td>
 <td class="content">
-In addition to the workflows used with the specific cloud providers, there is also a set of common workflows that can be used with any cloud provider. See <a href="wf_common.html">Common workflows for all cloud providers</a> for more information about these workflows and how they are organized.
+In addition to the workflows used with the specific cloud providers, there is also a set of common workflows that can be used with any cloud provider. See <a href="../cm/wf_common.html">Common workflows for all cloud providers</a> for more information about these workflows and how they are organized.
 </td>
 </tr>
 </table>
@@ -1901,82 +1868,6 @@ If both versions of a workflow exist for an administrative task, they are includ
 </td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="base-urls-and-rest-endpoint-paths">Base URLs and REST endpoint paths</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The REST API calls in the workflows use different URLs and URL formats depending on the desired service and resource.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Every API call used in the workflows includes the resource path to the REST endpoint. The path is relative and appended to the appropriate <strong>base</strong> URL. Unless otherwise indicated for a specific API call, the base URL addresses the NetApp Cloud Manager service. You should always carefully review the curl examples provided in the workflows before using them.
-</td>
-</tr>
-</table>
-</div>
-<div class="sect2">
-<h3 id="cloud-manager-endpoints">Cloud Manager endpoints</h3>
-<div class="paragraph">
-<p>The majority of the workflow REST API calls are made to the <strong>NetApp Cloud Manager</strong> service. The base URL of the SaaS interface is:</p>
-</div>
-<div class="paragraph">
-<p><code><a href="https://cloudmanager.netapp.com/" class="bare">https://cloudmanager.netapp.com/</a></code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="auth0-authentication-service">Auth0 authentication service</h3>
-<div class="paragraph">
-<p>Some of the REST API calls used in the identity workflows are made to the <strong>Auth0</strong> token authentication service. The base URL is:</p>
-</div>
-<div class="paragraph">
-<p><code><a href="https://netapp-cloud-account.auth0.com/" class="bare">https://netapp-cloud-account.auth0.com/</a></code></p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="common-parameters-and-variables">Common parameters and variables</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>There are several parameters or variables common among the workflows.</p>
-</div>
-<div class="sect2">
-<h3 id="request-headers">Request headers</h3>
-<div class="paragraph">
-<p>Nearly all the REST API calls used in the workflows require the following two request headers.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Rather than cite these headers as a prerequisite in every REST API call, they are considered a universal requirement. If a workflow does not use these headers or has different prerequisites, the section <strong>Before you begin</strong> is included at the top of the workflow and describes the prerequisites.
-</td>
-</tr>
-</table>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Authorization request header</dt>
-<dd>
-<p>To get a bearer token for this header, perform the appropriate workflow at <a href="../platform/create_user_token.html">Create a user token</a> and extract the <code>access_token</code> value.</p>
-</dd>
-<dt class="hdlist1">x-agent-id request header</dt>
-<dd>
-<p>This header contains the agent ID which is based on the client ID. See <a href="get_client_id.html">Get client and account identifiers</a> for information about creating this value.</p>
-</dd>
-</dl>
 </div>
 </div>
 <div class="sect2">
@@ -2071,12 +1962,6 @@ Rather than cite these headers as a prerequisite in every REST API call, they ar
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="json-input-for-curl-command">JSON input for curl command</h3>
-<div class="paragraph">
-<p>In many cases, a workflow step accepts JSON input in the request body of the REST API call. This input is indicated in the curl command through the <code>-d</code> option, with the corresponding sample included in the <strong>JSON input example</strong> section.</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -2097,7 +1982,7 @@ Rather than cite these headers as a prerequisite in every REST API call, they ar
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Understanding the workflow processes](https://docs.netapp.com/us-en/cloud-manager-automation/cm/workflow_processes.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Cloud Volumes ONTAP workflow processes](https://docs.netapp.com/us-en/cloud-manager-automation/cm/workflow_processes.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cm/workflow_processes.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>

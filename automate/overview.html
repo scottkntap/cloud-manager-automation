@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Workflows for Amazon Web Services</title>
+  <title>Overview of Cloud Manager platform automation options</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Workflows for Amazon Web Services" />
+  <meta property="og:title" content="Overview of Cloud Manager platform automation options" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_aws.html" />
-	<meta property="og:description" content="There are several workflows you can use with the Amazon Web Services public cloud." />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/automate/overview.html" />
+	<meta property="og:description" content="Use the resources on this page to get help integrating Cloud Manager and Cloud Volumes ONTAP with your infrastructure as code." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
@@ -18,8 +18,8 @@
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/>
   
-  <meta name="description" content="There are several workflows you can use with the Amazon Web Services public cloud.">
-  <meta name="keywords" content=" aws, workflows, cloud, manager, rest, api">
+  <meta name="description" content="Use the resources on this page to get help integrating Cloud Manager and Cloud Volumes ONTAP with your infrastructure as code.">
+  <meta name="keywords" content=" terraform, terraform provider, automation, automating">
   
   
 
@@ -281,13 +281,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-automation/automate/overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-automation/cm/wf_aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-automation/automate/overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-automation/cm/wf_aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-automation/automate/overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-automation/cm/wf_aws.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-automation/automate/overview.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -342,7 +342,7 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
-        <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/fullsite-sidebar/Cloud_Manager_API_documentation.pdf" >
+        <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/fullsite-sidebar/Cloud_Manager_platform_API_documentation.pdf" >
           <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
 
@@ -367,15 +367,26 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/REST_implementation.pdf" 
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Common_REST_implementation.pdf" 
             
           >
             <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            REST implementation
+            Common REST implementation
           </a>
           
 
 
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
 
 
 
@@ -395,11 +406,11 @@
         <li class="pdf-ux-container">
           <a target="_blank" 
             
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Identity_and_authorization.pdf" 
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Common_workflows_and_tasks.pdf" 
             
           >
             <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Identity and authorization
+            Common workflows and tasks
           </a>
           
 
@@ -417,28 +428,6 @@
   
 
 
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Storage_services_APIs.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Storage services APIs
-          </a>
-          
 
     
       <ul class="subfolders" style="display:none;">
@@ -474,32 +463,6 @@
 
 
 
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/API_reference.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            API reference
-          </a>
-          
-
-
-
 
 
           
@@ -511,36 +474,7 @@
 
 
 
-          
-        </li>
-      </ul>
-    
 
-  
-
-
-
-          
-        </li>
-      </ul>
-    
-
-  
-
-
-
-    
-      <ul class="subfolders" style="display:none;">
-        <li class="pdf-ux-container">
-          <a target="_blank" 
-            
-              href="/us-en/cloud-manager-automation/pdfs/sidebar/Storage_workflows.pdf" 
-            
-          >
-            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-            Storage workflows
-          </a>
-          
 
     
       <ul class="subfolders" style="display:none;">
@@ -554,15 +488,6 @@
             AWS workflows
           </a>
           
-    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
-  <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/pages/cm/wf_aws.pdf" >
-    <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
-    PDF of this page
-  </a>
-</li>
-
-</ul>
-  
 
 
 
@@ -1271,6 +1196,67 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/API_reference.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
+            API reference
+          </a>
+          
+
+
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+          
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          <a target="_blank" 
+            
+              href="/us-en/cloud-manager-automation/pdfs/sidebar/Automation_technologies.pdf" 
+            
+          >
+            <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
+            Automation technologies
+          </a>
+          
+    <ul class="subfolders" style="display:none;"><li class="active pdf-hide">
+  <a target="_blank" href="/us-en/cloud-manager-automation/pdfs/pages/automate/overview.pdf" >
+    <img src="/us-en/cloud-manager-automation/images/pdf.png" width="16" height="16"/>
+    PDF of this page
+  </a>
+</li>
+
+</ul>
+  
+
+
+
+
+
           
         </li>
       </ul>
@@ -1348,9 +1334,9 @@
         <div class="na-navbar-padding"> Get started</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/overview.html">
-        Overview
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/platform/rest_implementation.html">
-        <div class="na-navbar-padding"> REST implementation</div>
+        Platform overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Common REST implementation</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/concepts.html">
         Basic concepts
@@ -1358,8 +1344,10 @@
         HTTP details
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/additional_considerations.html">
         Additional considerations
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/workflows_tasks.html">
+        Workflow processes and tasks
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Identity and authorization</div>
+        <div class="na-navbar-padding"> Common workflows and tasks</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_nss_key.html">
         Generate NSS user ID
@@ -1367,39 +1355,28 @@
         Get client and account IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_user_token.html">
         Create user token
-      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Storage services APIs</div>
-      </a>
-      <ul><li class="subfolders "><a href="#">
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Volumes ONTAP</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/overview.html">
         Overview
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/getting_started.html">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/hello_world.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/prepare.html">
+        Prepare
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/cloud_manager_deployment.html">
+        Typical deployment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/hello_world.html">
         Hello world
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/workflow_processes.html">
-        Understand the workflow processes
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/cloud_manager_deployment.html">
-        Typical Cloud Manager deployment
+        Workflow processes
       </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/rest_implementation.html">
         REST implementation details
-      </a></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
-        <div class="na-navbar-padding"> API reference</div>
-      </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_resources.html">
-        Resources
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_definitions.html">
-        Definitions
-      </a></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> Storage workflows</div>
-      </a>
-      <ul><li class="subfolders "><a href="#">
+      </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> AWS workflows</div>
       </a>
-      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_before.html">
         Before you begin
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Working environments</div>
@@ -1628,7 +1605,7 @@
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common.html">
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_before.html">
         Before you begin
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Identity and access</div>
@@ -1679,7 +1656,21 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
-      </a></li></ul></li></ul></li></ul></li><li class="subfolders "><a href="#">
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
+        <div class="na-navbar-padding"> API reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_resources.html">
+        Resources
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_definitions.html">
+        Definitions
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Automation technologies</div>
+      </a>
+      <ul><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/blogs.html">
+        Automation blogs
+      </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/support/additional_resources_cm.html">
@@ -1720,7 +1711,7 @@
           <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Workflows for Amazon Web Services
+          Overview of Cloud Manager platform automation options
         </li>
       </ul>
     </div>
@@ -1729,23 +1720,23 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Workflows for Amazon Web Services</h1>
+  <h1 class="n-doc__component-detail-heading">Overview of Cloud Manager platform automation options</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-02-28 17:23:29 +0000">02/28/2022</time>
+    <time datetime="2022-03-05 04:15:44 +0000">03/05/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-ranuk">
+  <a target="_blank" href="https://github.com/dmp-netapp">
     <img  class="avatar avatar-small"
-          alt="netapp-ranuk"
+          alt="dmp-netapp"
           width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/80323433?v=4"
+          src="https://avatars.githubusercontent.com/u/50704017?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1758,61 +1749,34 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>There are several workflows you can use with the Amazon Web Services public cloud.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
-</td>
-<td class="content">
-Review the <a href="getting_started.html">Get started</a> section before using any of the Cloud Manager REST API workflows.
-</td>
-</tr>
-</table>
+<p>DevOps teams use a variety of tools to automate the setup and administration of their data center runtime environments. NetApp supports many of these technologies for Cloud Manager and Cloud Volumes ONTAP automation. The tools are commonly based on an Infrastructure as Code (IaC) design.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="workflow-categories">Workflow categories</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="terraform">Terraform</h3>
 <div class="paragraph">
-<p>The AWS workflows are organized into the following functional categories:</p>
+<p>Terraform is an open-source orchestration tool which uses declarative configuration files. NetApp has created a Terraform provider you can use with Cloud Manager to automate and integrate Cloud Volumes ONTAP based on IaC. See <a href="https://registry.terraform.io/providers/NetApp/netapp-cloudmanager/latest" target="_blank" rel="noopener">Terraform provider: netapp-cloudmanager</a> for more information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ansible">Ansible</h3>
+<div class="paragraph">
+<p>Ansible is an open-source configuration management tool based on the use of procedural configuration files.</p>
 </div>
 <div class="ulist">
+<div class="title">Related information</div>
 <ul>
 <li>
-<p>Working environments</p>
+<p><a href="https://www.netapp.com/us/info/what-is-infrastructure-as-code-iac.aspx" target="_blank" rel="noopener">Infrastructure as Code</a></p>
 </li>
 <li>
-<p>Aggregates</p>
+<p><a href="https://www.terraform.io" target="_blank" rel="noopener">Terraform</a></p>
 </li>
 <li>
-<p>Volumes</p>
-</li>
-<li>
-<p>Metadata</p>
-</li>
-<li>
-<p>Miscellaneous</p>
+<p><a href="https://www.ansible.com" target="_blank" rel="noopener">Ansible</a></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>See <a href="workflow_processes.html">Understanding the workflow processes</a> for more information on these categories.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="connector-setup">Connector setup</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You must have a <strong>Connector</strong> for the cloud environment before creating a working environment and performing other activities using the workflows. You can create a Connector using the Cloud Manager web UI. When you create a Connector, Cloud Manager adds the AWS cloud provider account that you deployed the Connector in to your list of available accounts. Your AWS account needs to have the right permissions in order to create a Connector.</p>
-</div>
-<div class="paragraph">
-<p>Review <a href="https://docs.netapp.com/us-en/occm/task_creating_connectors_aws.html">Learn about AWS Connectors</a> to know how to create and deploy an AWS Connector.</p>
-</div>
 </div>
 </div>
 
@@ -1825,8 +1789,8 @@ Review the <a href="getting_started.html">Get started</a> section before using a
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Workflows for Amazon Web Services](https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_aws.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cm/wf_aws.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Overview of Cloud Manager platform automation options](https://docs.netapp.com/us-en/cloud-manager-automation/automate/overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/automate/overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>
     <div class="page-nav-container">
