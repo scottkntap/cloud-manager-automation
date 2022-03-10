@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,7 +908,26 @@
 <div class="paragraph lead">
 <p>You can retrieve the public identifier, working environment ID, the storage virtual machine name for Cloud Volumes ONTAP working environments and other Cloud Volumes ONTAP related details (visible to currently logged in user) which would be used in other workflows.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#get-working-environment-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#get-working-environment-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-working-environment-for-single-node">Get working environment for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to retrieve the Cloud Volumes ONTAP system related details for a single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-get-the-working-environments">1. Get the working environments</h3>
@@ -1023,6 +1052,175 @@
         "monitoringProperties": null
     }
 ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-working-environment-for-high-availability-pair">Get working environment for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to retrieve the Cloud Volumes ONTAP system related details for an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-get-the-working-environments-2">1. Get the working environments</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/working-environments/{workingEnvironmentId}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/working-environments' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;'</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>(Optional) Query parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>fields</code> string</p>
+</li>
+<li>
+<p><code>tenantId</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>The JSON output example includes details of a single node Google Cloud working environment.</p>
+</dd>
+<dt class="hdlist1">JSON output example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">[
+    {
+        "publicId": "vsaworkingenvironment-sfrf3wvj",
+        "name": "zivgcp01we02",
+        "tenantId": "tenantIDshownhere",
+        "svmName": "svm_zivgcp01we02",
+        "creatorUserEmail": "user_email",
+        "status": null,
+        "providerProperties": null,
+        "reservedSize": null,
+        "clusterProperties": null,
+        "ontapClusterProperties": null,
+        "cloudProviderName": "GCP",
+        "snapshotPolicies": null,
+        "actionsRequired": null,
+        "activeActions": null,
+        "replicationProperties": null,
+        "schedules": null,
+        "svms": null,
+        "workingEnvironmentType": "VSA",
+        "supportRegistrationProperties": null,
+        "supportRegistrationInformation": [],
+        "capacityFeatures": null,
+        "encryptionProperties": null,
+        "supportedFeatures": null,
+        "isHA": false,
+        "haProperties": null,
+        "k8sProperties": null,
+        "fpolicyProperties": null,
+        "saasProperties": null,
+        "cbsProperties": null,
+        "complianceProperties": null,
+        "monitoringProperties": null
+    },
+    {
+        "publicId": "vsaworkingenvironment-2qkd75xv",
+        "name": "zivgcp01we03",
+        "tenantId": "tenantIDshownhere",
+        "svmName": "svm_zivgcp01we03",
+        "creatorUserEmail": "user_email",
+        "status": null,
+        "providerProperties": null,
+        "reservedSize": null,
+        "clusterProperties": null,
+        "ontapClusterProperties": null,
+        "cloudProviderName": "GCP",
+        "snapshotPolicies": null,
+        "actionsRequired": null,
+        "activeActions": null,
+        "replicationProperties": null,
+        "schedules": null,
+        "svms": null,
+        "workingEnvironmentType": "VSA",
+        "supportRegistrationProperties": null,
+        "supportRegistrationInformation": [],
+        "capacityFeatures": null,
+        "encryptionProperties": null,
+        "supportedFeatures": null,
+        "isHA": false,
+        "haProperties": null,
+        "k8sProperties": null,
+        "fpolicyProperties": null,
+        "saasProperties": null,
+        "cbsProperties": null,
+        "complianceProperties": null,
+        "monitoringProperties": null
+    },
+    {
+        "publicId": "vsaworkingenvironment-lghitaz0",
+        "name": "ziv01we01ha",
+        "tenantId": "Tenant-kT8tLZay",
+        "svmName": "svm_ziv01we01ha",
+        "creatorUserEmail": "user_email",
+        "status": null,
+        "providerProperties": null,
+        "reservedSize": null,
+        "clusterProperties": null,
+        "ontapClusterProperties": null,
+        "cloudProviderName": "GCP",
+        "snapshotPolicies": null,
+        "actionsRequired": null,
+        "activeActions": null,
+        "replicationProperties": null,
+        "schedules": null,
+        "svms": null,
+        "workingEnvironmentType": "VSA",
+        "supportRegistrationProperties": null,
+        "supportRegistrationInformation": [],
+        "capacityFeatures": null,
+        "encryptionProperties": null,
+        "supportedFeatures": null,
+        "isHA": true,
+        "haProperties": null,
+        "k8sProperties": null,
+        "fpolicyProperties": null,
+        "saasProperties": null,
+        "cbsProperties": null,
+        "complianceProperties": null,
+        "monitoringProperties": null
+    }
+]</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

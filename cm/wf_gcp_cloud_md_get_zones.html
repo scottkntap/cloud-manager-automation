@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Discover an external resource</title>
+  <title>Get zones</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Discover an external resource" />
+  <meta property="og:title" content="Get zones" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-discover.html" />
-	<meta property="og:description" content="Discover an external resource" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html" />
+	<meta property="og:description" content="You can use the permutations endpoint to retrieve the Cloud Volumes ONTAP configuration information." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Discover an external resource">
-  <meta name="keywords" content=" "><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use the permutations endpoint to retrieve the Cloud Volumes ONTAP configuration information.">
+  <meta name="keywords" content=" permutations, cloud, volumes, ontap, working, environment, occm"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -51,7 +51,7 @@
   <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/tabbed-blocks.css" type="text/css">
   <link rel="stylesheet" href='/us-en/cloud-manager-automation/css/product-family.css' type="text/css">
-  <link rel="stylesheet" href='/us-en/cloud-manager-automation/css/na-api-explorer.css' type="text/css"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloud-manager-automation/js/na-search.js'></script><script src='/us-en/cloud-manager-automation/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloud-manager-automation/css/prism.css' type='text/css'>
@@ -72,7 +72,7 @@
   <script src='/us-en/cloud-manager-automation/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/cloud-manager-automation/js/toc.js'></script>
-  <script src='/us-en/cloud-manager-automation/js/customscripts.js'></script><script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script><script>
+  <script src='/us-en/cloud-manager-automation/js/customscripts.js'></script><script>
       $(document).ready(function() {
           
           var collapseOnInit = true;
@@ -254,13 +254,13 @@
           <ul class="n-menu__list">
             <li class="n-menu__list-column">
               <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/cloud-manager-automation//tenancy/post-tenancy-resource-discover.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-automation//tenancy/post-tenancy-resource-discover.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-automation//tenancy/post-tenancy-resource-discover.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
                 </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-automation//tenancy/post-tenancy-resource-discover.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
                 </li></ul>
             </li>
           </ul>
@@ -584,7 +584,7 @@
         Get instance types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
         Get VPCs
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
         Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
@@ -750,7 +750,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/resource_overview.html">
         Resource overview
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-discover.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-discover.html">
         Discover an external resource
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource.html">
         Create an external resource
@@ -851,7 +851,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content api-doc">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -868,7 +868,7 @@
           <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Discover an external resource
+          Get zones
         </li>
       </ul>
     </div>
@@ -877,18 +877,26 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Discover an external resource</h1>
+  <h1 class="n-doc__component-detail-heading">Get zones</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 15:05:44 +0000">03/10/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
 <span>Contributors
+  <a target="_blank" href="https://github.com/netapp-ranuk">
+    <img  class="avatar avatar-small"
+          alt="netapp-ranuk"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/80323433?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
 </span>
 
 
@@ -897,316 +905,115 @@
 
 <div id="preamble">
 <div class="sectionbody">
+<div class="paragraph lead">
+<p>You can perform this workflow to retrieve the GCP regions and zones over which a Cloud Volumes ONTAP working environment might be created.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+This workflow is applicable only for an HA working environment.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-project">1. Select the project</h3>
 <div class="paragraph">
-<p><span class="api-doc-operation  api-doc-operation-post">POST</span> <span class="api-doc-code-block"><code>/tenancy/resource/discover</code></span></p>
-</div>
-<div class="paragraph">
-<p>Discovers an external resource to be added to Cloud Manager.
-           <br>
-<strong>Token usage:</strong> Cloud Manager user token.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_projects.html">Get projects</a> and choose <code>projectId</code> value of the required project for <code>projectId</code> query parameter.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="parameters">Parameters</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="2-get-the-zones">2. Get the zones</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">In</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">authorization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Authorization JWT access token</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X-Service-Request-Id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Request identifier</p>
-</div></div></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/metadata/zones</p></td>
 </tr>
 </tbody>
 </table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
 </div>
-</div>
-<div class="sect1">
-<h2 id="request-body">Request Body</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">workspacePublicId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">agentId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceIdentifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceClass</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloudId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#metadata">metadata</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="response">Response</h2>
-<div class="sectionbody">
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>Status: 200, Default response</code></pre>
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/metadata/zones?project=&lt;PROJECT_ID&gt;' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json'</code></pre>
 </div>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">accountPublicId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourcePublicId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceIdentifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">agentId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceClass</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloudId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">agentIds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">array[string]</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>Query parameter:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;PROJECT_ID&gt; <code>projectId</code> string</p>
+</li>
+</ul>
 </div>
+</dd>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>The JSON output example includes the list of GCP regions and zones.</p>
+</dd>
+<dt class="hdlist1">JSON output example</dt>
+</dl>
 </div>
-<div class="sect1">
-<h2 id="definitions">Definitions</h2>
-<div class="sectionbody">
-<div class="sect4">
-<h5 id="metadata">metadata</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">propertyName</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">propertyValue</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect4">
-<h5 id="body">body</h5>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">workspacePublicId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">agentId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceIdentifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceType</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">resourceClass</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">cloudId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#metadata">metadata</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"></div></td>
-</tr>
-</tbody>
-</table>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">[
+    {
+        "displayName": "asia-east1",
+        "name": "asia-east1",
+        "location": "Changhua County, Taiwan",
+        "zones": [
+            {
+                "name": "asia-east1-a"
+            },
+            {
+                "name": "asia-east1-b"
+            },
+            {
+                "name": "asia-east1-c"
+            }
+        ]
+    },
+    {
+        "displayName": "asia-east2",
+        "name": "asia-east2",
+        "location": "Hong Kong",
+        "zones": [
+            {
+                "name": "asia-east2-c"
+            },
+            {
+                "name": "asia-east2-b"
+            },
+            {
+                "name": "asia-east2-a"
+            }
+        ]
+    }
+]</code></pre>
 </div>
 </div>
 </div>
@@ -1220,8 +1027,8 @@
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Discover an external resource](https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-discover.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/tenancy/post-tenancy-resource-discover.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Get zones](https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cm/wf_gcp_cloud_md_get_zones.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>
     <div class="page-nav-container">
@@ -1234,46 +1041,7 @@
     </div>
   </div>
   
-  <div style="clear: both"></div><!-- Main needs to have height --><div id="sidePanel" class="api-doc-side-panel">
-  <div id="api-btn-close" onclick="closePanel()"><span id="api-btn-close-text">Close</span></div>
-  <div id="api-login-overlay">
-    <div id="api-login-container">
-      <div id="explorer-login-title">Try it out</div>
-      <p>Sign in with your NetApp Cloud Central credentials.</p>
-      <button id="api-btn-login" class="api-btn" onclick="login()" type="button"><span>Sign in</span></button>
-    </div>
-  </div>
-  <div class="side-panel-container">
-    <form method="post" id="api-explorer-form">
-      <div id="explorer-title">Try this API</div>
-      <p id="error_access" style="margin-bottom: 0px"></p>
-      <div id="explorer-parameters">
-        <h4 class="api-section-title">Parameters</h4>
-      </div>
-      <div id="explorer-headers">
-        <h4 class="api-section-title">Headers</h4>
-      </div>
-      <div id="explorer-body">
-        <h4 class="api-section-title">Body</h4>
-      </div>
-      <div class="row">
-        <button id="api-btn-submit" class="api-btn"><span>Submit</span></button>
-      </div>
-      <div class="row">
-        <p id="submit-error" style="margin-bottom: 0px;"></p>
-      </div>
-    </form>
-    <div id="explorer-code">
-      <h4 class="api-section-title">Code</h4>
-      <pre><code class="api-explorer-code" id="request-code"></code></pre>
-    </div>
-    <div id="explorer-response">
-      <h4 class="api-section-title">Response</h4>
-      <pre><code class="api-explorer-code" id="response-code"></code></pre>
-    </div>
-  </div>
-</div>
-</div>
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
 
@@ -1375,8 +1143,7 @@
 </div>
 </footer>
 
-      </div><!-- API Explorer JS -->
-      <script type="text/javascript" src='/us-en/cloud-manager-automation/js/na-api-explorer.js'></script><!-- Elasticsearch JS -->
+      </div><!-- Elasticsearch JS -->
       <script type="text/javascript" src='/us-en/cloud-manager-automation/js/bundle.js'></script>
 
       <!-- Syntax Highlighting -->

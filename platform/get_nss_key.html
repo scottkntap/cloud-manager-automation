@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -906,7 +916,7 @@
 </div>
 <div class="paragraph">
 <div class="title">About this task</div>
-<p>Registering NSS credentials with Cloud Manager and creating an NSS user ID enables subscription to the Cloud Volumes ONTAP system, product support and analytics. For information about related NSS administrative tasks, see <a href="https://docs.netapp.com/us-en/occm/task_adding_nss_accounts.html" target="_blank" rel="noopener">Manage NSS credentials</a>.</p>
+<p>Registering NSS credentials with Cloud Manager and creating an NSS user ID enables subscription to the Cloud Volumes ONTAP system, upgrade Cloud Volumes ONTAP software to the latest release, and predictive analytics. For information about related NSS administrative tasks, see <a href="https://docs.netapp.com/us-en/occm/task_adding_nss_accounts.html" target="_blank" rel="noopener">Manage NSS credentials</a>.</p>
 </div>
 <div class="paragraph">
 <div class="title">Before you begin</div>
@@ -943,7 +953,7 @@
 </div>
 <div class="paragraph">
 <div class="title">After you finish</div>
-<p>You can use the generated NSS user ID when creating a working environment with your preferred licensing model and cloud provider. The NSS user ID is required with BYOL licensing and optional for the PAYGO subscription.</p>
+<p>You can use the generated NSS user ID when creating a working environment with your preferred licensing model and cloud provider. The NSS user ID is <strong>required</strong> with BYOL licensing and <strong>optional</strong> for the PAYGO subscription.</p>
 </div>
 
     </article>

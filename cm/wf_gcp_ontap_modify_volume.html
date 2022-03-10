@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,18 +908,37 @@
 <div class="paragraph lead">
 <p>You can modify the configuration of an existing volume.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#modify-volume-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#modify-volume-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modify-volume-for-single-node">Modify volume for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to modify the configuration of an existing volume for a single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-working-environment">1. Select the working environment</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environment</a> and choose the <code>publicId</code>  and <code>svmName</code> values of the working environment for used as the <code>workingEnvironmentId</code> and <code>svmName</code> path parameters.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environment</a> and choose the <code>publicId</code>  and <code>svmName</code> values of the working environment for used as the <code>workingEnvironmentId</code> and <code>svmName</code> path parameters.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="2-select-the-volume">2. Select the volume</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_get_volumes.html">Get volumes</a> and choose the <code>name</code> for the <code>volumeName</code> path parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_get_volumes.html#get-volumes-for-single-node">Get volumes</a> and choose the <code>name</code> for the <code>volumeName</code> path parameter.</p>
 </div>
 </div>
 <div class="sect2">
@@ -993,6 +1022,111 @@
 <p>None</p>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="modify-volume-for-high-availability-pair">Modify volume for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to modify the configuration of an existing volume for an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environment</a> and choose the <code>publicId</code>  and <code>svmName</code> values of the working environment for used as the <code>workingEnvironmentId</code> and <code>svmName</code> path parameters.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-select-the-volume-2">2. Select the volume</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_get_volumes.html#get-volumes-for-high-availability-pair">Get volumes</a> and choose the <code>name</code> for the <code>volumeName</code> path parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-modify-the-volume-2">3. Modify the volume</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PUT</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/volumes/{workingEnvironmentId}/{svmName}/{volumeName}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request PUT 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes/&lt;WORKING_ENV_ID&gt;/&lt;SVM_NAME&gt;/&lt;VOLUME_NAME&gt;' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>Path parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</li>
+<li>
+<p>&lt;SVM_NAME&gt; <code>(svmName)</code> string</p>
+</li>
+<li>
+<p>&lt;VOLUME_NAME&gt; <code>(volumeName)</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The JSON input example includes the minimum list of input parameters.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "exportPolicyInfo": {
+    "policyType": "custom",
+    "ips": [
+      "10.138.0.0/20"
+    ],
+    "nfsVersion": [
+      "nfs3"
+    ]
+  }
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 

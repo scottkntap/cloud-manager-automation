@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -903,8 +913,7 @@
 <div class="sect2">
 <h3 id="1-select-the-working-environment-to-use">1. Select the working environment to use</h3>
 <div class="paragraph">
-<p><strong>&gt;&gt; UPDATE</strong><br>
-Perform the workflow <a href="wf_aws_cloud_1n_get_wes_.html">Get working environments</a> and choose the <code>publicId</code> values for the working environments and destination volume name.</p>
+<p>Perform the workflow <a href="wf_aws_cloud_get_wes.html">Get working environments</a> and choose the <code>publicId</code> values for the working environments and destination volume name.</p>
 </div>
 </div>
 <div class="sect2">
@@ -923,7 +932,7 @@ Perform the workflow <a href="wf_aws_cloud_1n_get_wes_.html">Get working environ
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/replication/metadata/snapmirror-policies/{sourceWorkingEnvironmentId}/{targetWorkingEnvironmentId}</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/replication/metadata/snapmirror-policies/{workingEnvironmentId}/{destinationVolumeName}</p></td>
 </tr>
 </tbody>
 </table>
@@ -934,7 +943,7 @@ Perform the workflow <a href="wf_aws_cloud_1n_get_wes_.html">Get working environ
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/replication/metadata/snapmirror-policies/&lt;WORKING_ENV_ID&gt;/&lt;WORKING_ENV_ID' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json'</code></pre>
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/replication/metadata/snapmirror-policies/&lt;WORKING_ENV_ID&gt;/&lt;DEST_VOL_NAME&gt;' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json'</code></pre>
 </div>
 </div>
 <div class="dlist">
@@ -945,10 +954,10 @@ Perform the workflow <a href="wf_aws_cloud_1n_get_wes_.html">Get working environ
 <div class="ulist">
 <ul>
 <li>
-<p>&lt;WORKING_ENV_ID&gt; <code>(sourceWorkingEnvironmentId)</code></p>
+<p>&lt;WORKING_ENV_ID&gt; <code>workingEnvironmentId</code></p>
 </li>
 <li>
-<p>&lt;WORKING_ENV_ID&gt; <code>(destinationWorkingEnvironmentId)</code></p>
+<p>&lt;DEST_VOL_NAME&gt; <code>destinationVolumeName</code></p>
 </li>
 </ul>
 </div>

@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,12 +908,31 @@
 <div class="paragraph lead">
 <p>You can delete an existing GCP Cloud Volumes ONTAP working environment.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#delete-working-environment-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#delete-working-environment-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-working-environment-for-single-node">Delete working environment for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to delete a single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-working-environment">1. Select the working environment</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> path parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> path parameter.</p>
 </div>
 </div>
 <div class="sect2">
@@ -928,7 +957,7 @@
 </table>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Curl example</dt>
+<dt class="hdlist1">curl example</dt>
 </dl>
 </div>
 <div class="listingblock">
@@ -940,13 +969,98 @@
 <dl>
 <dt class="hdlist1">Input</dt>
 <dd>
+<div class="ulist">
+<ul>
+<li>
 <p>Path parameter &lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</li>
+<li>
+<p>(Optional) Query parameters:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>localDelete</code> boolean</p>
+<div class="paragraph">
+<p>If <code>true</code> the Cloud Volumes ONTAP instance in the cloud is not terminated, but Cloud Manager no longer manages it (default is <code>false</code>).</p>
+</div>
+<div class="paragraph">
+<p>If <code>false</code> the Cloud Volumes ONTAP instance is deleted including all the cloud resources created for this working environment.</p>
+</div>
+</li>
+<li>
+<p><code>forceDelete</code> boolean</p>
+<div class="paragraph">
+<p>If <code>true</code> the working environment is deleted even if it is part of one or more SnapMirror relationships (default is <code>false</code>).</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
 </dd>
 </dl>
 </div>
-<div class="paragraph">
-<p>(Optional) Query parameters:</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="delete-working-environment-for-high-availability-pair">Delete working environment for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to delete an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> path parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-delete-the-working-environment-2">2. Delete the working environment</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DELETE</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/working-environments/{workingEnvironmentId}</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request DELETE 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/working-environments/&lt;WORKING_ENV_ID&gt;' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;'</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Path parameter &lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</li>
+<li>
+<p>(Optional) Query parameters:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -960,16 +1074,20 @@
 <div class="paragraph">
 <p>If <code>true</code> the working environment is deleted even if it is part of one or more SnapMirror relationships (default is <code>false</code>).</p>
 </div>
-<div class="dlist">
-<dl>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
 <dt class="hdlist1">Output</dt>
 <dd>
 <p>None</p>
 </dd>
 </dl>
 </div>
-</li>
-</ul>
+</div>
 </div>
 </div>
 

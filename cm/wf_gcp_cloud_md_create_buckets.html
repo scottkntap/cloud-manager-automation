@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Create Buckets</title>
+  <title>Create bucket</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Create Buckets" />
+  <meta property="og:title" content="Create bucket" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_create_buckets.html" />
-	<meta property="og:description" content="You can perform this workflow to retrieve the S3 buckets." />
+	<meta property="og:description" content="You can perform this workflow to create the S3 buckets." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can perform this workflow to retrieve the S3 buckets.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can perform this workflow to create the S3 buckets.">
   <meta name="keywords" content=" buckets, cloud, volumes, ontap, working, environment, occm"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -858,7 +868,7 @@
           <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
         </li>
         <li class="n-breadcrumb__list-item">
-          Create Buckets
+          Create bucket
         </li>
       </ul>
     </div>
@@ -867,14 +877,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Create Buckets</h1>
+  <h1 class="n-doc__component-detail-heading">Create bucket</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,10 +908,41 @@
 <div class="paragraph lead">
 <p>You can perform this workflow to create a new bucket. This is a GCP storage bucket (data container in GCP) required for data tiering and backup.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-bucket-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-bucket-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-bucket-for-single-node">Create bucket for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a bucket for a single node working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-project">1. Select the project</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_md_get_projects.html#get-projects-for-single-node">Get projects</a> workflow and choose the <code>projectId`</code> value of the required project for the <code>projectId</code> parameter.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="1-create-a-bucket">1. Create a bucket</h3>
+<h3 id="2-select-the-region">2. Select the region</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-single-node">Get regions</a> workflow and choose the <code>name</code> value of the required region for the <code>location</code> parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-create-a-bucket">3. Create a bucket</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -954,6 +995,82 @@
 </dl>
 </div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-bucket-for-high-availability-pair">Create bucket for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a bucket for an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-project-2">1. Select the project</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_md_get_projects.html#get-projects-for-high-availability-pair">Get projects</a> workflow and choose the <code>projectId`</code> value of the required project for the <code>projectId</code> parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-select-the-region-2">2. Select the region</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-high-availability-pair">Get regions</a> workflow and choose the <code>name</code> value of the required region for the <code>location</code> parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-create-a-bucket-2">3. Create a bucket</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/metadata/create-bucket</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/metadata/create-bucket' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json' --d JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "projectId": "occm-dev",
+  "bucketName": "zivgcpbucket02ha",
+  "location": "us-west1",
+  "storageClass": "standard"
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
 
     </article>
     <!-- Page Container -->
@@ -964,7 +1081,7 @@
   <div class="page-nav-toolbar">
     <div id="version-dropdown"></div>
     <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Create Buckets](https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_create_buckets.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Create bucket](https://docs.netapp.com/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_create_buckets.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cm/wf_gcp_cloud_md_create_buckets.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
     </div>

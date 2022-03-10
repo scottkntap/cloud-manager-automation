@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -896,7 +906,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>If you want to create CIFS volumes on your Cloud Volumes ONTAP system, you first need to configure the CIFS server. You can choose to set up the CIFS server in a workgroup or in an Active Directory domain. Review the <a href="https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-cifs-cg%2FGUID-362AE62E-EE3A-419B-8195-B96079EEEC5D.html">NetApp docs</a> for more information.</p>
+<p>If you want to create CIFS volumes on your Cloud Volumes ONTAP system, you first need to configure the CIFS server. You can choose to set up the CIFS server in a workgroup or in an Active Directory domain. Review the <a href="https://docs.netapp.com/us-en/ontap/smb-config/set-up-server-workgroup-task.html">Set up SMB (CIFS) in a workgroup</a> and <a href="https://docs.netapp.com/us-en/ontap/smb-config/set-up-server-workgroup-task.html">Set up SMB (CIFS) in an Active Directory domain</a> topics for more information.</p>
 </div>
 <div class="paragraph">
 <p>Choose the correct workflow depending on the type of the Cloud Volumes ONTAP deployment:</p>
@@ -1156,15 +1166,15 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="#set-up-a-cifs-server-in-a-workgroup">Set up a CIFS server in a workgroup</a></p>
+<p><a href="#set-up-a-cifs-server-in-a-workgroup-ha">Set up a CIFS server in a workgroup (HA)</a></p>
 </li>
 <li>
-<p><a href="#set-up-a-cifs-server-in-an-active-directory-domain">Set up a CIFS server in an Active Directory domain</a></p>
+<p><a href="#set-up-a-cifs-server-in-an-active-directory-domain-ha">Set up a CIFS server in an Active Directory domain (HA)</a></p>
 </li>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="set-up-a-cifs-server-in-a-workgroup-2">Set up a CIFS server in a workgroup</h3>
+<h3 id="set-up-a-cifs-server-in-a-workgroup-ha">Set up a CIFS server in a workgroup (HA)</h3>
 <div class="paragraph">
 <p>You can configure a CIFS server in a workgroup when the Microsoft Active Directory domain infrastructure is not available.</p>
 </div>
@@ -1242,7 +1252,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="set-up-a-cifs-server-in-an-active-directory-domain-2">Set up a CIFS server in an Active Directory domain</h3>
+<h3 id="set-up-a-cifs-server-in-an-active-directory-domain-ha">Set up a CIFS server in an Active Directory domain (HA)</h3>
 <div class="paragraph">
 <p>You can create a CIFS server on the SVM and specify the Active Directory (AD) domain to which it belongs.</p>
 </div>

@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,6 +908,27 @@
 <div class="paragraph lead">
 <p>You can use this workflow to create a volume accessed through NFS protocol.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-a-volume-using-nfs-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-a-volume-using-nfs-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-a-volume-using-nfs-for-single-node">Create a volume using NFS for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a volume using NFS for a single node working environment.</p>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -910,18 +941,16 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </tr>
 </table>
 </div>
-</div>
-</div>
 <div class="sect2">
 <h3 id="1-select-the-working-environment">1. Select the working environment</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environement</a> and choose the <code>publicId</code> and the <code>svmName</code> values for the <code>workingEnvironmentId</code>  and the <code>svmName</code> parameters.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environement</a> and choose the <code>publicId</code> and the <code>svmName</code> values for the <code>workingEnvironmentId</code>  and the <code>svmName</code> parameters.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="2-select-the-aggregate">2. Select the aggregate</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html">Get aggregates</a> and choose the <code>name</code> value of the aggregate for the <code>name</code> parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-single-node">Get aggregates</a> and choose the <code>name</code> value of the aggregate for the <code>name</code> parameter.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -945,13 +974,13 @@ If aggregate name does not exist and the <code>createAggregateIfNotFound</code> 
 <div class="sect2">
 <h3 id="4-select-the-region">4. Select the region</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html">Get regions</a> workflow and pick <code>ipCidrRange</code> value of the required <code>region&#8594; subnets</code> for <code>exportPolicy&#8594;ips</code> value.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-single-node">Get regions</a> workflow and pick <code>ipCidrRange</code> value of the required <code>region&#8594; subnets</code> for <code>exportPolicy&#8594;ips</code> value.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="5-create-the-quote">5. Create the quote</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html">Create quote</a>. This is a recommended step but is not mandatory.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-single-node">Create quote</a>. This is a recommended step but is not mandatory.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1048,6 +1077,166 @@ If aggregate name does not exist and the <code>createAggregateIfNotFound</code> 
 <p>None</p>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-a-volume-using-nfs-for-high-availability-pair">Create a volume using NFS for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a volume using NFS for an HA working environment.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAdd</code> are not provided on the REST API call, the response will fail with a suggested name for the aggregate and the number of disks needed to fulfill the request.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environement</a> and choose the <code>publicId</code> and the <code>svmName</code> values for the <code>workingEnvironmentId</code>  and the <code>svmName</code> parameters.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-select-the-aggregate-2">2. Select the aggregate</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-high-availability-pair">Get aggregates</a> and choose the <code>name</code> value of the aggregate for the <code>name</code> parameter.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If aggregate name does not exist and the <code>createAggregateIfNotFound</code> query parameter is set <code>true</code>, the create volume request is allowed if the named aggregate is not found.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-choose-the-size-for-the-disk-2">3. Choose the size for the disk</h3>
+<div class="paragraph">
+<p>Choose the size value for the <code>size:size</code> parameter. The <code>size:unit</code> must be one of the following: <code>TB</code>, <code>GB</code>, <code>MB</code>, <code>KB</code>, or <code>Byte</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4-select-the-region-2">4. Select the region</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-high-availability-pair">Get regions</a> workflow and pick <code>ipCidrRange</code> value of the required <code>region&#8594; subnets</code> for <code>exportPolicy&#8594;ips</code> value.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="5-create-the-quote-2">5. Create the quote</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-high-availability-pair">Create quote</a>. This is a recommended step but is not mandatory.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="6-create-the-volume-2">6. Create the volume</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/volumes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>The JSON input example includes the minimum list of input parameters, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code></p>
+</li>
+<li>
+<p>&lt;SVM_NAME&gt; <code>(svmName)</code></p>
+</li>
+<li>
+<p>&lt;AGGR_NAME&gt; <code>(aggregateName)</code></p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>If aggregate name does not exist, you can set the <code>createAggregateIfNotFound</code> query parameter to <code>true</code> which allows the aggregate not-found condition.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "workingEnvironmentId": "vsaworkingenvironment-blg9ei6u",
+  "svmName": "svm_ziv01we02ha",
+  "aggregateName": "ziv01we02agg01ha",
+  "name": "ziv01we02agg01havol01",
+  "size": {
+    "size": 100,
+    "unit": "GB"
+  },
+  "snapshotPolicyName": "default",
+  "enableThinProvisioning": true,
+  "enableCompression": true,
+  "enableDeduplication": true,
+  "maxNumOfDisksApprovedToAdd": 0,
+  "exportPolicyInfo": {
+      "ips": [
+          "10.138.0.0/20"
+      ],
+      "nfsVersion": [
+          "nfs3", "nfs4"
+      ],
+      "policyType": "custom"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </div>
 

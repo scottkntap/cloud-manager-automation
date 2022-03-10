@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,11 +908,14 @@
 <div class="paragraph lead">
 <p>You can use this workflow to create a new Cloud Volumes ONTAP working environment using bring your own license (BYOL) licensing.</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Note the following when using BYOL licensing</strong>:</p>
-</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="title">Note the following when using BYOL licensing</div>
 <div class="ulist">
 <ul>
 <li>
@@ -916,14 +929,35 @@
 </li>
 </ul>
 </div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-working-environment-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-working-environment-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="create-working-environment-for-single-node">Create working environment for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create single node working environment with BYOL licensing.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-region">1. Select the region</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html">Get regions</a> and do the following:</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-single-node">Get regions</a> and do the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -945,19 +979,19 @@
 <div class="sect2">
 <h3 id="3-select-the-project">3. Select the project</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_projects.html">Get projects</a> and choose the <code>projectId</code> value of the required project for <code>project</code> parameter in step 8.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_projects.html#get-projects-for-single-node">Get projects</a> and choose the <code>projectId</code> value of the required project for <code>project</code> parameter in step 8.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="4-select-the-permutations">4. Select the permutations</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_permutations.html">Get permutations</a> and choose the <code>ontapVersion</code>, <code>license: type</code>, and <code>instanceType</code> values of the required <code>vsaMetadata</code> parameter in step 8.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_permutations.html#get-gcp-permutations-for-single-node">Get permutations</a> and choose the <code>ontapVersion</code>, <code>license: type</code>, and <code>instanceType</code> values of the required <code>vsaMetadata</code> parameter in step 8.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="5-select-the-packages-configuration">5. Select the packages configuration</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_packages.html">Get packages</a> and search the <code>licenseType</code> from permutations:</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_packages.html#get-gcp-packages-for-single-node">Get packages</a> and search the <code>licenseType</code> from permutations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -976,7 +1010,7 @@
 <div class="sect2">
 <h3 id="6-select-the-service-account">6. Select the service account</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_md_get_service_accounts.html">Get service accounts</a> workflow and choose the <code>email</code> value of the required service accounts for the <code>gcpServiceAccount</code> parameter in step 8.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_service_accounts.html#get-service-accounts-for-single-node">Get service accounts</a> workflow and choose the <code>email</code> value of the required service accounts for the <code>gcpServiceAccount</code> parameter in step 8.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1058,8 +1092,8 @@ region: "europe-west3-c"
 serialNumber: "00000108000000000000"
 subnetId: "projects/occm-dev/regions/europe-west3/subnetworks/vpc4qa-2-europe-west3"
 subnetPath: "projects/occm-dev/regions/europe-west3/subnetworks/vpc4qa-2-europe-west3"
-svmPassword: "Netapp123"
-tenantId: "workspaceNqaJyVMz"
+svmPassword: "passord"
+tenantId: "workspaceXXXvv"
 tierLevel: "standard"
 volume: {
   exportPolicyInfo: {
@@ -1125,6 +1159,230 @@ writingSpeedState: "NORMAL"
  "monitoringProperties": null,
  "licensesInformation": null
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-working-environment-for-high-availability-pair">Create working environment for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create an HA working environment with BYOL licensing.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-region-2">1. Select the region</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_regions.html#get-regions-for-high-availability-pair">Get regions</a> and do the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Choose the <code>name</code> value of the required region for the <code>region</code> parameter in step 8.</p>
+</li>
+<li>
+<p>Choose one of the VPCs. Choose <code>name</code> for <code>vpcId</code> parameter and <code>subnets: path</code> for <code>subnetId</code> and <code>subnetPath</code> parameters in step 8.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-select-the-workspace-2">2. Select the workspace</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_common_identity_get_tenants.html">Get tenants</a> and choose the <code>workspacePublicId</code> value for the <code>tenantId</code> parameter in step 8.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-select-the-project-2">3. Select the project</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_projects.html#get-projects-for-high-availability-pair">Get projects</a> and choose the <code>projectId</code> value of the required project for <code>project</code> parameter in step 8.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4-select-the-permutations-2">4. Select the permutations</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_permutations.html#get-gcp-permutations-for-high-availability-pair">Get permutations</a> and choose the <code>ontapVersion</code>, <code>license: type</code>, and <code>instanceType</code> values of the required <code>vsaMetadata</code> parameter in step 8.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="5-select-the-packages-configuration-2">5. Select the packages configuration</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_packages.html#get-gcp-packages-for-high-availability-pair">Get packages</a> and search the <code>licenseType</code> from permutations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Choose the <code>name</code> for <code>packageName</code> parameter.</p>
+</li>
+<li>
+<p>Choose the <code>diskSize</code> for <code>gcpVolumeSize</code>.</p>
+</li>
+<li>
+<p>Choose the <code>diskType</code> and <code>writingSpeedState</code> for the <code>gcpVolumeType</code> and <code>writingSpeedState</code> parameters.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="6-select-the-service-account-2">6. Select the service account</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_md_get_service_accounts.html#get-service-accounts-for-high-availability-pair">Get service accounts</a> workflow and choose the <code>email</code> value of the required service accounts for the <code>gcpServiceAccount</code> parameter in step 8.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="7-obtain-an-nss-key-2">7. Obtain an NSS key</h3>
+<div class="paragraph">
+<p>An NSS key is <strong>required</strong> when using BYOL subscription. If needed, you can create a key or select an existing key, and include the NSS key in the <code>nssAccount</code> parameter in step 8.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a new NSS key using the Cloud Manager web user interface, perform the task <a href="../platform/get_nss_key.html">Generate NSS user ID</a> and choose the <code>id</code>.</p>
+</li>
+<li>
+<p>To select an existing NSS key, perform the <a href="wf_common_identity_get_nss_keys.html">Get NSS keys</a> workflow and choose the <code>id</code> value of the required NSS user.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="8-create-the-working-environment-2">8. Create the working environment</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/working-environments</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/working-environments' --header 'x-agent-id: &lt;AGENT_ID&gt;' //&lt;1&gt; --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' //&lt;2&gt; ---header 'Content-Type: application/json' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>(1) Replace &lt;AGENT_ID&gt; with your agent ID.<br>
+(2) Replace &lt;ACCESS_TOKEN&gt; with your obtained bearer access token.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>The JSON input example includes the minimum list of parameters. This request uses BYOL licensing as indicated in the <code>licenseType</code> parameter. The <code>serialNumber</code> is required.</p>
+</dd>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "name": "lironweha",
+  "tenantId": "workspace-CdkdlaGl",
+  "region": "us-east1-b",
+  "packageName": "gcp_ha_custom",
+  "dataEncryptionType": "GCP",
+  "capacityTier": "cloudStorage",
+  "tierLevel": "standard",
+  "gcpServiceAccount": xxxxx@occm-dev.iam.gserviceaccount.com,
+  "vsaMetadata": {
+    "ontapVersion": "ONTAP-9.11.0X1.T1.gcpha",
+    "licenseType": "gcp-ha-cot-premium-byol",
+    "instanceType": "n2-standard-4"
+  },
+  "nssAccount": "6f0577ba-edc4-47f8-8732-xxxxxa41ae5",
+  "subnetPath": "projects/occm-dev/regions/us-east1/subnetworks/default",
+  "subnetId": "projects/occm-dev/regions/us-east1/subnetworks/default",
+  "svmPassword": "password",
+  "vpcId": "default",
+  "gcpVolumeSize": {
+    "size": 1,
+    "unit": "TB",
+    "_identifier": "1 TB"
+  },
+  "gcpVolumeType": "pd-ssd",
+  "gcpLabels": [],
+  "project": "occm-dev",
+  "backupVolumesToCbs": false,
+  "enableCompliance": false,
+  "haParams": {
+    "node1Zone": "us-east1-b",
+    "node2Zone": "us-east1-c",
+    "mediatorZone": "us-east1-d",
+    "vpc0NodeAndDataConnectivity": "projects/occm-dev/global/networks/default",
+    "vpc1ClusterConnectivity": "projects/occm-dev/global/networks/vpc4qa-2",
+    "vpc2HAConnectivity": "projects/occm-dev/global/networks/vpc4qa-3",
+    "vpc3DataReplication": "projects/occm-dev/global/networks/vpc4qa-4",
+    "subnet0NodeAndDataConnectivity": "projects/occm-dev/regions/us-east1/subnetworks/default",
+    "subnet1ClusterConnectivity": "projects/occm-dev/regions/us-east1/subnetworks/vpc4qa-2-us-east1",
+    "subnet2HAConnectivity": "projects/occm-dev/regions/us-east1/subnetworks/vpc4qa-3-us-east1",
+    "subnet3DataReplication": "projects/occm-dev/regions/us-east1/subnetworks/vpc4qa-4-us-east1",
+    "platformSerialNumberNode1": "xxx20140000000000510",
+    "platformSerialNumberNode2": "xxx20140000000000510"
+  }
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>The JSON output example includes an example of the <code>VsaWorkingEnvironmentResponse</code> response.</p>
+</dd>
+<dt class="hdlist1">JSON output example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "publicId": "vsaworkingenvironment-xxx9",
+  "name": "lironweha",
+  "tenantId": "Tenant-mPqezSkl",
+  "svmName": "svm_lironweha",
+  "creatorUserEmail": "user-email",
+  "status": null,
+  "providerProperties": null,
+  "reservedSize": null,
+  "clusterProperties": null,
+  "ontapClusterProperties": null,
+  "cloudProviderName": "GCP",
+  "snapshotPolicies": null,
+  "actionsRequired": null,
+  "activeActions": null,
+  "replicationProperties": null,
+  "schedules": null,
+  "svms": null,
+  "workingEnvironmentType": "VSA",
+  "supportRegistrationProperties": null,
+  "supportRegistrationInformation": null,
+  "capacityFeatures": null,
+  "encryptionProperties": null,
+  "supportedFeatures": null,
+  "isHA": true,
+  "haProperties": null,
+  "fpolicyProperties": null,
+  "saasProperties": null,
+  "cbsProperties": null,
+  "complianceProperties": null,
+  "monitoringProperties": null,
+  "licensesInformation": null
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

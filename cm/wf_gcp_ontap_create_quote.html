@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -898,24 +908,43 @@
 <div class="paragraph lead">
 <p>You can create a quote for a new volume which returns a resource quote needed to satisfy the request. The resource quote contains aggregate information where the volume will be created and confirms if the space is available. This is a recommended step but is not mandatory.</p>
 </div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-quote-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-quote-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-quote-for-single-node">Create quote for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create quote for a single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-working-environment">1. Select the working environment</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environment</a> and choose the <code>publicId</code> and ‘svmName’ values of the required working environment for <code>workingEnvironmentId</code> and <code>svmName</code> parameters in the JSON input.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environment</a> and choose the <code>publicId</code> and <code>svmName</code> values of the required working environment for <code>workingEnvironmentId</code> and <code>svmName</code> parameters in the JSON input.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="2-select-the-aggregate">2. Select the aggregate</h3>
 <div class="paragraph">
-<p>Perform the <a href="wf_gcp_cloud_get_aggrs.html">Get aggregates</a> workflow and choose the <code>name</code> value of the required aggregate for the <code>aggregateName</code> parameter in the JSON input.</p>
+<p>Perform the <a href="wf_gcp_cloud_get_aggrs.html#get-aggregates-for-single-node">Get aggregates</a> workflow and choose the <code>name</code> value of the required aggregate for the <code>aggregateName</code> parameter in the JSON input.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="3-select-the-gcp-disk-type">3. Select the gcp disk type</h3>
 <div class="paragraph">
-<p>Perform the <a href="wf_gcp_cloud_get_gcp_disk_types.html">Get gcp disk types</a> workflow and choose the <code>size</code> and <code>supportedDiskType</code> values of the required disk type for the <code>diskSize</code> and <code>providerVolumeType</code> parameters in the JSON input.</p>
+<p>Perform the <a href="wf_gcp_cloud_md_get_disk_types.html#get-gcp-disk-types-for-single-node">Get gcp disk types</a> workflow and choose the <code>size</code> and <code>supportedDiskType</code> values of the required disk type for the <code>diskSize</code> and <code>providerVolumeType</code> parameters in the JSON input.</p>
 </div>
 </div>
 <div class="sect2">
@@ -995,6 +1024,114 @@
     "newAggregate": false,
     "autoVsaCapacityManagement": true
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-quote-for-high-availability-pair">Create quote for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create quote for an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environment</a> and choose the <code>publicId</code> and <code>svmName</code> values of the required working environment for <code>workingEnvironmentId</code> and <code>svmName</code> parameters in the JSON input.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-select-the-aggregate-2">2. Select the aggregate</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_get_aggrs.html#get-aggregates-for-high-availability-pair">Get aggregates</a> workflow and choose the <code>name</code> value of the required aggregate for the <code>aggregateName</code> parameter in the JSON input.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-select-the-gcp-disk-type-2">3. Select the gcp disk type</h3>
+<div class="paragraph">
+<p>Perform the <a href="wf_gcp_cloud_md_get_disk_types.html#get-gcp-disk-types-for-high-availability-pair">Get gcp disk types</a> workflow and choose the <code>size</code> and <code>supportedDiskType</code> values of the required disk type for the <code>diskSize</code> and <code>providerVolumeType</code> parameters in the JSON input.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4-generate-the-volume-quote-2">4. Generate the volume quote</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col>
+<col>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/quote</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes/quote' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt; --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>The JSON input example includes the list of input parameters.</p>
+</dd>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "workingEnvironmentId": "vsaworkingenvironment-blg9ei6u",
+  "svmName": "svm_ziv01we02ha",
+  "aggregateName": "ziv01we02agg01ha",
+  "name": "ziv01we02agg01havol01",
+  "size": {
+    "size": "100",
+    "unit": "GB"
+  },
+  "enableThinProvisioning": "true",
+  "providerVolumeType": "pd-ssd",
+  "verifyNameUniqueness": "true"
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>The JSON output example includes an example of the quote details.</p>
+</dd>
+<dt class="hdlist1">JSON output example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "numOfDisks": 0,
+    "diskSize": {
+        "size": 100.0,
+        "unit": "GB"
+    },
+    "aggregateName": "ziv01we02agg01ha",
+    "newAggregate": false,
+    "autoVsaCapacityManagement": true
+}</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>

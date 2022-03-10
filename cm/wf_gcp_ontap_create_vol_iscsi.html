@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -896,7 +906,31 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can use this workflow to create a volume accessed through iSCSI. There are two workflows available depending on whether a new or existing iGroup is used. You need to select the correct workflow:</p>
+<p>You can use this workflow to create a volume accessed through iSCSI.</p>
+</div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-volume-using-iscsi-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-volume-using-iscsi-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-volume-using-iscsi-for-single-node">Create volume using iSCSI for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a volume using the iSCSI protocol for a single node working environment.</p>
+</div>
+<div class="paragraph">
+<p>There are two workflows available depending on whether a new or existing iGroup is used. You need to select the correct workflow:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -908,11 +942,8 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="create-volume-using-iscsi-with-a-new-igroup">Create volume using iSCSI with a new iGroup</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="create-volume-using-iscsi-with-a-new-igroup">Create volume using iSCSI with a new iGroup</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -925,26 +956,26 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="1-select-the-working-environment">1. Select the working environment</h3>
+<div class="sect3">
+<h4 id="1-select-the-working-environment">1. Select the working environment</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="2-select-the-aggregate">2. Select the aggregate</h3>
+<div class="sect3">
+<h4 id="2-select-the-aggregate">2. Select the aggregate</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-single-node">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="3-choose-the-size-for-the-disk">3. Choose the size for the disk</h3>
+<div class="sect3">
+<h4 id="3-choose-the-size-for-the-disk">3. Choose the size for the disk</h4>
 <div class="paragraph">
 <p>Choose the size value for the <code>size:size</code> parameter. The <code>size:unit</code> must be one of the following: <code>TB</code>, <code>GB</code>, <code>MB</code>, <code>KB</code>, or <code>Byte</code>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="4-choose-the-iscasiinfo-parameters">4. Choose the iscasiInfo parameters</h3>
+<div class="sect3">
+<h4 id="4-choose-the-iscsiinfo-parameters">4. Choose the iscsiInfo parameters</h4>
 <div class="paragraph">
 <p>You must choose the following values for the REST API call:</p>
 </div>
@@ -981,14 +1012,14 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="5-create-the-quote">5. Create the quote</h3>
+<div class="sect3">
+<h4 id="5-create-the-quote">5. Create the quote</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html">Create quote</a>.This is a recommended step but is not mandatory.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-single-node">Create quote</a>.This is a recommended step but is not mandatory.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="6-create-the-volume">6. Create the volume</h3>
+<div class="sect3">
+<h4 id="6-create-the-volume">6. Create the volume</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1085,10 +1116,8 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="create-volume-using-iscsi-with-an-existing-igroup">Create volume using iSCSI with an existing iGroup</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="create-volume-using-iscsi-with-an-existing-igroup">Create volume using iSCSI with an existing iGroup</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -1101,38 +1130,38 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </tr>
 </table>
 </div>
-<div class="sect2">
-<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-2">1. Select the working environment</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="2-select-the-aggregate-2">2. Select the aggregate</h3>
+<div class="sect3">
+<h4 id="2-select-the-aggregate-2">2. Select the aggregate</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-single-node">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="3-choose-the-size-for-the-disk-2">3. Choose the size for the disk</h3>
+<div class="sect3">
+<h4 id="3-choose-the-size-for-the-disk-2">3. Choose the size for the disk</h4>
 <div class="paragraph">
 <p>Choose the size value for the <code>size:size</code> parameter. The <code>size:unit</code> must be one of the following: <code>TB</code>, <code>GB</code>, <code>MB</code>, <code>KB</code>, or <code>Byte</code>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="4-choose-the-igroup">4. Choose the iGroup</h3>
+<div class="sect3">
+<h4 id="4-choose-the-igroup">4. Choose the iGroup</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_get_igroups.html">Get iGroups</a> and choose the igroups for the <code>iscasiInfo</code> &#8594; <code>igroups</code> value. Also select the <code>osType</code> value for the <code>iscasiInfo</code> &#8594; <code>osName</code>.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_get_igroups.html#get-igroups-for-single-node">Get iGroups</a> and choose the igroups for the <code>iscasiInfo</code> &#8594; <code>igroups</code> value. Also select the <code>osType</code> value for the <code>iscasiInfo</code> &#8594; <code>osName</code>.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="5-create-the-quote-2">5. Create the quote</h3>
+<div class="sect3">
+<h4 id="5-create-the-quote-2">5. Create the quote</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html">Create quote</a>. This is a recommended step but is not mandatory.</p>
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-single-node">Create quote</a>. This is a recommended step but is not mandatory.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="6-create-the-volume-2">6. Create the volume</h3>
+<div class="sect3">
+<h4 id="6-create-the-volume-2">6. Create the volume</h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -1147,7 +1176,7 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/vsa/volumes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/volumes</p></td>
 </tr>
 </tbody>
 </table>
@@ -1187,7 +1216,7 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">JSON input exmaple</dt>
+<dt class="hdlist1">JSON input example</dt>
 </dl>
 </div>
 <div class="listingblock">
@@ -1220,6 +1249,338 @@ If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAd
 <p>None</p>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-volume-using-iscsi-for-high-availability-pair">Create volume using iSCSI for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create a volume using the iSCSI protocol for an HA working environment.</p>
+</div>
+<div class="paragraph">
+<p>There are two workflows available depending on whether a new or existing iGroup is used. You need to select the correct workflow:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-volume-using-iscsi-with-a-new-igroup">Create volume using iSCSI with a new iGroup</a></p>
+</li>
+<li>
+<p><a href="#create-volume-using-iscsi-with-an-existing-igroup">Create volume using iSCSI with an existing iGroup</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="create-volume-using-iscsi-with-a-new-igroup-2">Create volume using iSCSI with a new iGroup</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAdd</code> are not provided on the REST API call, the response will fail with a suggested name for the aggregate and the number of disks needed to fulfill the request.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-3">1. Select the working environment</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="2-select-the-aggregate-3">2. Select the aggregate</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-high-availability-pair">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="3-choose-the-size-for-the-disk-3">3. Choose the size for the disk</h4>
+<div class="paragraph">
+<p>Choose the size value for the <code>size:size</code> parameter. The <code>size:unit</code> must be one of the following: <code>TB</code>, <code>GB</code>, <code>MB</code>, <code>KB</code>, or <code>Byte</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="4-choose-the-iscasiinfo-parameters">4. Choose the iscasiInfo parameters</h4>
+<div class="paragraph">
+<p>You must choose the following values for the REST API call:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A unique igroup name for <code>igroupCreationRequest</code> &#8594; <code>igroupName</code> parameter</p>
+</li>
+<li>
+<p>The required iqn’s to <code>igroupCreationRequest</code> &#8594; <code>initiators</code> parameter.</p>
+</li>
+<li>
+<p>The required operating system for the <code>osName</code> parameter from one of the following:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>windows</p>
+</li>
+<li>
+<p>linux</p>
+</li>
+<li>
+<p>vmware</p>
+</li>
+<li>
+<p>windows_2008</p>
+</li>
+<li>
+<p>windows_gpt</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="5-create-the-quote-3">5. Create the quote</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-high-availability-pair">Create quote</a>.This is a recommended step but is not mandatory.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="6-create-the-volume-3">6. Create the volume</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/vsa/volumes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>The JSON input example includes the minimum list of input parameters, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</li>
+<li>
+<p>&lt;SVM_NAME&gt; <code>(svmName)</code> string</p>
+</li>
+<li>
+<p>&lt;AGGR_NAME&gt; <code>(aggregateName)</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>If aggregate name does not exist, you can set the <code>createAggregateIfNotFound</code> query parameter to <code>true</code> which allows the aggregate not-found condition.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "workingEnvironmentId": "VsaWorkingEnvironment-SfpVUZSc",
+  "svmName": "svm_zivaws02we01",
+  "aggregateName": "aggr1",
+  "name": "zivaws02we01vol01Iscsi",
+  "size": {
+    "size": 100,
+    "unit": "GB"
+  },
+  "iscsiInfo": {
+    "igroupCreationRequest": {
+        "igroupName": "zivIgroup",
+        "initiators": [
+            "iqn.1994-05.com.redhat:96de86825216",
+            "iqn.1994-05.com.redhat:96de86823426"
+        ]
+    },
+    "osName": "linux"
+  },
+  "snapshotPolicyName": "default",
+  "enableThinProvisioning": true,
+  "enableCompression": true,
+  "enableDeduplication": true,
+  "maxNumOfDisksApprovedToAdd": 0
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-volume-using-iscsi-with-an-existing-igroup-2">Create volume using iSCSI with an existing iGroup</h3>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+If the properties <code>aggregateName</code> and <code>maxNumOfDisksApprovedToAdd</code> are not provided on the REST API call, the response will fail with a suggested name for the aggregate and the number of disks needed to fulfill the request.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-4">1. Select the working environment</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environments</a> and choose the <code>publicId</code> value for the <code>workingEnvironmentId</code> parameter and the <code>svmName</code> value for the <code>svmName</code> parameter.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="2-select-the-aggregate-4">2. Select the aggregate</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_get_aggrs.html#get-aggregates-for-high-availability-pair">Get aggregates</a> and choose the <code>name</code> for the <code>aggregateName</code> value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="3-choose-the-size-for-the-disk-4">3. Choose the size for the disk</h4>
+<div class="paragraph">
+<p>Choose the size value for the <code>size:size</code> parameter. The <code>size:unit</code> must be one of the following: <code>TB</code>, <code>GB</code>, <code>MB</code>, <code>KB</code>, or <code>Byte</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="4-choose-the-igroup-2">4. Choose the iGroup</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_get_igroups.html#get-igroups-for-high-availability-pair">Get iGroups</a> and choose the igroups for the <code>iscasiInfo</code> &#8594; <code>igroups</code> value. Also select the <code>osType</code> value for the <code>iscasiInfo</code> &#8594; <code>osName</code>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="5-create-the-quote-4">5. Create the quote</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_ontap_create_quote.html#create-quote-for-high-availability-pair">Create quote</a>. This is a recommended step but is not mandatory.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="6-create-the-volume-4">6. Create the volume</h4>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/vsa/volumes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>The JSON input example includes the minimum list of input parameters, including:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</li>
+<li>
+<p>&lt;SVM_NAME&gt; <code>(svmName)</code> string</p>
+</li>
+<li>
+<p>&lt;AGGR_NAME&gt; <code>(aggregateName)</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>If an aggregate name does not exist, you can set the <code>createAggregateIfNotFound</code> query parameter to <code>true</code> which allows the aggregate not-found condition.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "workingEnvironmentId": "VsaWorkingEnvironment-UvFmWXoD",
+  "svmName": "svm_zivaws01we01",
+  "aggregateName": "aggr1",
+  "name": "zivaws01we01vol05Iscsi",
+  "size": {
+    "size": 100,
+    "unit": "GB"
+  },
+  "iscsiInfo": {
+    "igroups": ["zivIgroup1"],
+    "osName": "linux"
+  },
+  "snapshotPolicyName": "default",
+  "enableThinProvisioning": true,
+  "enableCompression": true,
+  "enableDeduplication": true,
+  "maxNumOfDisksApprovedToAdd": 0
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 </div>

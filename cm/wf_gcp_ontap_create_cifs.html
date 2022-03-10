@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -896,7 +906,28 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>If you want to create CIFS volumes on your Cloud Volumes ONTAP system, you first need to configure the CIFS server. You can choose to set up the CIFS server in a workgroup or in an Active Directory domain. Review the <a href="https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.pow-cifs-cg%2FGUID-362AE62E-EE3A-419B-8195-B96079EEEC5D.html">ONTAP documentation</a> for more information.</p>
+<p>If you want to create CIFS volumes on your Cloud Volumes ONTAP system, you first need to configure the CIFS server. You can choose to set up the CIFS server in a workgroup or in an Active Directory domain. Review the <a href="https://docs.netapp.com/us-en/ontap/smb-config/set-up-server-workgroup-task.html">Set up SMB (CIFS) in a workgroup</a> and <a href="https://docs.netapp.com/us-en/ontap/smb-config/set-up-server-workgroup-task.html">Set up SMB (CIFS) in an Active Directory domain</a> topics for more information.</p>
+</div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#create-cifs-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#create-cifs-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-cifs-for-single-node">Create CIFS for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create CIFS volumes in a single node working environment.</p>
 </div>
 <div class="paragraph">
 <p>Choose the workflow that is specific to your goal:</p>
@@ -911,22 +942,19 @@
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="set-up-a-cifs-server-in-a-workgroup">Set up a CIFS server in a workgroup</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="set-up-a-cifs-server-in-a-workgroup">Set up a CIFS server in a workgroup</h3>
 <div class="paragraph">
 <p>You can configure a CIFS server in a workgroup when the Microsoft Active Directory domain infrastructure is not available.</p>
 </div>
-<div class="sect2">
-<h3 id="1-select-the-working-environment">1. Select the working environment</h3>
+<div class="sect3">
+<h4 id="1-select-the-working-environment">1. Select the working environment</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="2-create-the-cifs-configuration">2. Create the CIFS configuration</h3>
+<div class="sect3">
+<h4 id="2-create-the-cifs-configuration">2. Create the CIFS configuration</h4>
 <div class="paragraph">
 <p>Create the CIFS server configuration.</p>
 </div>
@@ -992,21 +1020,19 @@
 </div>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="set-up-a-cifs-server-in-an-active-directory-domain">Set up a CIFS server in an Active Directory domain</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="set-up-a-cifs-server-in-an-active-directory-domain">Set up a CIFS server in an Active Directory domain</h3>
 <div class="paragraph">
 <p>You can create a CIFS server on the SVM and specify the Active Directory (AD) domain to which it belongs.</p>
 </div>
-<div class="sect2">
-<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-2">1. Select the working environment</h4>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="2-determine-the-active-directory-configuration">2. Determine the Active Directory configuration</h3>
+<div class="sect3">
+<h4 id="2-determine-the-active-directory-configuration">2. Determine the Active Directory configuration</h4>
 <div class="paragraph">
 <p>You need the following configuration parameters for an Active Directory server.</p>
 </div>
@@ -1053,8 +1079,8 @@
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="3-create-the-cifs-configuration">3. Create the CIFS configuration</h3>
+<div class="sect3">
+<h4 id="3-create-the-cifs-configuration">3. Create the CIFS configuration</h4>
 <div class="paragraph">
 <p>Create the CIFS server configuration.</p>
 </div>
@@ -1123,6 +1149,238 @@
 <p>None.</p>
 </dd>
 </dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="create-cifs-for-high-availability-pair">Create CIFS for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to create CIFS volumes in an HA working environment.</p>
+</div>
+<div class="paragraph">
+<p>Choose the workflow that is specific to your goal:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#set-up-a-cifs-server-in-a-workgroup-ha">Set up a CIFS server in a workgroup (HA)</a></p>
+</li>
+<li>
+<p><a href="#set-up-a-cifs-server-in-an-active-directory-domain">Set up a CIFS server in an Active Directory domain</a></p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="set-up-a-cifs-server-in-a-workgroup-ha">Set up a CIFS server in a workgroup (HA)</h3>
+<div class="paragraph">
+<p>You can configure a CIFS server in a workgroup when the Microsoft Active Directory domain infrastructure is not available.</p>
+</div>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-3">1. Select the working environment</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="2-create-the-cifs-configuration-2">2. Create the CIFS configuration</h4>
+<div class="paragraph">
+<p>Create the CIFS server configuration.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/working-environments/{workingEnvironmentId}/cifs-workgroup</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/working-environments/&lt;WORKING_ENV_ID&gt;/cifs-workgroup' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Path parameter &lt;WORKING_ENV_ID&gt; <code>workingEnvironmentId</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "serverName": "SMB_SERVER02",
+  "workgroupName": "workgroup02",
+  "svmName": "svm_ziv01we01"
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="set-up-a-cifs-server-in-an-active-directory-domain-ha">Set up a CIFS server in an Active Directory domain (HA)</h3>
+<div class="paragraph">
+<p>You can create a CIFS server on the SVM and specify the Active Directory (AD) domain to which it belongs.</p>
+</div>
+<div class="sect3">
+<h4 id="1-select-the-working-environment-4">1. Select the working environment</h4>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environments</a> and choose the <code>publicId</code> value for the working environment used in the <code>workingEnvironmentId</code> path parameter.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="2-determine-the-active-directory-configuration-2">2. Determine the Active Directory configuration</h4>
+<div class="paragraph">
+<p>You need the following configuration parameters for an Active Directory server.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 35%;">
+<col style="width: 65%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input parameter</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dnsDomain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Active Directory domain as the DNS name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ipAddresses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Define the primary DNS IP address and optionally add a secondary IP address.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">netBIOS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the CIFS server NetBIOS name.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organizationalUnit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Include the organizational unit as appropriate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">activeDirectoryDomain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the Active Directory domain to join.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">activeDirectoryUsername</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A username with authorization to join the domain.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">activeDirectoryPassword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The password for the authorized username.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="3-create-the-cifs-configuration-2">3. Create the CIFS configuration</h4>
+<div class="paragraph">
+<p>Create the CIFS server configuration.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/working-environments/{workingEnvironmentId}/cifs</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/working-environments/&lt;WORKING_ENV_ID&gt;/cifs' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --d @JSONinput</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Path parameter &lt;WORKING_ENV_ID&gt; <code>workingEnvironmentId</code> string</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">JSON input example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "dnsDomain": "zivh.netapp.com",
+  "ipAddresses": [
+    "172.31.5.241"
+  ],
+  "netBIOS": "zivaws02we03",
+  "organizationalUnit": "CN=Computers",
+  "activeDirectoryDomain": "zivh.netapp.com",
+  "activeDirectoryUsername": "administrator",
+  "activeDirectoryPassword": "password"
+}</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>None.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 </div>

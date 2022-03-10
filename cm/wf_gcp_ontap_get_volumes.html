@@ -582,6 +582,10 @@
         Get disk types
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
         Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
@@ -606,12 +610,14 @@
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
-        Get NSS key
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
-        Get NSS keys
+        Get NSS IDs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
-        Delete NSS key
+        Delete NSS ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
@@ -636,6 +642,10 @@
         Get intercluster LIFs
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
         Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
       </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
@@ -874,7 +884,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-07 22:46:28 +0000">03/07/2022</time>
+    <time datetime="2022-03-10 15:02:32 +0000">03/10/2022</time>
     
   
 
@@ -896,14 +906,33 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can retrieve the list of volumes of a single node GCP working environment.</p>
+<p>You can retrieve the list of volumes of GCP working environment.</p>
+</div>
+<div class="paragraph">
+<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#get-volumes-for-single-node">Single Node</a></p>
+</li>
+<li>
+<p><a href="#get-volumes-for-high-availability-pair">HA pair</a></p>
+</li>
+</ul>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="get-volumes-for-single-node">Get volumes for single node</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to retrieve the list of volumes for a  single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-working-environment">1. Select the working environment</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> query parameter.</p>
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-single-node">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> query parameter.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1033,6 +1062,154 @@
         "isFlexGroupVolume": false
     }
 ]</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="get-volumes-for-high-availability-pair">Get volumes for high availability pair</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You can use this workflow to retrieve the list of volumes for an HA working environment.</p>
+</div>
+<div class="sect2">
+<h3 id="1-select-the-working-environment-2">1. Select the working environment</h3>
+<div class="paragraph">
+<p>Perform the workflow <a href="wf_gcp_cloud_get_wes.html#get-working-environment-for-high-availability-pair">Get working environment</a> and choose the <code>publicId</code> value of the working environment for the <code>workingEnvironmentId</code> query parameter.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-get-the-volumes-2">2. Get the volumes</h3>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">HTTP method</th>
+<th class="tableblock halign-left valign-top">Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/gcp/ha/volumes</p></td>
+</tr>
+</tbody>
+</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">curl example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/gcp/ha/volumes?workingEnvironmentId=&lt;WORKING_ENV_ID&gt;' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;'</code></pre>
+</div>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Input</dt>
+<dd>
+<p>Query parameter &lt;WORKING_ENV_ID&gt; <code>(workingEnvironmentId)</code> string</p>
+</dd>
+<dt class="hdlist1">Output</dt>
+<dd>
+<p>The JSON output example includes the list of volumes for the working environment.</p>
+</dd>
+<dt class="hdlist1">JSON output example</dt>
+</dl>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">[
+    {
+        "name": "ziv01we02agg01havol01",
+        "uuid": "9b8eaf57-60f3-11eb-b6be-4f2f4a6477xx,
+        "svmName": "svm_ziv01we02ha",
+        "size": {
+            "size": 100.0,
+            "unit": "GB"
+        },
+        "usedSize": {
+            "size": 3.70025634765625E-4,
+            "unit": "GB"
+        },
+        "junctionPath": "/ziv01we02agg01havol01",
+        "volumeTotalInodes": 3112959,
+        "volumeUsedInodes": 96,
+        "mountPoint": "10.138.15.219:/ziv01we02agg01havol01",
+        "compressionSpaceSaved": {
+            "size": 0.0,
+            "unit": "GB"
+        },
+        "deduplicationSpaceSaved": {
+            "size": 0.0,
+            "unit": "GB"
+        },
+        "thinProvisioning": true,
+        "compression": true,
+        "deduplication": true,
+        "snapshotPolicy": "default",
+        "securityStyle": "unix",
+        "exportPolicyInfo": {
+            "name": "export-svm_ziv01we02ha-ziv01we02agg01havol01",
+            "policyType": "custom",
+            "ips": [
+                "10.138.0.0/20"
+            ],
+            "nfsVersion": [
+                "nfs3"
+            ]
+        },
+        "shareNames": [],
+        "shareInfo": [],
+        "parentVolumeName": "",
+        "rootVolume": false,
+        "state": "online",
+        "volumeType": "rw",
+        "aggregateName": "ziv01we02agg01ha",
+        "parentSnapshot": null,
+        "autoSizeMode": "grow",
+        "maxGrowSize": {
+            "size": 1100.0,
+            "unit": "GB"
+        },
+        "providerVolumeType": "pd-ssd",
+        "cloneNames": [],
+        "moving": false,
+        "primaryNoFailoverMountPoint": null,
+        "secondaryNoFailoverMountPoint": null,
+        "capacityTier": null,
+        "capacityTierUsedSize": null,
+        "cifsShareAccessPoint": null,
+        "primaryCifsShareAccessPoint": null,
+        "secondaryCifsShareAccessPoint": null,
+        "tieringPolicy": "none",
+        "tierInactiveUserData": {
+            "size": 0.0,
+            "unit": "GB"
+        },
+        "tierInactiveUserDataPercent": 0,
+        "comment": null,
+        "qosPolicyGroupName": null,
+        "snaplockType": "non_snaplock",
+        "constituentsAggregates": [],
+        "snapshotsUsedSize": {
+            "size": 630784.0,
+            "unit": "Byte"
+        },
+        "cbsBackupsInfo": null,
+        "minimumCoolingDays": null,
+        "targetName": "iqn.1992-08.com.netapp:sn.d92dfebe60e811eba91c8xxx28f681feb:vs.3",
+        "iscsiEnabled": false,
+        "isFlexGroupVolume": false
+    }
+]</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
