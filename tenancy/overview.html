@@ -50,10 +50,10 @@
   
   <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/tabbed-blocks.css" type="text/css">
-  <link rel="stylesheet" href='/us-en/cloud-manager-automation/css/product-family.css' type="text/css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-  <!-- Used to import Promise for IE. Required for SearchKit -->
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloud-manager-automation/js/na-search.js'></script><script src='/us-en/cloud-manager-automation/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloud-manager-automation/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/cloud-manager-automation/css/prism-netapp.css' type='text/css'>
 
@@ -131,7 +131,6 @@
   }
   </script>
   <script src='/us-en/cloud-manager-automation/js/version-dropdown.js'></script>
-  <script src='/us-en/cloud-manager-automation/js/product-family.js'></script>
   <script src='/us-en/cloud-manager-automation/js/FileSaver.min.js'></script>
   <script src='/us-en/cloud-manager-automation/js/jszip-utils.min.js'></script>
   <script src='/us-en/cloud-manager-automation/js/jszip.min.js'></script>
@@ -144,6 +143,25 @@
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  <div class="page-nav-toolbar">
+    <div id="version-dropdown"></div>
+    <div class="page-nav-contribute"  >
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Overview](https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
+      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/tenancy/overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
+      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
+    </div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
   <!-- Start top_hat -->
   <div class="n-top-hat">
     <div class="n-container">
@@ -857,19 +875,16 @@
     <div class="n-breadcrumb">
       <ul class="n-breadcrumb__list">
         <li class="n-breadcrumb__list-item">
-          <a href="https://www.netapp.com">Home</a>
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com">Documentation</a>
-        </li>
+        
+
         
 
         <li class="n-breadcrumb__list-item">
           <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
         </li>
-        <li class="n-breadcrumb__list-item">
-          Overview
-        </li>
+
       </ul>
     </div>
     <div style="clear: both"></div><!-- Main needs to have height -->
@@ -884,7 +899,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-10 15:05:44 +0000">03/10/2022</time>
+    <time datetime="2022-03-15 16:56:01 +0000">03/15/2022</time>
     
   
 
@@ -893,7 +908,6 @@
 
 
 </p>
-
 
 <div id="preamble">
 <div class="sectionbody">
@@ -985,7 +999,7 @@ The service operates within the context of a Cloud Manager account. The identity
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Authorization</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Required. Contains the user JWT access token and is required</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Required. Contains the JWT access token</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-service-request-id</code></p></td>
@@ -1121,7 +1135,7 @@ The service operates within the context of a Cloud Manager account. The identity
 <p>Suppose a company is in stealth mode and doing a proof of concept (PoC) with a Cloud Manager account. If it&#8217;s successful, the company might want to move from the PoC account to a development account. Another migration use case is account consolidation.</p>
 </div>
 <div class="paragraph">
-<p><strong>If the 'CMNotificationOptIn' account option is enabled, will all users associated with the account receive the Cloud Manager event notifications?</strong></p>
+<p><strong>If the &#8216;CMNotificationOptIn&#8217; account option is enabled, will all users associated with the account receive the Cloud Manager event notifications?</strong></p>
 </div>
 <div class="paragraph">
 <p>No. The API endpoint used in this case is "PATCH tenancy/account/{accountId}/update-user". The occm service token is carried in the "authorization" request header and the specific user to receive the notifications is identified with the "x-user-token" header.</p>
@@ -1139,19 +1153,19 @@ The service operates within the context of a Cloud Manager account. The identity
 <p>Actions are defined as permissions. The general definition pattern is <code>&lt;principal_type&gt;:&lt;action&gt;</code>. Two examples include <code>accounts:create</code> and <code>workspace:*</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong>The API endpoint 'authorize-user-is-in-account' only accepts the parameter 'accountId'. In this case, how does the API determine which user is to be authorized?</strong></p>
+<p><strong>The API endpoint 'authorize-user-is-in-account' only accepts the parameter &#8216;accountId&#8217;. In this case, how does the API determine which user is to be authorized?</strong></p>
 </div>
 <div class="paragraph">
-<p>It checks if the user belongs to the account. The 'authorization' header contains the user token identifying the user. One possible use case is account migration, where the application continually polls to determine if all the users are migrated to the destination account.</p>
+<p>It checks if the user belongs to the account. The &#8216;authorization&#8217; header contains the user token identifying the user. One possible use case is account migration, where the application continually polls to determine if all the users are migrated to the destination account.</p>
 </div>
 <div class="paragraph">
-<p><strong>The API endpoint 'authorize-agent-in-account' accepts the 'x-agent-id' request header. What does this mean?</strong></p>
+<p><strong>The API endpoint 'authorize-agent-in-account' accepts the &#8216;x-agent-id&#8217; request header. What does this mean?</strong></p>
 </div>
 <div class="paragraph">
-<p>The 'authorization' header contains the user token and the 'x-agent-id' header has the Cloud Manager client identifier.</p>
+<p>The &#8216;authorization&#8217; header contains the user token and the &#8216;x-agent-id&#8217; header has the Cloud Manager client identifier.</p>
 </div>
 <div class="paragraph">
-<p><strong>Every Cloud Manager resource has the data field 'cloud_id'. What is this field and how is it used?</strong></p>
+<p><strong>Every Cloud Manager resource has the data field &#8216;cloud_id&#8217;. What is this field and how is it used?</strong></p>
 </div>
 <div class="paragraph">
 <p>This field is the cloud identifier for the resource. For example, this could be the cloud VM ID.</p>
@@ -1175,7 +1189,7 @@ The service operates within the context of a Cloud Manager account. The identity
 <p>This question applies to the following REST API call: "DELETE /tenancy/service-resource/{resource-id}". There is no special meaning associated with a service resource. It&#8217;s just another way for services to delete resources.</p>
 </div>
 <div class="paragraph">
-<p><strong>There is an API operation 'remove-resource-from-agent'. Why isn&#8217;t there a corresponding 'add-to-agent' call?</strong></p>
+<p><strong>There is an API operation &#8216;remove-resource-from-agent&#8217;. Why isn&#8217;t there a corresponding &#8216;add-to-agent&#8217; call?</strong></p>
 </div>
 <div class="paragraph">
 <p>The add operation occurs during resource discovery or creation. From the view of an external Cloud Manager user, only the Connector can discover and create resources. However, internally there are some resources available without explicitly attaching them to the Connector (such as license and persistence). These resources instead belong to the account.</p>
@@ -1191,25 +1205,6 @@ The service operates within the context of a Cloud Manager account. The identity
     <!-- Page Container -->
   </div>
 
-  
-  <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Overview](https://docs.netapp.com/us-en/cloud-manager-automation/tenancy/overview.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/tenancy/overview.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
-    <div class="page-nav-container">
-      <nav class="page-nav-fixed">
-        <div class="page-nav-title">ON THIS PAGE</div>
-        <div class="page-nav-links">
-          <ul class="page-nav-inner" id="page-menu"></ul>
-        </div>
-      </nav>
-    </div>
-  </div>
-  
   <div style="clear: both"></div><!-- Main needs to have height --></div>
 
         </main>
