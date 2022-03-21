@@ -899,7 +899,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 16:54:01 +0000">03/15/2022</time>
+    <time datetime="2022-03-16 15:05:44 +0000">03/16/2022</time>
     
   
 
@@ -1240,13 +1240,13 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
 <div class="sect2">
 <h3 id="1-select-the-region-2">1. Select the region</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_azure_cloud_md_get_regions.html#get-azure-regions-for-high-availability-pair">Get regions</a> and choose the <code>name</code> value of the required region for the <code>region</code> parameter in step 11.</p>
+<p>Perform the workflow <a href="wf_azure_cloud_md_get_regions.html#get-azure-regions-for-high-availability-pair">Get regions</a> and choose the <code>name</code> value of the required region for the <code>region</code> parameter in step 10.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="2-select-the-workspace-2">2. Select the workspace</h3>
 <div class="paragraph">
-<p>Perform the workflow <a href="wf_common_identity_get_tenants.html">Get tenants</a> and choose the <code>workspacePublicId</code> value for the <code>tenantId</code> parameter in step 11.</p>
+<p>Perform the workflow <a href="wf_common_identity_get_tenants.html">Get tenants</a> and choose the <code>workspacePublicId</code> value for the <code>tenantId</code> parameter in step 10.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1257,42 +1257,36 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
 <div class="ulist">
 <ul>
 <li>
-<p>Choose the <code>id</code> value of the desired vnet from the <code>virtualNetworks</code> for the <code>vnetId</code> parameter in step 11.</p>
+<p>Choose the <code>id</code> value of the desired vnet from the <code>virtualNetworks</code> for the <code>vnetId</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>cidr</code> value of the desired cidr from the <code>virtualNetworks</code> for the <code>cidr</code> parameter in step 11.</p>
+<p>Choose the <code>cidr</code> value of the desired cidr from the <code>virtualNetworks</code> for the <code>cidr</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>id</code> of the desired subnet from the <code>virtualNetworks</code>&#8594; <code>cidrs</code>&#8594; <code>subnets</code> for the <code>subnetId</code> parameter in step 11.</p>
+<p>Choose the <code>id</code> of the desired subnet from the <code>virtualNetworks</code>&#8594; <code>cidrs</code>&#8594; <code>subnets</code> for the <code>subnetId</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>id</code> of the desired security group from the <code>securityGroups</code> field for the <code>securityGroupId</code> parameter in step 11.</p>
+<p>Choose the <code>id</code> of the desired security group from the <code>securityGroups</code> field for the <code>securityGroupId</code> parameter in step 10.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="4-select-the-azure-availability-zone-2">4. Select the Azure availability zone</h3>
-<div class="paragraph">
-<p>Perform the workflow <a href="wf_azure_cloud_md_get_availability_zones.html#get-availability-zones-for-high-availability-pair">Get Azure Availability Zones</a> and choose the number from <code>zones</code> for the <code>availabilityZone</code> parameter in step 11.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="5-get-azure-packages-configuration">5. Get Azure packages configuration</h3>
+<h3 id="4-get-azure-packages-configuration">4. Get Azure packages configuration</h3>
 <div class="paragraph">
 <p>Perform the <a href="wf_azure_cloud_md_get_packages.html#get-packages-for-high-availability-pair">Get Azure Packages</a> workflow and choose the <code>name</code> of the desired package item for the <code>packageName</code> parameter.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="6-attach-a-marketplace-subscription-2">6. Attach a marketplace subscription</h3>
+<h3 id="5-attach-a-marketplace-subscription">5. Attach a marketplace subscription</h3>
 <div class="paragraph">
 <p>Perform the workflow <a href="wf_common_occm_attach_subscription.html">Attach SaaS subscription</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="7-optional-obtain-an-nss-key-2">7. (Optional) Obtain an NSS key</h3>
+<h3 id="6-optional-obtain-an-nss-key">6. (Optional) Obtain an NSS key</h3>
 <div class="paragraph">
-<p>An NSS key is <strong>optional</strong> when using PAYGO licensing. If needed, you can create a key or select an existing key, and include the NSS key in the <code>nssAccount</code> parameter in step 11.</p>
+<p>An NSS key is <strong>optional</strong> when using PAYGO licensing. If needed, you can create a key or select an existing key, and include the NSS key in the <code>nssAccount</code> parameter in step 10.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1306,51 +1300,51 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
 </div>
 </div>
 <div class="sect2">
-<h3 id="8-select-azure-cloud-provider-accounts">8. Select Azure cloud provider accounts</h3>
+<h3 id="7-select-azure-cloud-provider-accounts">7. Select Azure cloud provider accounts</h3>
 <div class="paragraph">
 <p>Perform the <a href="wf_azure_cloud_md_create_account.html">Create Azure Cloud Provider Accounts</a> workflow and choose the <code>publicId</code> of the desired cloud provider account item from the <code>azureAccounts</code> for the <code>cloudProviderAccount</code> parameter.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="9-select-azure-permutations">9. Select Azure permutations</h3>
+<h3 id="8-select-azure-permutations">8. Select Azure permutations</h3>
 <div class="paragraph">
 <p>Perform the <a href="wf_azure_cloud_md_get_permutations.html#get-permutations-for-high-availability-pair">Get Azure Permutations</a> workflow and pick the desired permutation:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Choose the <code>ontapVersion</code> of the desired permutation for the <code>ontapVersion</code> field inside the <code>vsaMetadata</code> parameter  in step 11.</p>
+<p>Choose the <code>ontapVersion</code> of the desired permutation for the <code>ontapVersion</code> field inside the <code>vsaMetadata</code> parameter  in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>type</code> of the desired license item from the  <code>license</code> parameter for the <code>licenseType</code> field inside the <code>vsaMetadata</code> parameter in step 11.</p>
+<p>Choose the <code>type</code> of the desired license item from the  <code>license</code> parameter for the <code>licenseType</code> field inside the <code>vsaMetadata</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>instanceType</code> of the desired permutation for the <code>instanceType</code> field inside the <code>vsaMetadata</code> parameter in step 11.</p>
+<p>Choose the <code>instanceType</code> of the desired permutation for the <code>instanceType</code> field inside the <code>vsaMetadata</code> parameter in step 10.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="10-select-azure-storage-account-types">10. Select Azure storage account types</h3>
+<h3 id="9-select-azure-storage-account-types">9. Select Azure storage account types</h3>
 <div class="paragraph">
 <p>Perform the <a href="wf_azure_cloud_md_get_storage_account_types.html#get-azure-storage-account-types-for-high-availability-pair">Get Azure Storage Account Types</a> workflow and pick the desired storage type.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Choose the <code>diskType</code> of the desired storage type item for the <code>storageType</code> parameter in step 11.</p>
+<p>Choose the <code>diskType</code> of the desired storage type item for the <code>storageType</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>size</code> of the desired disk size from the <code>sizes</code> &#8594; <code>size</code> field for the <code>size</code> field inside the <code>diskSize</code> parameter in step 11.</p>
+<p>Choose the <code>size</code> of the desired disk size from the <code>sizes</code> &#8594; <code>size</code> field for the <code>size</code> field inside the <code>diskSize</code> parameter in step 10.</p>
 </li>
 <li>
-<p>Choose the <code>unit</code> of the desired disk size from the <code>sizes</code> &#8594; <code>size</code> field for the <code>unit</code> field inside the <code>diskSize</code> parameter in step 11.</p>
+<p>Choose the <code>unit</code> of the desired disk size from the <code>sizes</code> &#8594; <code>size</code> field for the <code>unit</code> field inside the <code>diskSize</code> parameter in step 10.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="11-create-the-working-environment-2">11. Create the working environment</h3>
+<h3 id="10-create-the-working-environment">10. Create the working environment</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">

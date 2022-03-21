@@ -899,7 +899,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-15 16:54:01 +0000">03/15/2022</time>
+    <time datetime="2022-03-16 15:29:01 +0000">03/16/2022</time>
     
   
 
@@ -929,31 +929,12 @@
 <img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
 </td>
 <td class="content">
-Ensure that you&#8217;ve the Azure subscription ID. You can easily obtain the ID from the Azure portal.
+Ensure that you&#8217;ve the Azure subscription ID. You can obtain the ID from the Azure portal.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#get-availability-zones-for-single-node">Single Node</a></p>
-</li>
-<li>
-<p><a href="#get-availability-zones-for-high-availability-pair">HA pair</a></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="get-availability-zones-for-single-node">Get availability zones for single node</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can use this workflow to retrieve the availability zones by region for a single node working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-get-the-availability-zones">1. Get the availability zones</h3>
@@ -1021,162 +1002,6 @@ Ensure that you&#8217;ve the Azure subscription ID. You can easily obtain the ID
         2
     ]
 }</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="get-availability-zones-for-high-availability-pair">Get availability zones for high availability pair</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can use this workflow to retrieve the availability zones by region for a high availability pair working environment.</p>
-</div>
-<div class="sect2">
-<h3 id="1-get-the-availability-zones-2">1. Get the availability zones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">HTTP method</th>
-<th class="tableblock halign-left valign-top">Path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/azure/ha/metadata/availability-zones</p></td>
-</tr>
-</tbody>
-</table>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">curl example</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/azure/ha/metadata/availability-zones?region=&lt;REGION&gt;&amp;subscriptionId=&lt;SUBSCRIPTION_ID&gt;' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json'</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Input</dt>
-<dd>
-<p>Query parameters:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>&lt;REGION&gt; <code>region</code> string</p>
-</li>
-<li>
-<p>(Optional) &lt;SUBSCRIPTION_ID&gt; <code>subscriptionId</code> string</p>
-</li>
-<li>
-<p>(Optional) <code>cloudProviderAccountId</code> string</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Output</dt>
-<dd>
-<p>The JSON output example includes the list of Azure availability zones.</p>
-</dd>
-<dt class="hdlist1">JSON output example</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-    "region": "eastus2",
-    "zones": [
-        1,
-        3,
-        2
-    ]
-}</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="get-availability-zones-for-high-availability-pair-2">Get availability zones for high availability pair</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>You can use this workflow to retrieve the availability zones by region for a high availability pair working environment.</p>
-</div>
-<div class="sect2">
-<h3 id="1-get-the-availability-zones-3">1. Get the availability zones</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">HTTP method</th>
-<th class="tableblock halign-left valign-top">Path</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">/occm/api/azure/ha/metadata/availability-zones</p></td>
-</tr>
-</tbody>
-</table>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">curl example</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/azure/ha/metadata/availability-zones?region=&lt;REGION&gt;&amp;subscriptionId=&lt;SUBSCRIPTION_ID&gt;' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' --header 'Content-Type: application/json'</code></pre>
-</div>
-</div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Input</dt>
-<dd>
-<p>Query parameters:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>&lt;REGION&gt; <code>region</code> string</p>
-</li>
-<li>
-<p>(Optional) &lt;SUBSCRIPTION_ID&gt; <code>subscriptionId</code> string</p>
-</li>
-<li>
-<p>(Optional) <code>cloudProviderAccountId</code> string</p>
-</li>
-</ul>
-</div>
-</dd>
-<dt class="hdlist1">Output</dt>
-<dd>
-<p>The JSON output example includes the list of Azure  storage account types.</p>
-</dd>
-<dt class="hdlist1">JSON output example</dt>
-</dl>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">{
-    "region": "eastus2",
-    "zones": [
-        1,
-        3,
-        2
-    ]
-}</code></pre>
-</div>
-</div>
 </div>
 </div>
 </div>
