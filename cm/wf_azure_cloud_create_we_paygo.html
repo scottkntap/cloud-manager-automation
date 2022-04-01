@@ -872,7 +872,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-16 15:05:44 +0000">03/16/2022</time>
+    <time datetime="2022-03-30 14:59:48 +0000">03/30/2022</time>
     
   
 
@@ -902,7 +902,7 @@
 <img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
 </td>
 <td class="content">
-<div class="title">Note the following when using PAYGO:</div>
+<div class="title">When using PAYGO subscription:</div>
 <div class="ulist">
 <ul>
 <li>
@@ -921,7 +921,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>Choose the correct workflow depending on the type of Cloud Volumes ONTAP deployment:</p>
+<p>Choose the workflow to use based on the type of Cloud Volumes ONTAP deployment:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1080,15 +1080,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/azure/vsa/working-environments' --header 'x-agent-id: &lt;AGENT_ID&gt;' //&lt;1&gt; --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' //&lt;2&gt; ---header 'Content-Type: application/json' --d @JSONinput</code></pre>
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>(1) Replace &lt;AGENT_ID&gt; with your agent ID.<br>
-(2) Replace &lt;ACCESS_TOKEN&gt; with your obtained access bearer token.</p>
-</div>
+<pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request POST 'https://cloudmanager.cloud.netapp.com/occm/api/azure/vsa/working-environments' --header 'x-agent-id: &lt;AGENT_ID&gt;'  --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;' ---header 'Content-Type: application/json' --d @JSONinput</code></pre>
 </div>
 </div>
 <div class="dlist">

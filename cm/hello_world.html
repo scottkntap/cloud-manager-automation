@@ -872,24 +872,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-05 02:10:47 +0000">03/05/2022</time>
+    <time datetime="2022-03-30 14:59:48 +0000">03/30/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/dmp-netapp">
-    <img  class="avatar avatar-small"
-          alt="dmp-netapp"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/50704017?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" href="https://github.com/netapp-ranuk">
     <img  class="avatar avatar-small"
           alt="netapp-ranuk"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/80323433?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" href="https://github.com/dmp-netapp">
+    <img  class="avatar avatar-small"
+          alt="dmp-netapp"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/50704017?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -928,13 +928,23 @@ The example provided below is very simple. The workflow samples later in this gu
 </ul>
 </div>
 <div class="paragraph">
-<div class="title">Curl example</div>
+<div class="title">curl example</div>
 <p>The following curl command retrieves information about the Cloud Manager server.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-curl" data-lang="curl">curl --location --request GET 'https://cloudmanager.cloud.netapp.com/occm/api/occm/system/about' --header 'Content-Type: application/json' --header 'x-agent-id: &lt;AGENT_ID&gt;' --header 'Authorization: Bearer &lt;ACCESS_TOKEN&gt;'</code></pre>
 </div>
+</div>
+<div class="ulist TIP">
+<ul class="TIP">
+<li>
+<p>Replace &lt;AGENT_ID&gt; with your agent ID.</p>
+</li>
+<li>
+<p>Replace &lt;ACCESS_TOKEN&gt; with the bearer access token.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <div class="title">Output example</div>
