@@ -9,14 +9,14 @@
   <meta property="og:title" content="Workflow processes and tasks | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/platform/workflows_tasks.html" />
-	<meta property="og:description" content="You should be familiar with the high-level organization and format of the Cloud Manager workflow processes before using them with a live cloud deployment." />
+	<meta property="og:description" content="The Cloud Manager platform REST APIs support many different workflows and tasks. You should be familiar with their common characteristics before reviewing a ..." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You should be familiar with the high-level organization and format of the Cloud Manager workflow processes before using them with a live cloud deployment.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="The Cloud Manager platform REST APIs support many different workflows and tasks. You should be familiar with their common characteristics before reviewing a ...">
   <meta name="keywords" content=" workflows, processes, cloud, manager, api"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
@@ -339,15 +339,32 @@
         Additional considerations
       </a></li></ul></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/workflows_tasks.html">
         Workflow processes and tasks
-      </a></li></ul></li><li class="subfolders "><a href="#">
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Authentication and authorization</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/aa_concepts.html">
+        Basic concepts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/user_access_tokens.html">
+        User access tokens
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/grant_types.html">
+        Grant types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/connectors_clients.html">
+        Connector and client identifiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/use_rest_apis.html">
+        Use the RESP APIs
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Common workflows and tasks</div>
       </a>
-      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_nss_key.html">
-        Generate NSS user ID
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_client_id.html">
-        Get client and account IDs
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_identifiers.html">
+        Get required identifiers
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_user_token.html">
         Create user token
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/register_service.html">
+        Register service
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_service_token.html">
+        Create service token
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_nss_key.html">
+        Generate NSS user ID
       </a></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Volumes ONTAP</div>
       </a>
@@ -903,7 +920,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-03-02 20:26:02 +0000">03/02/2022</time>
+    <time datetime="2022-04-15 14:57:39 +0000">04/15/2022</time>
     
   
 
@@ -924,7 +941,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>The Cloud Manager platform REST APIs support many different workflows and tasks. You should be familiar with their common characteristics before reviewing a specific API.</p>
+<p>The Cloud Manager platform REST APIs support many different workflows and tasks. You should be familiar with their common characteristics before reviewing and using a specific API.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -935,6 +952,9 @@
 <p><a href="workflows_tasks.html#tasks">Tasks</a></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Also See <a href="../cm/workflow_processes.html">Cloud Volumes ONTAP workflow processes</a> for more details about the extensive set of workflow examples included with the Cloud Volumes ONTAP REST API.</p>
 </div>
 </div>
 </div>
@@ -1014,7 +1034,7 @@ Every API call used in the workflows includes the resource path to the REST endp
 </dd>
 <dt class="hdlist1">x-agent-id request header</dt>
 <dd>
-<p>This header contains the agent ID which is based on the client ID. See <a href="get_client_id.html">Get client and account identifiers</a> for information about creating this value.</p>
+<p>This header contains the agent ID which is based on the client ID. See <a href="get_identifiers.html">Get required identifiers</a> for information about creating this value.</p>
 </dd>
 </dl>
 </div>
@@ -1023,7 +1043,7 @@ Every API call used in the workflows includes the resource path to the REST endp
 <div class="sect2">
 <h3 id="presentation-of-common-tokens-and-identifiers">Presentation of common tokens and identifiers</h3>
 <div class="paragraph">
-<p>Most of the variable tokens, identifiers, and other variables used in the sample REST API calls consist of long strings of letters, numbers, and special characters. They are considered <em>opaque</em> with no easily discernible content or meaning. Therefore, rather than including the actual original strings, smaller reserved keywords are used instead. For example, <strong>&lt;ACCESS_TOKEN&gt;</strong> is a shorthand notation for a temporary string used to establish identity based on the OAuth2 standard.</p>
+<p>Most of the variable tokens, identifiers, and other variables used in the sample REST API calls consist of long strings of letters, numbers, and special characters. In most case they are <em>opaque</em> with no easily discernible content or meaning. Therefore, rather than including the actual strings, smaller reserved keywords are used instead. For example, <strong>&lt;ACCESS_TOKEN&gt;</strong> is a shorthand notation for an OAuth2 access token used to establish identity.</p>
 </div>
 <div class="paragraph">
 <p>This approach has several benefits:</p>
