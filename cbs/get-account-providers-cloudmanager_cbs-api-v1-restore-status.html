@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head class="at-element-marker">
+  <title>Retrieve volume-level restore status | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Retrieve volume-level restore status | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-restore-status.html" />
+	<meta property="og:description" content="Retrieve volume-level restore status" />
+  <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Retrieve volume-level restore status">
+  <meta name="keywords" content=" "><!-- Icons -->
+  <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-automation/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Controls AsciiDoctor Admonition Blocks -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-automation/css/font-awesome.min.css">
+
+  <!-- Controls the shadow effect for search dropdown menu -->
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/boxshadowproperties.css">
+
+  <!-- NetApp CSS controls the technical content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-automation/css/netapp.css">
+
+  <!-- WWW CSS Content -->
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-automation/css/www-luci-dotcom.min.css">
+  <link rel="stylesheet" type="text/css" href="/us-en/cloud-manager-automation/css/www-netapp-dotcom.css">
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/www-netapp-library-critical.min.css" media="all" >
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/www-netapp-library-non-critical.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/www-netapp-library-global-header-footer.min.css">
+
+  <!-- NetApp IE Customizations -->
+  <link rel="stylesheet" href='/us-en/cloud-manager-automation/css/na-utility.css' type='text/css'>
+  <link rel="stylesheet" href='/us-en/cloud-manager-automation/css/na-sidebar.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-automation/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-automation/css/custom-dropdown.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-automation/css/na-pagenav.css' type='text/css'>
+
+  
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/us-en/cloud-manager-automation/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloud-manager-automation/js/na-search.js'></script><script src='/us-en/cloud-manager-automation/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloud-manager-automation/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-automation/css/prism-netapp.css' type='text/css'>
+
+
+  <script src='/us-en/cloud-manager-automation/js/na-utility.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/clouddocs.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/us-en/cloud-manager-automation/js/toc.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/us-en/cloud-manager-automation/js/custom-dropdown.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/FileSaver.min.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/jszip-utils.min.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/jszip.min.js'></script>
+  <script src='/us-en/cloud-manager-automation/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Retrieve volume-level restore status](https://docs.netapp.com/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-restore-status.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cbs/get-account-providers-cloudmanager_cbs-api-v1-restore-status.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">ON THIS PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Product and Solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support and Training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/us-en/cloud-manager-automation/search.html"
+          data-type="widget" 
+          data-placeholder="Search Documentation" 
+          data-no-results-found="No results were found for {query}" 
+          data-did-you-mean="Search for {suggestion}." 
+          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
+          data-results-found="{hitCount} results found"  
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
+        All Cloud Manager documentation
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/index.html">
+        Cloud Manager API docs
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/overview.html">
+        Platform overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Common REST implementation</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/concepts.html">
+        Basic concepts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/http_details.html">
+        HTTP details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/additional_considerations.html">
+        Additional considerations
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/api_explorer.html">
+        Use the API Explorer
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/workflows_tasks.html">
+        Workflow processes and tasks
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Authentication and authorization</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/aa_concepts.html">
+        Basic concepts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/user_access_tokens.html">
+        User access tokens
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/grant_types.html">
+        Grant types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/connectors_clients.html">
+        Connector and client identifiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/use_rest_apis.html">
+        Use the REST APIs
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Common workflows and tasks</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_identifiers.html">
+        Get required identifiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_user_token.html">
+        Create user token
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/register_service.html">
+        Register service
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/create_service_token.html">
+        Create service token
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/get_nss_key.html">
+        Generate NSS user ID
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Volumes ONTAP</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/overview.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Get started</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/prepare.html">
+        Prepare
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/cloud_manager_deployment.html">
+        Typical deployment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/hello_world.html">
+        Hello world
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/workflow_processes.html">
+        Workflow processes
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/rest_implementation.html">
+        REST implementation details
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> AWS workflows</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_before.html">
+        Before you begin
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Working environments</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_create_we_paygo.html">
+        Create working environment with PAYGO
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_create_we_byol.html">
+        Create working environment with BYOL
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_get_wes.html">
+        Get working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_delete_we.html">
+        Delete working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_cifs.html">
+        Create CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_get_cifs.html">
+        Get CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_delete_cifs.html">
+        Delete CIFS
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Aggregates</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_get_aggrs.html">
+        Get aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_aggr.html">
+        Create aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_add_disks_aggr.html">
+        Add disks to aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_delete_aggr.html">
+        Delete aggregate
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Volumes</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_vol_nfs.html">
+        Create a volume using NFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_vol_cifs.html">
+        Create a volume using CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_vol_iscsi.html">
+        Create a volume using iSCSI
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_get_volumes.html">
+        Get volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_modify_volume.html">
+        Modify volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_delete_volume.html">
+        Delete volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_create_quote.html">
+        Create quote
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_ontap_get_igroups.html">
+        Get iGroups
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Metadata</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_regions.html">
+        Get regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_permutations.html">
+        Get permutations
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_vpcs.html">
+        Get virtual private clouds
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_ebs_vol_types.html">
+        Get EBS volume types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_packages.html">
+        Get packages
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_route_tables.html">
+        Get route tables
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_get_key_pairs.html">
+        Get key pairs
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Miscellaneous</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_md_create_account.html">
+        Create AWS cloud provider account
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Azure workflows</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_before.html">
+        Before you begin
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Working environments</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_create_we_paygo.html">
+        Create working environment with PAYGO
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_create_we_byol.html">
+        Create working environment with BYOL
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_get_wes.html">
+        Get working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_delete_we.html">
+        Delete working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_cifs.html">
+        Create CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_get_cifs.html">
+        Get CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_delete_cifs.html">
+        Delete CIFS
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Aggregates</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_get_aggrs.html">
+        Get aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_aggr.html">
+        Create aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_add_disks_aggr.html">
+        Add disks to aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_delete_aggr.html">
+        Delete aggregate
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Volumes</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_vol_nfs.html">
+        Create a volume using NFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_vol_cifs.html">
+        Create a volume using CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_vol_iscsi.html">
+        Create a volume using iSCSI
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_get_volumes.html">
+        Get volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_modify_volume.html">
+        Modify volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_delete_volume.html">
+        Delete volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_create_quote.html">
+        Create quote
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_ontap_get_igroups.html">
+        Get iGroups
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Metadata</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_regions.html">
+        Get Azure regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_permutations.html">
+        Get Azure permutations
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_storage_account_types.html">
+        Get Azure storage account types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_vnets.html">
+        Get Azure VNets
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_availability_zones.html">
+        Get Azure availability zones
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_get_packages.html">
+        Get Azure packages
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Miscellaneous</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_azure_cloud_md_create_account.html">
+        Create Azure cloud provider account
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> GCP workflows</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_before.html">
+        Before you begin
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Working environments</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_create_we_paygo.html">
+        Create working environment with PAYGO
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_create_we_byol.html">
+        Create working environment with BYOL
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_get_wes.html">
+        Get working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_delete_we.html">
+        Delete working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_cifs.html">
+        Create CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_get_cifs.html">
+        Get CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_delete_cifs.html">
+        Delete CIFS
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Aggregates</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_get_aggrs.html">
+        Get aggregates
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_aggr.html">
+        Create aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_add_disks_aggr.html">
+        Add disks to aggregate
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_delete_aggr.html">
+        Delete aggregate
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Volumes</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_vol_nfs.html">
+        Create a volume using NFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_vol_cifs.html">
+        Create a volume using CIFS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_vol_iscsi.html">
+        Create a volume using iSCSI
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_get_volumes.html">
+        Get volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_modify_volume.html">
+        Modify volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_delete_volume.html">
+        Delete volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_create_quote.html">
+        Create quote
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_ontap_get_igroups.html">
+        Get iGroups
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Metadata</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_regions.html">
+        Get GCP regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_permutations.html">
+        Get permutations
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_tag_keys.html">
+        Get tag keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_create_buckets.html">
+        Create buckets
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_buckets.html">
+        Get buckets
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_packages.html">
+        Get GCP packages
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_snapshot_policies.html">
+        Get snapshot policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_supported_features.html">
+        Get supported features
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_supported_tiers.html">
+        Get supported capacity tiers
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_service_accounts.html">
+        Get service accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_projects.html">
+        Get projects
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_encryption_keys.html">
+        Get GCP encryption keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_disk_types.html">
+        Get disk types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_instance_type_nosupport.html">
+        Get instance types
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_vpcs.html">
+        Get VPCs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_gcp_cloud_md_get_zones.html">
+        Get zones
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Common workflows</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_before.html">
+        Before you begin
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Identity and access</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_supported_srv.html">
+        Get supported services
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_provider_accounts.html">
+        Get cloud provider accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_tenants.html">
+        Get tenants
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> SaaS marketplace</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_saas_mp.html">
+        Get SaaS marketplace account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_occm_attach_subscription.html">
+        Attach subscription
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> NetApp Support Site</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_create_nss_key.html">
+        Create NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_key.html">
+        Get NSS ID
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_get_nss_keys.html">
+        Get NSS IDs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_identity_delete_nss_key.html">
+        Delete NSS ID
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Internal tasks and support</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_occm_get_task.html">
+        Get active task
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> SnapMirror replication</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_create_repl.html">
+        Create relationship
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_update_repl.html">
+        Update relationship
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_delete_repl.html">
+        Delete relationship
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_sm_rels.html">
+        Get relationships
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_rel_status.html">
+        Get relationships status
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_rel_we_status.html">
+        Get relationship status for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_ic_lifs.html">
+        Get intercluster LIFs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_repl_get_we_schedules.html">
+        Get schedules for working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_policies.html">
+        Get SnapMirror policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_common_ontap_md_get_snapmirror_svm_policies.html">
+        Get SnapMirror SVM policies
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
+        <div class="na-navbar-padding"> API reference</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_resources.html">
+        Resources
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/api_ref_definitions.html">
+        Definitions
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Audit service</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/overview.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Audit</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/audit_overview.html">
+        Audit overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/post-staging-exteranl-audit.cloudmanager.netapp.com.html">
+        Send audit information
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud Backup service</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/overview.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Backup</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/backup_overview.html">
+        Backup overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment.html">
+        Retrieve working environment details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html">
+        Retrieve specific working environment details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html">
+        Enable the Cloud Backup service
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html">
+        Modify the Cloud Backup service
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html">
+        Unregister a working environment
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-status.html">
+        Retrieve the backup status
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-.html">
+        Enable the Cloud backup service (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-.html">
+        Modify the Cloud backup service backup configuration
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v3-backup-working-environment-.html">
+        Enable the Cloud Backup service (v3)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html">
+        Enable backup for a volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html">
+        Retrieve volume information
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html">
+        Modify a backed up volume
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html">
+        Remove backup settings
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-volume-.html">
+        Enable backup for a volume (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v3-backup-working-environment-volume-.html">
+        Enable backup for a volume (v3)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html">
+        Retrieve volume details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html">
+        Enable backup of multiple volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html">
+        Modify multiple backed up volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-volume.html">
+        Enable backup for multiple volumes (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot-.html">
+        Retrieve Snapshot copy information
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot-.html">
+        Delete a Snapshot copy
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot.html">
+        Retrieve Snapshot copy information
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot.html">
+        Delete all Snapshot copies (volume)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-snapshot.html">
+        Delete all Snapshot copies (working environment)
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Catalog</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/catalog_overview.html">
+        Catalog overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-catalog-working-environments-setup.html">
+        Configure the service
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-catalog-search.html">
+        Search a specific file
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-catalog-snapshots.html">
+        Retrieve Snapshot copies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v1-catalog-working-environments-.html">
+        Enable or disable the service
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Cloud</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/cloud_overview.html">
+        Cloud overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-aws-account.html">
+        Retrieve AWS accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-aws-region.html">
+        Retrieve subscribed AWS regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-aws-awsaccountid-region-key.html">
+        Retrieve AWS keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-aws-awsaccountid-region-privatelink.html">
+        Retrieve AWS private links
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-aws-archival-storage-class.html">
+        Retrieve AWS storage classes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-region.html">
+        Retrieve regions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-azure-subscription-resource-group.html">
+        Create an Azure resource group
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-resource-group.html">
+        Retrieve Azure resource groups
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vnet.html">
+        Retrieve Azure virtual networks
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription.html">
+        Retrieve Azure subscriptions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vault-key.html">
+        Retrieve Azure vault keys
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vault.html">
+        Retrieve Azure vaults
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-gcp-project.html">
+        Retrieve GCP projects
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-gcp-project-region.html">
+        Retrieve GCP regions
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Job</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/job_overview.html">
+        Job overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-job.html">
+        Retrieve jobs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-job-.html">
+        Retrieve particular job details
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> License</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/license_overview.html">
+        License overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-license-working-environment-.html">
+        Retrieve the license validity
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Restore</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/restore_overview.html">
+        Restore overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-restore.html">
+        Perform a volume and file-level restore
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v2-restore.html">
+        Perform a volume and file-level restore (v2)
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-restore-status.html">
+        Retrieve volume-level restore status
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Sfr</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/sfr_overview.html">
+        Sfr overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-sfr-volume-file-explore-start.html">
+        Start a file explore operation
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-sfr-volume-file-explore-status.html">
+        Return the file explore status
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v2-sfr-volume-file-explore-status.html">
+        Return the file explore status (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-sfr-volume-snapshot-file-explore-list.html">
+        Retrieve files
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v2-sfr-volume-snapshot-file-explore-list.html">
+        Retrieve files (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-sfr-volume-backup-export.html">
+        Export a filesystem
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/delete-account-providers-cloudmanager_cbs-api-v1-sfr-backup-export.html">
+        Unexport a filesystem
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Working environment</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/working_environment_overview.html">
+        Working environment overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy.html">
+        Retrieve ONTAP backup policies
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy.html">
+        Create a backup policy
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/put-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy-.html">
+        Update a backup policy
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-ip-space.html">
+        Retrieve IP spaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment.html">
+        Retrieve working environments
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-.html">
+        Retrieve a working environment details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-svm.html">
+        Retrieve storage VMs
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-volume.html">
+        Retrieve volumes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v1-working-environment-configure-object-store.html">
+        Configure the object storage
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/post-account-providers-cloudmanager_cbs-api-v2-working-environment-configure-object-store.html">
+        Configure the object storage (v2)
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-volume-list.html">
+        Retrieve working environment volume directories
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cbs/get-account-providers-cloudmanager_cbs-api-v1-working-environment-object-store-config-status.html">
+        Retrieve an object store configuration status
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Persistence service</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/overview.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Index</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/index_overview.html">
+        Index overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/post-persistence-v1-service-collection-index.html">
+        Add the create index request
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/get-persistence-v1-service-collection-index.html">
+        Retrieve existing indexes
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/delete-persistence-v1-service-collection-index-.html">
+        Add the drop index request
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/post-persistence-v1-service-collection-execute.html">
+        Execute index requests
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Persistence</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/persistence_overview.html">
+        Persistence overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/get-persistence-v1-service-collection-account-.html">
+        Retrieve documents
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/post-persistence-v1-service-collection-account-.html">
+        Add a single document
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/patch-persistence-v1-service-collection-account-.html">
+        Update the existing document
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/put-persistence-v1-service-collection-account-.html">
+        Replace an existing document
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/persistence/delete-persistence-v1-service-collection-account-.html">
+        Delete the specified document
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Tenancy service</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/overview.html">
+        Overview
+      </a></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Account</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/account_overview.html">
+        Account overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-.html">
+        Create an account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-account-.html">
+        Delete an account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-associate.html">
+        Associate a user
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-disassociate.html">
+        Disassociate a user
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-users.html">
+        Retrieve user data
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-service-accounts.html">
+        Retrieve service account data
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-members.html">
+        Retrieve user and service account data
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-permissions-for-user.html">
+        Retrieve user role and permissions
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-leave.html">
+        Delete a user
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/patch-tenancy-account-update-user.html">
+        Enable Cloud Manager notifications
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account.html">
+        Retrieve user accounts
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-dest-account-.html">
+        Move account data
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-rename-.html">
+        Rename an account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-enable-saas-.html">
+        Enable SaaS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-enable-private-preview-.html">
+        Enable private preview for SaaS
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-enable-3rd-party-services-.html">
+        Enable third-party services
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Authorize</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/authorize_overview.html">
+        Authorize overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize.html">
+        Authorize an external resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize-agent.html">
+        Authorize an external agent
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize-agent-workspace.html">
+        Authorize an agent workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize-user-is-account-admin.html">
+        Authorize a user as account admin
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize-user-is-in-account.html">
+        Authorize a user for an account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-authorize-agent-in-account.html">
+        Authorize an agent
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Resource</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/resource_overview.html">
+        Resource overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-discover.html">
+        Discover an external resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource.html">
+        Create an external resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-resource.html">
+        Retrieve a resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-service-resource-.html">
+        Delete a service resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-set-cloud-id.html">
+        Set a cloud identifier
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-account-set-resource-name.html">
+        Set a resource name
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-add-to-workspace-.html">
+        Add a resource to a workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-remove-from-workspace-.html">
+        Remove a resource from a workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-remove-from-agent-.html">
+        Remove a resource from an agent
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-resource-.html">
+        Delete a resource from an account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-resource-account-update.html">
+        Update properties
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-service-resource-.html">
+        Delete a service resource
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Service account</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/service_account_overview.html">
+        Service account overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-service-account.html">
+        Create a service account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-account-service-account-.html">
+        Delete a service account
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/patch-tenancy-account-service-account-.html">
+        Update details
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-service-account-generate-service-account-secret.html">
+        Generate a secret
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> User</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/user_overview.html">
+        User overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-users-for-action--.html">
+        Retrieve users authorized for single resource
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-users-for-action-.html">
+        Retrieve users authorized for all resources
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Workspace</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/workspace_overview.html">
+        Workspace overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-workspace-.html">
+        Create a workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-workspace-add-user-.html">
+        Add a user
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-workspace-remove-user-.html">
+        Remove a user
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/delete-tenancy-account-workspace-.html">
+        Delete a workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/patch-tenancy-account-workspace-.html">
+        Rename a workspace
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-workspace-add-agent-.html">
+        Add an agent
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/post-tenancy-account-workspace-remove-agent-.html">
+        Remove an agent
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-workspace-agents.html">
+        Retrieve agents
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-workspace.html">
+        Retrieve workspaces
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/tenancy/get-tenancy-account-user-workspaces.html">
+        Retrieve user account workspaces
+      </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Automation technologies</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/overview.html">
+        Overview
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/automate/blogs.html">
+        Automation blogs
+      </a></li></ul></li><li class="subfolders "><a href="#">
+        <div class="na-navbar-padding"> Knowledge and support</div>
+      </a>
+      <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/support/additional_resources.html">
+        Additional resources
+      </a></li></ul></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/legal-notices.html">
+        Legal notices
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content api-doc">
+      <div class="ie-utility">
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Cloud Docs</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Retrieve volume-level restore status</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-06-03 11:04:49 +0000">06/03/2022</time>
+    
+  
+
+<span>Contributors
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><span class="api-doc-operation  api-doc-operation-get">GET</span> <span class="api-doc-code-block"><code>/account/{accountId}/providers/cloudmanager_cbs/api/v1/restore/status</code></span></p>
+</div>
+<div class="paragraph">
+<p>Retrieves the status of the volume and file level restore operation. This API endpoint tracks the restore job and retrieves the job status, error, time, and details of the restore job.</p>
+</div>
+<div class="paragraph">
+<p><strong>Token usage:</strong> Cloud Manager user token.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parameters">Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">In</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">accountId</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Account ID</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">authorization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>User Token</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x-agent-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">True</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Request Identifier</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="response">Response</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>Status: 200, Default response</code></pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">job</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array[<a href="#job">job</a>]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="definitions">Definitions</h2>
+<div class="sectionbody">
+<div class="sect4">
+<h5 id="source">source</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">working-environment-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">working-environment-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bucket</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">volume-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">volume-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">snapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="target">target</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">working-environment-id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">working-environment-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">svm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">volume-name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">volume-size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="file">file</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">inode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">size</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mtime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="restore">restore</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#source">source</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">target</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#target">target</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">array[<a href="#file">file</a>]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="data">data</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">restore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#restore">restore</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect4">
+<h5 id="job">job</h5>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">error</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#data">data</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Have feedback for our website?</span>
+              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-automation/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/cloud-manager-automation/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/us-en/cloud-manager-automation/js/prism.js'></script>
+      <script type="text/javascript" src='/us-en/cloud-manager-automation/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/us-en/cloud-manager-automation/js/www-ntap.js'></script>
+    <script src='/us-en/cloud-manager-automation/js/tabbed-blocks.js'></script>
+    <script src='/us-en/cloud-manager-automation/js/sidebar.js'></script>
+  </body></html>
