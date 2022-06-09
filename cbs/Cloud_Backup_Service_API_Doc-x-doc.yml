@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Send audit information | NetApp Documentation</title>
+  <title> | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Send audit information | NetApp Documentation" />
+  <meta property="og:title" content=" | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/audit/post-staging-exteranl-audit.cloudmanager.netapp.com.html" />
-	<meta property="og:description" content="Send audit information" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/cbs/Cloud_Backup_Service_API_Doc-x-doc.yml" />
+	<meta property="og:description" content="" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Send audit information">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
   <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Send audit information](https://docs.netapp.com/us-en/cloud-manager-automation/audit/post-staging-exteranl-audit.cloudmanager.netapp.com.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/audit/post-staging-exteranl-audit.cloudmanager.netapp.com.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[](https://docs.netapp.com/us-en/cloud-manager-automation/cbs/Cloud_Backup_Service_API_Doc-x-doc.yml)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/cbs/Cloud_Backup_Service_API_Doc-x-doc.yml" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -695,7 +695,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/audit_overview.html">
         Audit overview
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/post-staging-exteranl-audit.cloudmanager.netapp.com.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/post-exteranl-audit.cloudmanager.netapp.com.html">
         Send audit information
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Backup service</div>
@@ -1075,7 +1075,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content api-doc">
+    <!-- Begin of page container --><article class="page-content">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -1106,14 +1106,14 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Send audit information</h1>
+  <h1 class="n-doc__component-detail-heading"></h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 09:58:01 +0000">06/08/2022</time>
+    <time datetime="2022-06-09 08:49:41 +0000">06/09/2022</time>
     
   
 
@@ -1123,123 +1123,690 @@
 
 </p>
 
-<div id="preamble">
-<div class="sectionbody">
-<div class="paragraph">
-<p><span class="api-doc-operation  api-doc-operation-post">POST</span> <span class="api-doc-code-block"><code>/staging-exteranl-audit.cloudmanager.netapp.com</code></span></p>
-</div>
-<div class="paragraph">
-<p>Sends audit information.<br>
-The Audit service uses two types of data formats: audit groups and audit records.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="audit-groups">Audit groups</h3>
-<div class="paragraph">
-<p>Audit groups represent a collection of singular actions. For example, creating a Cloud Volumes ONTAP instance involves setting up the node, configuring the high availability (HA) pair, booting the nodes, setting up licenses and services, creating aggregates, creating data container volumes, and more. The step of creating the Cloud Volumes ONTAP instance is represented as an audit group.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="audit-records">Audit records</h3>
-<div class="paragraph">
-<p>The audit record format describes individual granular operations, such as node setup, HA formation, or license setup.</p>
-</div>
-</div>
-<div class="sect1">
-<h2 id="parameters">Parameters</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">In</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">X-Service-Request-Id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Request identifier used to tag the request for better supportability.</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="request-body">Request Body</h2>
-<div class="sectionbody">
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Type</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#data">data</a></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The audit payload</p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">partition-key</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>The backend Kinesis partition key, will be provided by Cloud Manager</p>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="response">Response</h2>
-<div class="sectionbody">
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>Status: 204, Audit response</code></pre>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="definitions">Definitions</h2>
-<div class="sectionbody">
-<div class="sect4">
-<h5 id="data">data</h5>
-<div class="paragraph">
-<p>The audit payload</p>
-</div>
-</div>
-</div>
-</div>
+---
+paths:
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/sfr/volume/{volumeId}/file-explore/start":
+    post:
+      x-doc:
+        title: <p><strong>description</strong></span></p><p>starts a file explore
+          operation while initiating a single file restore (sfr) operation this api
+          endpoint implements single or multiple file restore operations that work
+          on "default" and "compliance" integration modes this api endpoint is currently
+          supported on cloud volumes ontap on amazon web service (aws), cloud volumes
+          ontap on azure, and on-premises ontap systems it supports retrieving files
+          from aws, azure, and storagegrid cloud storage providers the api endpoint
+          initiates the deployment of the additional cloud restore instance it initiates
+          a cloud formation template in aws or resource operation template in azure,
+          depending on the cloud provider if the cloud restore instance is already
+          deployed and offline, the endpoint restarts the cloud restore instance</p><p><strong>authentication</strong></span></p><p>user
+          token</p>
+        category: SFR
+        filename: post-account-providers-cloudmanager_cbs-api-v1-sfr-volume-file-explore-start.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/sfr/volume/{volumeId}/file-explore/status":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>returns the file explore
+          status when you initiate a single or multiple file restore operation this
+          api endpoint also returns the deployment status of an active data connector
+          (adc) container on the cloud restore instance during the restore process
+          and the overall status of the file listing operation</p><p><strong>authentication
+          </strong></span></p><p>user token </p>"
+        category: SFR
+        filename: get-account-providers-cloudmanager_cbs-api-v1-sfr-volume-file-explore-status.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/sfr/volume/{volumeId}/file-explore/status":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>returns the file explore
+          status when you initiate a single or multiple file restore operation this
+          api endpoint also returns the deployment status of an active data connector
+          (adc) container on the cloud restore instance during the restore process
+          and the overall status of the file listing operation</p><p><strong>authentication
+          </strong></span></p><p>user token </p>(1)"
+        category: SFR
+        filename: get-account-providers-cloudmanager_cbs-api-v2-sfr-volume-file-explore-status.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/sfr/volume/{volumeId}/snapshot/{snapshotId}/file-explore/list":
+    get:
+      x-doc:
+        title: <p><strong>description</strong></span></p><p>retrieves a list of the
+          files contained in the specified volume snapshot copy for a single or multiple
+          file restore operation the volume snapshot copy is mounted on the cloud
+          restore instance to create a file catalog for the "browse and restore" option</p><p><strong>authentication</strong></span></p><p>user
+          token</p>
+        category: SFR
+        filename: get-account-providers-cloudmanager_cbs-api-v1-sfr-volume-snapshot-file-explore-list.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/sfr/volume/{volumeId}/snapshot/{snapshotId}/file-explore/list":
+    get:
+      x-doc:
+        title: <p><strong>description</strong></span></p><p>retrieves a list of the
+          files within a specified volume snapshot copy in a paginated fashion during
+          a single or multiple file restore operation (v2 version of the file-explore/list
+          api) you can pass the number of pages and the limit of the number of files
+          that the api endpoint should retrieve while fetching the details in a paginated
+          format the volume snapshot copy is mounted on the cloud restore instance
+          to create a file catalog for the "browse and restore" option</p><p><strong>authentication</strong></span></p><p>user
+          token</p>
+        category: SFR
+        filename: get-account-providers-cloudmanager_cbs-api-v2-sfr-volume-snapshot-file-explore-list.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/sfr/volume/{volumeId}/backup/export":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>exports filesystem from
+          the volume on to the cloud restore instance to browse the files for a single/multiple
+          file restores this api verifies if adc container is deployed and makes sure
+          that it creates a file catalog for the browse and restore option by exporting
+          the filesystem</p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: SFR
+        filename: post-account-providers-cloudmanager_cbs-api-v1-sfr-volume-backup-export.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/sfr/backup/export":
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>unexports a filesystem
+          from the cloud restore instance that was mounted to browse the files from
+          a volume for a single or multiple file-restore operation this api endpoint
+          is called to remove the data fetched during an export after completing a
+          single or multiple file-restore</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: SFR
+        filename: delete-account-providers-cloudmanager_cbs-api-v1-sfr-backup-export.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves the details
+          of the working environments that are backed up by using cloud backup service
+          within an account this endpoint is routed through the saas interface to
+          retrieve the details of a working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves the details
+          of a specific working environment backed up by using cloud backup service
+          within an account this api endpoint is routed through the saas interface
+          to retrieve the details of a working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>enables the cloud backup
+          service for a particular working environment the api endpoint enables the
+          cloud backup service on cloud volumes ontap on aws, azure, google cloud,
+          and on-premises ontap systems it checks and retrieves the storage account
+          details that have been created for a specified account of the selected cloud
+          provider if a s3 object store storage bucket does not exist, it will create
+          a bucket it then configures the object store in ontap and also creates a
+          snapmirror policy, if the chosen snapmirror policy does not exist</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>modifies the cloud backup
+          service for a working environment you can modify the state and backup policy
+          name</p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: Backup
+        filename: put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>unregisters a  working
+          environment you can remove the cloud backup service from a working environment
+          note that before you unregister, make sure you delete all backups and disable
+          the cloud backup service on a working environment this action will also
+          delete the backup folder</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}/status":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves the backup
+          status of a specified working environment backed up by using the cloud backup
+          service within an account this api endpoint is routed through the cloud
+          manager saas interface to retrieve the details of a working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-status.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/backup/working-environment/{workingEnvironmentId}":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>enables the cloud backup
+          service for a specified working environment synchronously (v2 version) this
+          endpoint enables the cloud backup service on cloud volumes ontap on aws,
+          azure, google cloud and on-premises ontap systems it checks and retrieves
+          storage account details that has been created for a specified account on
+          the selected cloud provider if an s3 object store  bucket does not exist,
+          it will create the bucket it then configures object store on ontap and also
+          creates a snapmirror policy if the chosen snapmirror policy does not exist</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-.html
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>modifies the cloud backup
+          service backup configuration for a particular working environment synchronously
+          (v2 version) you can modify the state, backup policy, archive storage class,
+          and enable auto backup</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: put-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v3/backup/working-environment/{workingEnvironmentId}":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>enables the cloud backup
+          service for a specific working environmentthe v3 version of the api endpoint
+          enables the cloud backup service on cloud volumes ontap on aws, azure and
+          google cloud and on-premises ontap systems  it checks if an s3 cloud storage
+          bucket is associated with an account if a bucket does not exist, it will
+          create the bucket it creates a backup folder on the s3 cloud object storage
+          bucket in the specified cloud provider or storagegrid the ability to tier
+          older backup files to archival storage requires that the cluster is running
+          ontap 9101 or later version (supported currently with aws and azure) restoring
+          volumes from backup objects that reside in archival storage also requires
+          that the destination cluster is running ontap 9101 or later   version</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v3-backup-working-environment-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}/volume/{volumeId}":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> enables backup for a
+          specified volume backup is not allowed for volume enabled with snaplock
+          license (worm license) you can configure optional backup modes the ad_hoc
+          mode creates an ad-hoc snapshot copy and creates a backup on the respective
+          cloud scheduled mode (default mode) creates snapshot copy as per ontap snapshot
+          policy and creates a backup to the cloud as per the backup policy based
+          on the defined backup policy, the api endpoint will create a snapmirror
+          to cloud relationship with the the specific cloud object storage</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves information
+          of a specified volume backed up by using the cloud backup service it retrieves
+          the details of the volume from the cloud manager saas application it retrieves
+          backup status, relationship policy name, and details</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> modifies a specified
+          backed up volume you can use this api endpoint to modify the volume state,
+          backup policy, backup policy rule-retention and archive-after-days parameters
+          </p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: Backup
+        filename: put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> removes the backup settings
+          on a specified backed up volume to remove the backup from the volume, the
+          snapshot copies taken for the volume must be deleted </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/backup/working-environment/{workingEnvironmentId}/volume/{volumeId}":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> enables backup for a
+          specified volume (version 2) backup is not allowed for a volume enabled
+          with a snaplock license (worm license) you can configure the different backup
+          modes the ad_hoc mode creates an on-demand snapshot copy and stores a backup
+          on the respective cloud scheduled mode (default mode) creates snapshot copies
+          as per ontap snapshot copy policy and stores a backup to the cloud as per
+          the backup policy based on the defined backup policy, this api endpoint
+          creates a snapmirror to cloud relationship with a specific cloud object
+          storage system </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-volume-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v3/backup/working-environment/{workingEnvironmentId}/volume/{volumeId}":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> enables backup for a
+          specified volume (version 3) this version of the endpoint runs the job asynchronously
+          backup is not allowed for a volume enabled with a snaplock license (worm
+          license) you can configure the different backup modes the ad_hoc mode creates
+          an on-demand snapshot copy and stores a backup on the respective cloud scheduled
+          mode (default mode) creates snapshot copies as per ontap snapshot copy policy
+          and stores a backup to the cloud as per the backup policy based on the defined
+          backup policy, this api endpoint creates a snapmirror to cloud relationship
+          with a specific cloud object storage system </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v3-backup-working-environment-volume-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}/volume":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p> retrieves details of all
+          the volumes for a specified working environment backed up by using the cloud
+          backup service it retrieves the volume name, volume type, protocol, storage
+          vm, backup status, last backup creation time, snapshot count, associated
+          backup policy and backup policy rules</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> enables the backup of
+          multiple volumes backup is not allowed for a volume enabled with a netapp
+          snaplock license (worm license) you can configure the different optional
+          backup modes the ad_hoc mode creates an on-demand  snapshot copy and stores
+          a backup on the respective cloud object storage scheduled mode (default
+          mode) creates snapshot copy as per ontap snapshot policy and stores a backup
+          on the cloud as per the backup policy based on the defined backup policy,
+          this api endpoint creates a snapmirror to cloud relationship with a specific
+          cloud object storage system </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>modifies multiple backed-up
+          volumes in a specific working environment this api endpoint modifies the
+          volume state, backup-policy, backup policy rule and retention, and archive-after-days
+          parameters</p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: Backup
+        filename: put-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/backup/working-environment/{workingEnvironmentId}/volume":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> enables backup for multiple
+          volumes (version 2) backup is not allowed for a volume enabled with a snaplock
+          license (worm license) you can configure the different backup modes the
+          ad_hoc mode creates an on-demand snapshot copy and stores a backup on the
+          respective cloud scheduled mode (default mode) creates snapshot copies as
+          per the ontap snapshot policy and stores a backup to the cloud as per the
+          backup policy based on the defined backup policy, this api endpoint creates
+          a snapmirror to cloud relationship with a cloud object storage system</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: post-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-volume.html
+  ? "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}/volume/{volumeId}/snapshot/{snapshotId}"
+  : get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves information
+          of a snapshot copy for a specified volume backed up by using the cloud backup
+          service for a working environment this api endpoint retrieves the details
+          of the volume snapshots from the cloud manager saas application it retrieves
+          the snapshot name, snapshot creation time, archive status, and size</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot-.html
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> deletes a specified
+          snapshot for a specified volume backed up by using the cloud backup service
+          for a working environment </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot-.html
+  ? "/account/{accountId}/providers/cloudmanager_cbs/api/v1/backup/working-environment/{workingEnvironmentId}/volume/{volumeId}/snapshot"
+  : get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves snapshot information
+          for a specified volume backed up by using the cloud backup service for a
+          working environment this api endpoint retrieves the details of the volume
+          snapshots from the cloud manager saas application it retrieves the snapshot
+          name, snapshot creation time, archive status, and size</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: get-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot.html
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> deletes all the snapshots
+          for a specified volume backed up by using the cloud backup service for a
+          working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: delete-account-providers-cloudmanager_cbs-api-v1-backup-working-environment-volume-snapshot.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/backup/working-environment/{workingEnvironmentId}/snapshot":
+    delete:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> deletes all the snapshots
+          for a specified working environment backed up by using the cloud backup
+          service (v2 version)</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Backup
+        filename: delete-account-providers-cloudmanager_cbs-api-v2-backup-working-environment-snapshot.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/restore":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> performs a volume-level
+          restore operation this api endpoint validates whether a backup of a volume
+          exists restore is not supported on dp volumes a restore operation is not
+          supported on a target volume with a different language code than the source
+          volume a restore operation is not supported for volumes with a size less
+          than 1 gb restore is not allowed on a volume enabled with a snaplock license
+          (worm license) it checks whether the source and target cloud provider matches
+          it also verifies whether the  backup and restore operation is supported
+          in the specified working environments</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Restore
+        filename: post-account-providers-cloudmanager_cbs-api-v1-restore.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/restore":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> performs a volume-level
+          restore (version 2) operation this api validates whether a backup of a volume
+          exists a restore operation is not supported on dp volumes a restore operation
+          is not supported on a target volume with a different language code than
+          the source volume restore operation is not supported for volumes with a
+          size less than 1 gb a restore operation is not allowed on a volume enabled
+          with a snaplock license (worm license) it checks whether the source and
+          target cloud provider matches it also verifies whether the backup and restore
+          operation is supported in the working environments</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Restore
+        filename: post-account-providers-cloudmanager_cbs-api-v2-restore.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/restore/status":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves the status
+          of the volume-level restore operation this api endpoint tracks the restore
+          job and retrieves the job status, error, time, and details of the restore
+          job</p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: Restore
+        filename: get-account-providers-cloudmanager_cbs-api-v1-restore-status.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/backup-policy":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves a list of
+          ontap backup policies associated with a working environment you can filter
+          the policies based on the archival enablement status this api endpoint retrieves
+          the backup-policy name, rule, attached volume count, and archive-after-days
+          information</p><p><strong>authentication</strong></span></p><p>user token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy.html
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> creates a backup policy
+          in a working environment the number of retained backups can be up to a maximum
+          of 1018 when no backup policies are assigned to the volume you can edit
+          a policy to create up to 4000 backups after you assign volumes to a policy
+          through ontap cli this api endpoint validates whether the ontap version
+          used by a working environment supports archiving </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: post-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/backup-policy/{policyName}":
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> updates a backup policy
+          in a working environment this api endpoint modifies the rule, label-rule,
+          retention, and archive-after-days information  </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: put-account-providers-cloudmanager_cbs-api-v1-working-environment-backup-policy-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/ip-space":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves a list of
+          ip spaces within a specified working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-ip-space.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves a list of
+          working environments and their details this api endpoint retrieves the name,
+          region, status, type, cloud-provider, provider-accountid, ontap-version,
+          and total-volumes-count information</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves the details
+          of a specific working environment this api endpoint retrieves the name,
+          region, status, type, cloud-provider, provider-accountid, ontap-version,
+          and total-volumes-count of a specific working environment</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/svm":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves a list of
+          storage vms and their details from a specific working environment this api
+          retrieves the id, name, and aggregate list that belongs to an storage  vm</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-svm.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/volume":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> retrieves a list of
+          volumes and their details from a specific working environment this api endpoint
+          retrieves the name, file-system-id, status , storage vm, type, style, capacity
+          allocated , capacity used, and snapmirror label information</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-volume.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/configure-object-store":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> configures object storage
+          verifies whether a private endpoint is enabled and a certificate is installed
+          this api endpoint is called if no object stores are found when cloud backup
+          service is enabled</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: post-account-providers-cloudmanager_cbs-api-v1-working-environment-configure-object-store.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v2/working-environment/{workingEnvironmentId}/configure-object-store":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> configures object storage
+          this is v2 version of the object store configure api verifies whether a
+          private endpoint is enabled and a certificate is installed this api endpoint
+          is called if no object stores are found when cloud backup service is enabled</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: post-account-providers-cloudmanager_cbs-api-v2-working-environment-configure-object-store.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/volume/{volumeId}/list":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of working
+          environment volume directories you can query by using target storage vm
+          and path of directories to browse within the volume</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-volume-list.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/working-environment/{workingEnvironmentId}/object-store-config/status":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves an object store
+          configuration status it uses the get /api/cloud/targets ontap rest apis
+          to retrieve the details</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Working Environment
+        filename: get-account-providers-cloudmanager_cbs-api-v1-working-environment-object-store-config-status.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/aws/account":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of aws
+          accounts from the cloud manager</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-aws-account.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/aws/region":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of subscribed
+          aws regions from cloud manager saas application </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-aws-region.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/aws/awsAccountId/{awsAccountId}/region/{regionCode}/key":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of aws
+          keys from a specified region that belongs to a specified aws account id
+          from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-aws-awsaccountid-region-key.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/aws/awsAccountId/{awsAccountId}/region/{regionCode}/privateLink":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of aws
+          private links from a specified region that belongs to a specified aws account
+          id from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-aws-awsaccountid-region-privatelink.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/aws/archival-storage-class":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of aws
+          storage classes for archival support from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-aws-archival-storage-class.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription/{subscriptionId}/region":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of regions
+          from a specific subscription id in azure from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-region.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription/{subscriptionId}/resource-group":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>creates azure resource
+          group in the specified subscription id</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: post-account-providers-cloudmanager_cbs-api-v1-azure-subscription-resource-group.html
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of azure
+          resource groups from a specific subscription id in azure from the cloud
+          manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-resource-group.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription/{subscriptionId}/vnet":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of azure
+          virtual networks from a specific subscription id in azure cloud from the
+          cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vnet.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of azure
+          subscriptions for a particular account from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription/{subscriptionId}/vault/{vaultName}/key":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of azure
+          vault keys from a particular vault for a specific subscription id in azure
+          cloud from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vault-key.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/azure/subscription/{subscriptionId}/vault":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of azure
+          vault for a specific subscription id in azure cloud from the cloud manager
+          saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-azure-subscription-vault.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/gcp/project":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of google
+          cloud projects from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-gcp-project.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/gcp/project/{projectId}/region":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of regions
+          from a specific google cloud project from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Cloud
+        filename: get-account-providers-cloudmanager_cbs-api-v1-gcp-project-region.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/job":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of jobs
+          from the cloud manager saas application you can query based on the job type
+          and job status from the cloud manager saas application</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Job
+        filename: get-account-providers-cloudmanager_cbs-api-v1-job.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/job/{jobId}":
+    get:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves the details
+          of particular jobs from the cloud manager saas application </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Job
+        filename: get-account-providers-cloudmanager_cbs-api-v1-job-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/catalog/working-environments/{workingEnvironmentId}/setup":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> configures the service
+          to include indexed cataloging services this api endpoint initiates the creation
+          of an  s3 bucket on an account level for cataloging to store the details
+          of the backup and changes it also enables the aws athena interactive s3
+          query service and aws glue serverless data integration service to coordinate
+          with the new catalog feature</p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Catalog
+        filename: post-account-providers-cloudmanager_cbs-api-v1-catalog-working-environments-setup.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/catalog/search":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p> searches for a specific
+          file from the backups taken by the cloud backup service it can also search
+          for a specified volume it is possible to narrow down your file searches
+          based on a particular working environment, file extensions, size ranges,
+          creation date range, and also location of the backup </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Catalog
+        filename: post-account-providers-cloudmanager_cbs-api-v1-catalog-search.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/catalog/snapshots":
+    post:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>retrieves a list of snapshot
+          copies pertaining to a particular volume using the catalog index query </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Catalog
+        filename: post-account-providers-cloudmanager_cbs-api-v1-catalog-snapshots.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/catalog/working-environments/{workingEnvironmentId}":
+    put:
+      x-doc:
+        title: "<p><strong>description</strong></span></p><p>enables or disables the
+          indexed cataloging service for a specified working environment </p><p><strong>authentication</strong></span></p><p>user
+          token</p>"
+        category: Catalog
+        filename: put-account-providers-cloudmanager_cbs-api-v1-catalog-working-environments-.html
+  "/account/{accountId}/providers/cloudmanager_cbs/api/v1/license/working-environment/{workingEnvironmentId}":
+    get:
+      x-doc:
+        title: 'Retrieves the license validity of the working environments from the
+          cloud manager saas the api retrieves the eligibility of the current license
+          used and it also returns the days remaining if the user is using a trial
+          license '
+        category: License
+        filename: get-account-providers-cloudmanager_cbs-api-v1-license-working-environment-.html
+
 
     </article>
     <!-- Page Container -->

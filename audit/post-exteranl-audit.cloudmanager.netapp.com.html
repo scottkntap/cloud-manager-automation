@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
   <head class="at-element-marker">
-  <title>Connector and client identifiers | NetApp Documentation</title>
+  <title>Send audit information | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Connector and client identifiers | NetApp Documentation" />
+  <meta property="og:title" content="Send audit information | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/platform/connectors_clients.html" />
-	<meta property="og:description" content="" />
+	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/audit/post-exteranl-audit.cloudmanager.netapp.com.html" />
+	<meta property="og:description" content="Send audit information" />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Send audit information">
   <meta name="keywords" content=" "><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
@@ -169,7 +169,7 @@
   
   <!-- Start Page Toolbar -->
   
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Connector and client identifiers](https://docs.netapp.com/us-en/cloud-manager-automation/platform/connectors_clients.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/platform/connectors_clients.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/issues/new?body=Page%3A%20[Send audit information](https://docs.netapp.com/us-en/cloud-manager-automation/audit/post-exteranl-audit.cloudmanager.netapp.com.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-automation/blob/main/audit/post-exteranl-audit.cloudmanager.netapp.com.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-automation/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-automation/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -350,7 +350,7 @@
         User access tokens
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/grant_types.html">
         Grant types
-      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/connectors_clients.html">
+      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/connectors_clients.html">
         Connector and client identifiers
       </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/platform/use_rest_apis.html">
         Use the REST APIs
@@ -695,7 +695,7 @@
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/audit_overview.html">
         Audit overview
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/post-exteranl-audit.cloudmanager.netapp.com.html">
+      </a></li><li class="  active "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/audit/post-exteranl-audit.cloudmanager.netapp.com.html">
         Send audit information
       </a></li></ul></li></ul></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Cloud Backup service</div>
@@ -1075,7 +1075,7 @@
   
 
   <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
-    <!-- Begin of page container --><article class="page-content">
+    <!-- Begin of page container --><article class="page-content api-doc">
       <div class="ie-utility">
   <div class="ie-menu">
     <div class="n-breadcrumb">
@@ -1106,26 +1106,18 @@
 </div>
 
       <div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Connector and client identifiers</h1>
+  <h1 class="n-doc__component-detail-heading">Send audit information</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 01:17:35 +0000">04/18/2022</time>
+    <time datetime="2022-06-09 08:49:40 +0000">06/09/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/dmp-netapp">
-    <img  class="avatar avatar-small"
-          alt="dmp-netapp"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/50704017?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
 </span>
 
 
@@ -1133,49 +1125,122 @@
 
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph lead">
-<p>There are several additional identifiers you typically need depending on the grant type and REST API call.</p>
+<div class="paragraph">
+<p><span class="api-doc-operation  api-doc-operation-post">POST</span> <span class="api-doc-code-block"><code>/exteranl-audit.cloudmanager.netapp.com</code></span></p>
+</div>
+<div class="paragraph">
+<p>Sends Audit information.<br>
+The Audit service uses two types of data formats: audit groups and audit records.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="connector">Connector</h3>
+<h3 id="audit-groups">Audit Groups</h3>
 <div class="paragraph">
-<p>A Connector is a type of agent deployed in the public cloud on behalf of a customer. It executes commands and other actions on behalf of Cloud Manager as part of managing the local cloud environment. For example, a Connector is can be used to access to one or more Cloud Volumes ONTAP instances.</p>
+<p>Audit groups represent a collection of singular actions. For example, creating a Cloud Volumes ONTAP instance involves setting up the node, configuring the high availability (HA) pair, booting the nodes, setting up licenses and services, creating aggregates, creating data container volumes, and more. The process of creating the Cloud Volumes ONTAP instance is represented as an audit group.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="connector-id">Connector ID</h3>
+<h3 id="audit-records">Audit Records</h3>
 <div class="paragraph">
-<p>Every Connector is assigned a unique identifier. This value is carried in the HTTP <code>x-agent-id</code> request header to identify the request destination.</p>
+<p>The audit record format describes individual granular operations, such as node setup, HA formation, or license setup.</p>
 </div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="parameters">Parameters</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">In</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X-Service-Request-Id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Request identifier used to tag the request for better supportability.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="request-body">Request Body</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Type</th>
+<th class="tableblock halign-left valign-top">Required</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#data">data</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The audit payload</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">partition-key</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">False</p></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>The backend Kinesis partition key, will be provided by Cloud Manager</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="response">Response</h2>
+<div class="sectionbody">
 <div class="listingblock">
-<div class="title">Example of a Connector ID</div>
 <div class="content">
-<pre>uzJbMFKEnuzi2ryLaENbCP52KBTXx0aIclients</pre>
+<pre class="highlight"><code>Status: 204, Audit response</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="client-id">Client ID</h3>
+</div>
+<div class="sect1">
+<h2 id="definitions">Definitions</h2>
+<div class="sectionbody">
+<div class="sect4">
+<h5 id="data">data</h5>
 <div class="paragraph">
-<p>In general, a client ID uniquely identifies a client and can be used in several different ways with the Cloud Manager REST APIs.</p>
+<p>The audit payload</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Refresh token grant</dt>
-<dd>
-<p>When requesting a user access token with the refresh token grant for the SaaS access model, the client ID is constant and represents NetApp Cloud Manager. The value is always <code>Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC</code>.</p>
-</dd>
-<dt class="hdlist1">Client credentials grant</dt>
-<dd>
-<p>When requesting a service token with the client credentials grant, you must retrieve the client ID from the service account through the Cloud Manager web user interface.</p>
-</dd>
-<dt class="hdlist1">Derive from Connector ID</dt>
-<dd>
-<p>You can derive the client ID from the associated Connector ID by simply removing the suffix <code>clients</code>. This value is used when accessing the Connector directly (not through the SaaS model).</p>
-</dd>
-</dl>
+</div>
 </div>
 </div>
 
