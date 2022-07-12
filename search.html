@@ -283,10 +283,10 @@
   <!-- Sidebar Column -->
   
   <div class="col-md-3" id="sidebar-height">
-      <div class="sidebar-nav-container" id="mysidebardiv">
-  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="https://docs.netapp.com/us-en/cloud-manager-family">
-        All Cloud Manager documentation
-      </a></li><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/index.html">
+      <div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-automation/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/index.html">
         Cloud Manager API docs
       </a></li><li class="subfolders "><a href="#">
         <div class="na-navbar-padding"> Get started</div>
@@ -1084,6 +1084,8 @@
   data-did-you-mean="Search for {suggestion}." 
   data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
   data-results-found="{hitCount} results found"
+  data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+  data-error-reset="Reset Search"
   data-sk-es-pf-indexes=""
   data-flavor=""></div>
   <button class="search-all-icon n-property-bar__search-toggle-button" type="button">
@@ -1242,6 +1244,7 @@
     <script src='/us-en/cloud-manager-automation/js/tabbed-blocks.js'></script>
     <script src='/us-en/cloud-manager-automation/js/sidebar.js'></script>
   </body><script>
+    /*
       if(hasParameter(window.location.search,'q')) {
         var queryString = decodeURI(getParameter(window.location.search, 'q'));
         document.getElementsByClassName("sk-search-box__text")[0].setAttribute("value", queryString);
@@ -1264,4 +1267,5 @@
         param = param || "";
         return (searchString.indexOf("?"+param+"=") != -1 || searchString.indexOf("&"+param+"=") != -1);
       }
+      */
   </script></html>
