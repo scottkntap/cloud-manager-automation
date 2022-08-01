@@ -1183,7 +1183,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 00:58:39 +0000">04/18/2022</time>
+    <time datetime="2022-08-01 20:31:22 +0000">08/01/2022</time>
     
   
 
@@ -1193,6 +1193,14 @@
           alt="dmp-netapp"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/50704017?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ranuk">
+    <img  class="avatar avatar-small"
+          alt="netapp-ranuk"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/80323433?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -1323,9 +1331,11 @@ The refresh token grant is the most secure option when requesting a user access 
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
+    "audience": "https://api.cloud.netapp.com",
     "grant_type": "client_credentials",
     "client_id": "&lt;CLIENT_ID&gt;",
     "client_secret": "&lt;CLIENT_SECRET&gt;"
+
 }</code></pre>
 </div>
 </div>
@@ -1341,6 +1351,10 @@ The refresh token grant is the most secure option when requesting a user access 
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>audience</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The resource identifier.</p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>grant_type</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Must be set to "client_credentials".</p></td>
