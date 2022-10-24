@@ -143,6 +143,17 @@
               $("#mysidebar").navgoco('toggle', true);
           });
 
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/us-en/cloud-manager-automation"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
       });
 
   </script>
@@ -257,6 +268,8 @@
       </div>
 
       
+      
+      
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
@@ -343,7 +356,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Platform overview"
@@ -359,7 +372,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Common REST implementation</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Basic concepts"
@@ -403,7 +416,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Authentication and authorization</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Basic concepts"
@@ -447,7 +460,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Common workflows and tasks</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get required identifiers"
@@ -491,7 +504,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Cloud Volumes ONTAP</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -507,7 +520,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Get started</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Prepare"
@@ -551,7 +564,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> AWS workflows</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Before you begin"
@@ -567,7 +580,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working environments</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create working environment with capacity-based license"
@@ -632,7 +645,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Aggregates</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
@@ -669,7 +682,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Volumes</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a volume using NFS"
@@ -734,7 +747,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Metadata</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get regions"
@@ -792,7 +805,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Miscellaneous</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create AWS cloud provider account"
@@ -808,7 +821,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Azure workflows</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Before you begin"
@@ -824,7 +837,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working environments</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create working environment with capacity-based license"
@@ -889,7 +902,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Aggregates</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
@@ -926,7 +939,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Volumes</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a volume using NFS"
@@ -991,7 +1004,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Metadata</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get Azure regions"
@@ -1042,7 +1055,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Miscellaneous</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create Azure cloud provider account"
@@ -1058,7 +1071,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> GCP workflows</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Before you begin"
@@ -1074,7 +1087,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working environments</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create working environment with capacity-based license"
@@ -1139,7 +1152,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Aggregates</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
@@ -1176,7 +1189,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Volumes</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create a volume using NFS"
@@ -1241,7 +1254,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Metadata</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get GCP regions"
@@ -1362,7 +1375,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Common workflows</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Before you begin"
@@ -1378,7 +1391,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Identity and access</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get supported services"
@@ -1408,7 +1421,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> SaaS marketplace</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get SaaS marketplace account"
@@ -1431,7 +1444,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> NetApp Support Site</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create NSS ID"
@@ -1468,7 +1481,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Internal tasks and support</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Get active task"
@@ -1484,7 +1497,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> SnapMirror replication</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Create relationship"
@@ -1563,7 +1576,7 @@
     ><a href="/us-en/cloud-manager-automation/cm/api_reference.html">
         <div class="na-navbar-padding"> API reference</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Resources"
@@ -1586,7 +1599,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Audit service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1602,7 +1615,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Audit</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Audit overview"
@@ -1625,7 +1638,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Cloud Backup</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -1641,7 +1654,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Backup</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup overview"
@@ -1825,7 +1838,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Catalog</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Catalog overview"
@@ -1876,7 +1889,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Cloud</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Cloud overview"
@@ -1990,7 +2003,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Jobs</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Jobs overview"
@@ -2041,7 +2054,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> License</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="License overview"
@@ -2064,7 +2077,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Ransomware scan</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Ransomware scan overview"
@@ -2087,7 +2100,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Restore</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Restore overview"
@@ -2124,7 +2137,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Sfr</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Sfr overview"
@@ -2175,7 +2188,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Working environment</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Working environment overview"
@@ -2282,7 +2295,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Credentials service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -2298,7 +2311,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Aws</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Aws overview"
@@ -2335,7 +2348,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Azure</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Azure overview"
@@ -2386,7 +2399,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Generic</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Generic overview"
@@ -2437,7 +2450,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Digital Wallet service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -2453,7 +2466,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Data services</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Data services overview"
@@ -2476,7 +2489,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> External services</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="External services overview"
@@ -2499,7 +2512,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> License</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="License overview"
@@ -2564,7 +2577,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Subscription</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Subscription overview"
@@ -2650,7 +2663,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> IPA service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -2666,7 +2679,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> License</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="License overview"
@@ -2724,7 +2737,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Nss</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Nss overview"
@@ -2831,7 +2844,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Services</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Services overview"
@@ -2861,7 +2874,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Persistence service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -2877,7 +2890,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Index</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Index overview"
@@ -2921,7 +2934,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Persistence</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Persistence overview"
@@ -2972,7 +2985,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Tenancy service</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -2988,7 +3001,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Account</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Account overview"
@@ -3116,7 +3129,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Authorize</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Authorize overview"
@@ -3174,7 +3187,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Resource</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Resource overview"
@@ -3274,7 +3287,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Service account</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Service account overview"
@@ -3318,7 +3331,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> User</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="User overview"
@@ -3348,7 +3361,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Workspace</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Workspace overview"
@@ -3434,7 +3447,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Automation technologies</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Overview"
@@ -3457,7 +3470,7 @@
     ><a href="#">
         <div class="na-navbar-padding"> Knowledge and support</div>
       </a>
-      <ul>
+      <ul style="display: none;">
         <li 
       data-pdf-exists="true" 
       data-pdf-filename="Additional resources"
@@ -3483,6 +3496,7 @@
 </script>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
 
 
   </div>
@@ -3528,7 +3542,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-09-27 08:58:24 +0000">09/27/2022</time>
+    <time datetime="2022-10-24 11:41:41 +0000">10/24/2022</time>
     
   
 
@@ -3727,11 +3741,7 @@
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <span class="n-footer__fine-print">Have feedback for our website?</span>
-              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
-            </li>
-            <li class="n-footer__copyright-link">
-              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+              <a target="_self" href="javascript:netapp_mailto()">Send feedback about this page</a>
             </li>
           </ul>
         </div>
