@@ -339,15 +339,15 @@
   <div class="col-md-3" id="sidebar-height">
       <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/us-en/cloud-manager-automation/images/collapse.png" alt="Collapse navigation panel"></button>
       <div class="prod-nav" id="product-nav">
-  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-automation/images/left_arrow.png" alt=""><pre>All Cloud Manager documentation</pre></a>
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/us-en/cloud-manager-family/"><img src="/us-en/cloud-manager-automation/images/left_arrow.png" alt=""><pre>All BlueXP documentation</pre></a>
 </div><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Cloud Manager API docs"
+      data-pdf-filename="BlueXP API docs"
       data-li-level="1#" 
       class=" "
     ><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/index.html">
-        Cloud Manager API docs
+        BlueXP API docs
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Get started"
@@ -3726,7 +3726,7 @@
 
         
         <li class="n-breadcrumb__list-item">
-          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">Cloud Manager</a>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-family/">BlueXP</a>
         </li>
         
 
@@ -3748,7 +3748,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-18 01:17:35 +0000">04/18/2022</time>
+    <time datetime="2022-10-25 20:48:27 +0000">10/25/2022</time>
     
   
 
@@ -3758,6 +3758,14 @@
           alt="dmp-netapp"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/50704017?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ranuk">
+    <img  class="avatar avatar-small"
+          alt="netapp-ranuk"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/80323433?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3776,7 +3784,7 @@
 <div class="sect2">
 <h3 id="connector">Connector</h3>
 <div class="paragraph">
-<p>A Connector is a type of agent deployed in the public cloud on behalf of a customer. It executes commands and other actions on behalf of Cloud Manager as part of managing the local cloud environment. For example, a Connector is can be used to access to one or more Cloud Volumes ONTAP instances.</p>
+<p>A Connector is a type of agent deployed in the public cloud on behalf of a customer. It executes commands and other actions on behalf of BlueXP as part of managing the local cloud environment. For example, a Connector is can be used to access to one or more Cloud Volumes ONTAP instances.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3794,17 +3802,17 @@
 <div class="sect2">
 <h3 id="client-id">Client ID</h3>
 <div class="paragraph">
-<p>In general, a client ID uniquely identifies a client and can be used in several different ways with the Cloud Manager REST APIs.</p>
+<p>In general, a client ID uniquely identifies a client and can be used in several different ways with the BlueXP REST APIs.</p>
 </div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Refresh token grant</dt>
 <dd>
-<p>When requesting a user access token with the refresh token grant for the SaaS access model, the client ID is constant and represents NetApp Cloud Manager. The value is always <code>Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC</code>.</p>
+<p>When requesting a user access token with the refresh token grant for the SaaS access model, the client ID is constant and represents NetApp BlueXP. The value is always <code>Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC</code>.</p>
 </dd>
 <dt class="hdlist1">Client credentials grant</dt>
 <dd>
-<p>When requesting a service token with the client credentials grant, you must retrieve the client ID from the service account through the Cloud Manager web user interface.</p>
+<p>When requesting a service token with the client credentials grant, you must retrieve the client ID from the service account through the BlueXP web user interface.</p>
 </dd>
 <dt class="hdlist1">Derive from Connector ID</dt>
 <dd>
