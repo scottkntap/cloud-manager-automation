@@ -9,14 +9,14 @@
   <meta property="og:title" content="Create user token | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html" />
-	<meta property="og:description" content="You must generate a bearer token to authenticate and access the Cloud Manager REST API. There are two workflows available depending on the type of authentica..." />
+	<meta property="og:description" content="You must generate a bearer token to authenticate and access the BlueXP REST API. There are two workflows available depending on the type of authentication." />
   <meta property="og:image" content="https://docs.netapp.com/us-en/cloud-manager-automation/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must generate a bearer token to authenticate and access the Cloud Manager REST API. There are two workflows available depending on the type of authentica...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You must generate a bearer token to authenticate and access the BlueXP REST API. There are two workflows available depending on the type of authentication.">
   <meta name="keywords" content=" generate, user, token"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
@@ -3707,7 +3707,7 @@
         
 
         <li class="n-breadcrumb__list-item">
-          <a href="/us-en/cloud-manager-automation/">Cloud&nbsp;Manager&nbsp;Automation</a>
+          <a href="/us-en/cloud-manager-automation/">API</a>
         </li>
 
       </ul>
@@ -3724,7 +3724,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-08-01 20:26:38 +0000">08/01/2022</time>
+    <time datetime="2022-11-17 12:30:06 +0000">11/17/2022</time>
     
   
 
@@ -3753,7 +3753,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You need to generate a bearer token to gain access to the Cloud Manager REST APIs. A user token is more commonly used for customer automation than the service token. There are two workflows available to create a user token. The one you select depends on your authentication environment.</p>
+<p>You need to generate a bearer token to gain access to the BlueXP REST APIs. A user token is more commonly used for customer automation than the service token. There are two workflows available to create a user token. The one you select depends on your authentication environment.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3798,7 +3798,7 @@ The first of the two workflows is <strong>required</strong> for federated authen
 <div class="sect2">
 <h3 id="2-generate-the-user-token">2. Generate the user token</h3>
 <div class="paragraph">
-<p>This API call uses the <em>Auth0</em> authentication service and not the NetApp Cloud Manager service. See the URL in the curl example below and adjust for your environment as needed. The client identifier in the JSON input is the same constant value for all customers.</p>
+<p>This API call uses the <em>Auth0</em> authentication service and not the NetApp BlueXP service. See the URL in the curl example below and adjust for your environment as needed. The client identifier in the JSON input is the same constant value for all customers.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3882,7 +3882,7 @@ The first of the two workflows is <strong>required</strong> for federated authen
 <div class="sect2">
 <h3 id="1-generate-the-user-token">1. Generate the user token</h3>
 <div class="paragraph">
-<p>This API call uses the <em>Auth0</em> authentication service and not the NetApp Cloud Manager service. See the URL in the curl example below and adjust for your environment as needed.</p>
+<p>This API call uses the <em>Auth0</em> authentication service and not the NetApp BlueXP (formerly Cloud Manager) service. See the URL in the curl example below and adjust for your environment as needed.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
