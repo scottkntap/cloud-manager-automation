@@ -195,15 +195,12 @@
           <li class="n-top-hat__list-item">
             <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
           </li>
-          <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
-          </li>
         </ul>
       </div>
       <div class="n-top-hat__utils">
         <ul class="n-top-hat__list">
           <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -276,33 +273,6 @@
 
     <div class="n-property-bar__cta"></div>
   </div>
-  <script>
-    $(function(){
-        var currentLocalization = $('html').attr('lang');
-
-        var localizationsDictionary = {
-            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
-            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
-            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
-            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
-            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
-            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
-            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
-            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
-            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
-            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
-            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
-            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
-            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
-            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
-            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
-        };
-
-        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
-            $('.n-property-bar__property-link').attr('href', '/');
-        }
-    });
-  </script>
   <!-- End property bar -->
 </header>
 
@@ -623,6 +593,13 @@
       </a>
       <ul style="display: none;">
         <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add capacity to EV aggregate"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_add_capacity.html">
+        Add capacity to EV aggregate
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
       data-li-level="4#" 
@@ -3613,7 +3590,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 12:31:07 +0000">11/17/2022</time>
+    <time datetime="2023-02-03 16:10:21 +0000">02/03/2023</time>
     
   
 
@@ -3680,7 +3657,7 @@
 <h2 id="create-working-environment-for-single-node">Create working environment for single node</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use this workflow to create an single node Cloud Volumes ONTAP working environment.</p>
+<p>You can use this workflow to create a single node Cloud Volumes ONTAP working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-region">1. Select the region</h3>
@@ -3834,10 +3811,33 @@ This request uses PAYGO subscription as indicated in the <code>licenseType</code
 </tr>
 </table>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+By default, new Cloud Volumes ONTAP instances are created with Elastic Volumes enabled on aggregates. You can set <code>"disableEv": "true"</code> if you choose to create a Cloud Volumes ONTAP instance with an aggregate where Elastic Volumes is disabled.
+</td>
+</tr>
+</table>
+</div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">JSON input example</dt>
 </dl>
+</div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Enable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>The <code>ebsVolumeType</code> parameter must be <code>gp3</code> or <code>io1</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>disableEv</code>: boolean, default value is <code>false</code>. By default, new Cloud Volumes ONTAP instances are created with Elastic Volumes enabled on aggregates.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3849,6 +3849,7 @@ This request uses PAYGO subscription as indicated in the <code>licenseType</code
     "tenantId": "tenantIDgoeshere",
     "subnetId": "subnet-f4da95ac",
     "dataEncryptionType": "AWS",
+    "disableEv":"false",
     "vsaMetadata": {
         "ontapVersion": "ONTAP-9.9.0.T1",
         "licenseType": "cot-explore-paygo",
@@ -3882,6 +3883,64 @@ This request uses PAYGO subscription as indicated in the <code>licenseType</code
     },
     "writingSpeedState": "NORMAL"
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Disable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>You can set <code>"disableEv": "true"</code> if you choose to create a Cloud Volumes ONTAP instance with an aggregate where Elastic Volumes is disabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "name": "ziv01we02",
+    "svmPassword": "user_password",
+    "vpcId": "vpc-b16c90d4",
+    "region": "us-east-1",
+    "tenantId": "tenantIDgoeshere",
+    "subnetId": "subnet-f4da95ac",
+    "dataEncryptionType": "AWS",
+    "disableEv":"true",
+    "vsaMetadata": {
+        "ontapVersion": "ONTAP-9.9.0.T1",
+        "licenseType": "cot-explore-paygo",
+        "instanceType": "m5.xlarge"
+        },
+    "ebsVolumeSize": {
+        "size": 100,
+        "unit": "GB"
+    },
+    "ebsVolumeType": "gp2",
+    "volume": {
+      "name": "ziv02vol01",
+      "size": {
+        "size": 200,
+        "unit": "GB"
+      },
+      "exportPolicyInfo": {
+        "policyType": "custom",
+        "ips": [
+          "172.31.0.0/16"
+        ],
+       "nfsVersion": [
+          "nfs3",
+          "nfs4"
+        ]
+      },
+      "snapshotPolicyName": "default",
+      "enableThinProvisioning": true,
+      "enableCompression": true,
+      "enableDeduplication": true
+    },
+    "writingSpeedState": "NORMAL"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="dlist">
@@ -4115,10 +4174,16 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
 </tr>
 </table>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">JSON input example</dt>
-</dl>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Enable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>The <code>ebsVolumeType</code> parameter must be <code>gp3</code> or <code>io1</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>disableEv</code>: boolean, default value is <code>false</code>. By default, new Cloud Volumes ONTAP instances are created with Elastic Volumes enabled on aggregates.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4128,6 +4193,7 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
   "vpcId": "vpc-b16c90d4",
   "region": "us-east-1",
   "tenantId": "tenantIDgoeshere",
+  "disableEv": "false",
   "ebsVolumeSize": {
     "size": 100,
     "unit": "GB"
@@ -4183,6 +4249,84 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
   "enableMonitoring": "false",
   "writingSpeedState": "NORMAL"
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Disable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>You can set <code>"disableEv": "true"</code> if you choose to create a Cloud Volumes ONTAP instance with an aggregate where Elastic Volumes is disabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "name": "ziv04we02ha",
+  "svmPassword": "password",
+  "vpcId": "vpc-b16c90d4",
+  "region": "us-east-1",
+  "tenantId": "tenantIDgoeshere",
+  "ebsVolumeSize": {
+    "size": 100,
+    "unit": "GB"
+  },
+  "disableEv": "true",
+  "ebsVolumeType": "gp2",
+  "vsaMetadata": {
+    "ontapVersion": "ONTAP-9.9.0X6.T1.ha",
+    "licenseType": "ha-cot-explore-paygo",
+    "instanceType": "m5.xlarge"
+  },
+  "dataEncryptionType": "AWS",
+  "ontapEncryptionParameters": null,
+  "haParams": {
+    "node1SubnetId": "subnet-f4da95ac",
+    "node2SubnetId": "subnet-b4387a9e",
+    "mediatorSubnetId": "subnet-76e6d400",
+    "clusterFloatingIP": "4.4.4.4",
+    "dataFloatingIP": "5.5.5.5",
+    "dataFloatingIP2": "6.6.6.6",
+    "mediatorKeyPairName": "Developers_Virginia",
+    "routeTableIds": [
+      "rtb-02a45467"
+    ],
+    "failoverMode": "FloatingIP",
+    "mediatorAssignPublicIP": true
+  },
+  "volume": {
+    "name": "ziv02vol01",
+    "size": {
+      "size": 200,
+      "unit": "GB"
+    },
+    "exportPolicyInfo": {
+      "policyType": "custom",
+      "ips": [
+        "172.31.0.0/16"
+      ],
+     "nfsVersion": [
+        "nfs3",
+        "nfs4"
+      ]
+    },
+    "snapshotPolicyName": "default",
+    "enableThinProvisioning": true,
+    "enableCompression": true,
+    "enableDeduplication": true
+  },
+  "optimizedNetworkUtilization": false,
+  "instanceTenancy": "default",
+  "packageName": "aws_ha_poc",
+  "cloudProviderAccount": "InstanceProfile",
+  "backupVolumesToCbs": false,
+  "enableMonitoring": "false",
+  "writingSpeedState": "NORMAL"
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="dlist">
@@ -4253,7 +4397,7 @@ This request uses PAYGO licensing as indicated in the <code>licenseType</code> p
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>

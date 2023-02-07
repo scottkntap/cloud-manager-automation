@@ -195,15 +195,12 @@
           <li class="n-top-hat__list-item">
             <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
           </li>
-          <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
-          </li>
         </ul>
       </div>
       <div class="n-top-hat__utils">
         <ul class="n-top-hat__list">
           <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -276,33 +273,6 @@
 
     <div class="n-property-bar__cta"></div>
   </div>
-  <script>
-    $(function(){
-        var currentLocalization = $('html').attr('lang');
-
-        var localizationsDictionary = {
-            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
-            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
-            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
-            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
-            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
-            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
-            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
-            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
-            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
-            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
-            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
-            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
-            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
-            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
-            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
-        };
-
-        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
-            $('.n-property-bar__property-link').attr('href', '/');
-        }
-    });
-  </script>
   <!-- End property bar -->
 </header>
 
@@ -623,6 +593,13 @@
       </a>
       <ul style="display: none;">
         <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add capacity to EV aggregate"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_add_capacity.html">
+        Add capacity to EV aggregate
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
       data-li-level="4#" 
@@ -3613,7 +3590,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-10 09:00:23 +0000">11/10/2022</time>
+    <time datetime="2022-12-02 19:24:12 +0000">12/02/2022</time>
     
   
 
@@ -3642,7 +3619,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>There are several workflows you can use with the Amazon Web Services public cloud.</p>
+<p>There are several workflows you can use with the Amazon Web Services (AWS) public cloud.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -3686,6 +3663,19 @@ Review the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/pr
 <div class="paragraph">
 <p>See <a href="workflow_processes.html">Understanding the workflow processes</a> for more information on these categories.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
+</td>
+<td class="content">
+The <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-aws-elastic-volumes.html">Amazon EBS Elastic Volumes</a> feature is enabled by default on new Cloud Volumes ONTAP 9.11.0 or later systems when using <code>gp3</code> or <code>io1</code> disks.<br>
+To support the feature, a few additional fields have been added. The workflows have been updated to reflect the changes.
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3715,7 +3705,7 @@ Review the <a href="https://docs.netapp.com/us-en/cloud-manager-automation/cm/pr
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>

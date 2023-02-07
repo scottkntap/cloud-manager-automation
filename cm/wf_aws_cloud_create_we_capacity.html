@@ -17,7 +17,7 @@
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
   <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="You can use this workflow to create a new Cloud Volumes ONTAP working environment using PAYGO ("pay as you go") licensing. A new volume is also created with ...">
-  <meta name="keywords" content=" paygo, cloud, volumes, ontap, connector, BlueXP, region, workspace, capacity-based"><!-- Icons -->
+  <meta name="keywords" content=" paygo, cloud, volumes, ontap, connector, cloud manager, region, workspace"><!-- Icons -->
   <link rel="icon" href="/us-en/cloud-manager-automation/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/us-en/cloud-manager-automation/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -195,15 +195,12 @@
           <li class="n-top-hat__list-item">
             <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Customer Stories</a>
           </li>
-          <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
-          </li>
         </ul>
       </div>
       <div class="n-top-hat__utils">
         <ul class="n-top-hat__list">
           <li class="n-top-hat__list-item">
-            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -276,33 +273,6 @@
 
     <div class="n-property-bar__cta"></div>
   </div>
-  <script>
-    $(function(){
-        var currentLocalization = $('html').attr('lang');
-
-        var localizationsDictionary = {
-            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
-            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
-            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
-            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
-            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
-            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
-            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
-            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
-            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
-            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
-            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
-            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
-            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
-            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
-            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
-        };
-
-        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
-            $('.n-property-bar__property-link').attr('href', '/');
-        }
-    });
-  </script>
   <!-- End property bar -->
 </header>
 
@@ -623,6 +593,13 @@
       </a>
       <ul style="display: none;">
         <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Add capacity to EV aggregate"
+      data-li-level="4#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/us-en/cloud-manager-automation/cm/wf_aws_cloud_add_capacity.html">
+        Add capacity to EV aggregate
+      </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Get aggregates"
       data-li-level="4#" 
@@ -3613,7 +3590,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-02 17:59:27 +0000">12/02/2022</time>
+    <time datetime="2023-02-03 16:10:21 +0000">02/03/2023</time>
     
   
 
@@ -3634,7 +3611,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>You can create a new Cloud Volumes ONTAP working environment using <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing" target="_blank" rel="noopener">capacity-based licensing</a>.</p>
+<p>You can create a new Cloud Volumes ONTAP working environment using capacity-based licensing.</p>
 </div>
 <div class="paragraph">
 <p>You can add new volumes when creating the working environment.</p>
@@ -3660,6 +3637,9 @@
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing" target="_blank" rel="noopener">Learn more about capacity-based licensing</a>.</p>
+</div>
 </td>
 </tr>
 </table>
@@ -3683,7 +3663,7 @@
 <h2 id="create-working-environment-for-single-node">Create working environment for single node</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use this workflow to create an single node Cloud Volumes ONTAP working environment.</p>
+<p>You can use this workflow to create a single node Cloud Volumes ONTAP working environment.</p>
 </div>
 <div class="sect2">
 <h3 id="1-select-the-region">1. Select the region</h3>
@@ -3706,7 +3686,7 @@
 <div class="sect2">
 <h3 id="4-select-the-capacity-package-name">4. Select the capacity package name</h3>
 <div class="paragraph">
-<p>Choose the package name for the <code>vsaMetadata:capacityPackageName</code> parameter in step 11. There are three licensing options available: <code>Professional</code>, <code>Essentials</code>, and <code>Freemium</code>. Review the <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html" target="_blank" rel="noopener">Cloud Volumes ONTAP licensing</a> types offered to new customers to know more about the available options.</p>
+<p>Choose the package name for the <code>vsaMetadata:capacityPackageName</code> parameter in step 11. There are three licensing options available: <code>Professional</code>, <code>Essentials</code>, and <code>Freemium</code>. Review the <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">Cloud Volumes ONTAP licensing</a> types offered to new customers to know more about the available options.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3757,7 +3737,7 @@ You need to choose one of the allowed values for the required <code>ebsVolumeTyp
 <div class="ulist">
 <ul>
 <li>
-<p>To create a new NSS key using the BlueXP user interface, perform the task <a href="../platform/get_nss_key.html">Generate NSS user ID</a> and choose the NSS ID.</p>
+<p>To create a new NSS key using the Cloud Manager user interface, perform the task <a href="../platform/get_nss_key.html">Generate NSS user ID</a> and choose the NSS ID.</p>
 </li>
 <li>
 <p>To select an existing NSS key, perform the workflow <a href="wf_common_identity_get_nss_keys.html">Get NSS keys</a> and choose the <code>id</code> of the required NSS user.</p>
@@ -3768,7 +3748,7 @@ You need to choose one of the allowed values for the required <code>ebsVolumeTyp
 <div class="sect2">
 <h3 id="9-optional-add-a-byol-license">9. (Optional) Add a BYOL license</h3>
 <div class="paragraph">
-<p>If you purchase a license from NetApp (BYOL), ensure that the purchased license is available in the Digital Wallet. The license gets automatically added to your account if you have associated the NSS account with BlueXP. To add the license manually, refer to <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account" target="_blank" rel="noopener">Add purchased licenses to your account</a>.</p>
+<p>If you purchase a license from NetApp (BYOL), make sure that the purchased license is available in the Digital Wallet. The license gets automatically added to your account if you have associated the NSS account with Cloud Manager. To add the license manually, refer to <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account" target="_blank" rel="noopener">Add purchased licenses to your account</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3854,6 +3834,68 @@ This request uses the hourly pay-as-you-go (PAYGO) subscriptions as indicated in
 <dt class="hdlist1">JSON input example</dt>
 </dl>
 </div>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Enable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>The <code>ebsVolumeType</code> parameter must be <code>gp3</code> or <code>io1</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>disableEv</code>: boolean, default value is <code>false</code>. By default, new Cloud Volumes ONTAP instances are created with Elastic Volumes enabled on aggregates.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "name": "bycapacitycvo",
+  "tenantId": "workspace-ksJa8vEY",
+  "region": "us-east-1",
+  "packageName": "aws_custom",
+  "dataEncryptionType": "AWS",
+  "capacityTier": "S3",
+  "tierLevel": "normal",
+  "vsaMetadata": {
+    "ontapVersion": "ONTAP-9.11.1RC1.T1",
+    "licenseType": "capacity-paygo",
+    "instanceType": "m5.2xlarge",
+    "capacityPackageName": "Professional"
+  },
+  "nssAccount": "b247b000-d0b3-4e05-bdca-f5e26a7xxb9",
+  "writingSpeedState": "NORMAL",
+  "subnetId": "subnet-xxx55de",
+  "svmPassword": "password",
+  "vpcId": "vpc-a762xx00",
+  "ontapEncryptionParameters": null,
+  "ebsVolumeType": "gp3",
+  "ebsVolumeSize": {
+    "size": 1,
+    "unit": "TB",
+    "_identifier": "1 TB"
+  },
+  "disableEv": "false",
+  "awsTags": [],
+  "optimizedNetworkUtilization": true,
+  "instanceTenancy": "default",
+  "iops": null,
+  "throughput": null,
+  "instanceProfileName": null,
+  "cloudProviderAccount": "InstanceProfile",
+  "saasSubscriptionId": "aws-a0s9zvu5ghepz0j9yamr2wsjk-FJsUvVHffi9",
+  "backupVolumesToCbs": false,
+  "enableCompliance": false,
+  "enableMonitoring": false
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Disable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>You can set <code>"disableEv": "true"</code> if you choose to create a Cloud Volumes ONTAP instance with an aggregate where Elastic Volumes is disabled.</p>
+</div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
@@ -3877,6 +3919,7 @@ This request uses the hourly pay-as-you-go (PAYGO) subscriptions as indicated in
   "vpcId": "vpc-a762xx00",
   "ontapEncryptionParameters": null,
   "ebsVolumeType": "gp2",
+  "disableEv": "true",
   "ebsVolumeSize": {
     "size": 1,
     "unit": "TB",
@@ -3896,11 +3939,15 @@ This request uses the hourly pay-as-you-go (PAYGO) subscriptions as indicated in
 }</code></pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Output</dt>
 <dd>
-<p>The JSON output example includes an example of the <code>VsaWorkingEnvironmentRresponse</code>.</p>
+<p>The JSON output example includes an example of the <code>VsaWorkingEnvironmentresponse</code>.</p>
 </dd>
 <dt class="hdlist1">JSON output example</dt>
 </dl>
@@ -4048,7 +4095,7 @@ You need to choose one of the allowed values for the required <code>ebsVolumeTyp
 <div class="ulist">
 <ul>
 <li>
-<p>To create a new NSS key using the BlueXP web user interface, perform the task <a href="../platform/get_nss_key.html">Generate NSS user ID</a> and choose the NSS ID.</p>
+<p>To create a new NSS key using the Cloud Manager web user interface, perform the task <a href="../platform/get_nss_key.html">Generate NSS user ID</a> and choose the NSS ID.</p>
 </li>
 <li>
 <p>To select an existing NSS key, perform the workflow <a href="wf_common_identity_get_nss_keys.html">Get NSS keys</a> and choose the <code>id</code> of the required NSS user.</p>
@@ -4059,7 +4106,7 @@ You need to choose one of the allowed values for the required <code>ebsVolumeTyp
 <div class="sect2">
 <h3 id="12-optional-add-a-byol-license">12. (Optional) Add a BYOL license</h3>
 <div class="paragraph">
-<p>If you purchase a license from NetApp (BYOL), ensure that the purchased license is available in the Digital Wallet. The license gets automatically added to your account if you have associated the NSS account with BlueXP. To add the license manually, refer to <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account" target="_blank" rel="noopener">Add purchased licenses to your account</a>.</p>
+<p>If you purchase a license from NetApp (BYOL), ensure that the purchased license is available in the Digital Wallet. The license gets automatically added to your account if you have associated the NSS account with Cloud Manager. To add the license manually, refer to <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-capacity-licenses.html#add-purchased-licenses-to-your-account" target="_blank" rel="noopener">Add purchased licenses to your account</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4074,17 +4121,8 @@ You need to choose one of the allowed values for the required <code>ebsVolumeTyp
 </li>
 <li>
 <p>Choose the <code>policyType</code>, <code>ips</code>, and the <code>nfsVersion</code> parameters in the <code>exportPolicyInfo</code> input parameter in step 10 if you choose to create a volume using the NFS protocol. The <code>ips</code> parameter signifies the client IP address (could be multiple addresses) that can access the volume over the network. The <code>nfsVersion</code> parameter signifies the version of the NFS protocol that a client will use for data transmission over a network.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/cloud-manager-automation/images/note.svg" alt="Note">
-</td>
-<td class="content">
-If you choose to create a volume using CIFS protocol, you will need to set the <code>shareInfo</code> parameter. If you choose to create a volume using iSCSI protocol, you will need to set the <code>iscsiInfo</code> parameter accordingly.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>[NOTE] If you choose to create a volume using CIFS protocol, you will need to set the <code>shareInfo</code> parameter. If you choose to create a volume using iSCSI protocol, you will need to set the <code>iscsiInfo</code> parameter accordingly.</p>
 </div>
 </li>
 </ul>
@@ -4140,75 +4178,113 @@ This request uses the hourly pay-as-you-go (PAYGO) subscription as indicated in 
 </tr>
 </table>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">JSON input example</dt>
-</dl>
+<div class="exampleblock tabbed-block">
+<div class="content">
+<div class="openblock">
+<div class="title">Enable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>The <code>ebsVolumeType</code> parameter must be <code>gp3</code> or <code>io1</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>disableEv</code>: boolean, default value is <code>false</code>. By default, new Cloud Volumes ONTAP instances are created with Elastic Volumes enabled on aggregates.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-json" data-lang="json">{
-  "name": "ziv04we02ha",
-  "svmPassword": "password",
-  "vpcId": "vpc-b16c90d4",
+  "name": "bycapacitycvo",
+  "tenantId": "workspace-ksJa8vEY",
   "region": "us-east-1",
-  "tenantId": "tenantIDgoeshere",
-  "ebsVolumeSize": {
-    "size": 100,
-    "unit": "GB"
-  },
-  "ebsVolumeType": "gp2",
+  "packageName": "aws_custom",
+  "dataEncryptionType": "AWS",
+  "capacityTier": "S3",
+  "tierLevel": "normal",
   "vsaMetadata": {
     "ontapVersion": "ONTAP-9.11.1RC1.T1",
-    "licenseType": "ha-capacity-paygo",
+    "licenseType": "capacity-paygo",
     "instanceType": "m5.2xlarge",
     "capacityPackageName": "Professional"
   },
-  "dataEncryptionType": "AWS",
+  "nssAccount": "b247b000-d0b3-4e05-bdca-f5e26a7xxb9",
+  "writingSpeedState": "NORMAL",
+  "subnetId": "subnet-xxx55de",
+  "svmPassword": "password",
+  "vpcId": "vpc-a762xx00",
   "ontapEncryptionParameters": null,
-  "haParams": {
-    "node1SubnetId": "subnet-f4da95ac",
-    "node2SubnetId": "subnet-b4387a9e",
-    "mediatorSubnetId": "subnet-76e6d400",
-    "clusterFloatingIP": "4.4.4.4",
-    "dataFloatingIP": "5.5.5.5",
-    "dataFloatingIP2": "6.6.6.6",
-    "mediatorKeyPairName": "Developers_Virginia",
-    "routeTableIds": [
-      "rtb-02a45467"
-    ],
-    "failoverMode": "FloatingIP",
-    "mediatorAssignPublicIP": true
+  "ebsVolumeType": "gp2",
+  "disableEv": "true",
+  "ebsVolumeSize": {
+    "size": 1,
+    "unit": "TB",
+    "_identifier": "1 TB"
   },
-  "volume": {
-    "name": "ziv02vol01",
-    "size": {
-      "size": 200,
-      "unit": "GB"
-    },
-    "exportPolicyInfo": {
-      "policyType": "custom",
-      "ips": [
-        "172.31.0.0/16"
-      ],
-     "nfsVersion": [
-        "nfs3",
-        "nfs4"
-      ]
-    },
-    "snapshotPolicyName": "default",
-    "enableThinProvisioning": true,
-    "enableCompression": true,
-    "enableDeduplication": true
-  },
-  "optimizedNetworkUtilization": false,
+  "awsTags": [],
+  "optimizedNetworkUtilization": true,
   "instanceTenancy": "default",
-  "packageName": "aws_ha_poc",
+  "iops": null,
+  "throughput": null,
+  "instanceProfileName": null,
   "cloudProviderAccount": "InstanceProfile",
+  "saasSubscriptionId": "aws-a0s9zvu5ghepz0j9yamr2wsjk-FJsUvVHffi9",
   "backupVolumesToCbs": false,
-  "enableMonitoring": "false",
-  "writingSpeedState": "NORMAL"
+  "enableCompliance": false,
+  "enableMonitoring": false
 }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="openblock">
+<div class="title">Disable Elastic Volumes</div>
+<div class="content">
+<div class="paragraph">
+<p>You can set <code>"disableEv": "true"</code> if you choose to create a Cloud Volumes ONTAP instance with an aggregate where Elastic Volumes is disabled.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+  "name": "bycapacitycvo",
+  "tenantId": "workspace-ksJa8vEY",
+  "region": "us-east-1",
+  "packageName": "aws_custom",
+  "dataEncryptionType": "AWS",
+  "capacityTier": "S3",
+  "tierLevel": "normal",
+  "vsaMetadata": {
+    "ontapVersion": "ONTAP-9.11.1RC1.T1",
+    "licenseType": "capacity-paygo",
+    "instanceType": "m5.2xlarge",
+    "capacityPackageName": "Professional"
+  },
+  "nssAccount": "b247b000-d0b3-4e05-bdca-f5e26a7xxb9",
+  "writingSpeedState": "NORMAL",
+  "subnetId": "subnet-xxx55de",
+  "svmPassword": "password",
+  "vpcId": "vpc-a762xx00",
+  "ontapEncryptionParameters": null,
+  "ebsVolumeType": "gp3",
+  "ebsVolumeSize": {
+    "size": 1,
+    "unit": "TB",
+    "_identifier": "1 TB"
+  },
+  "disableEv": "false",
+  "awsTags": [],
+  "optimizedNetworkUtilization": true,
+  "instanceTenancy": "default",
+  "iops": null,
+  "throughput": null,
+  "instanceProfileName": null,
+  "cloudProviderAccount": "InstanceProfile",
+  "saasSubscriptionId": "aws-a0s9zvu5ghepz0j9yamr2wsjk-FJsUvVHffi9",
+  "backupVolumesToCbs": false,
+  "enableCompliance": false,
+  "enableMonitoring": false
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="dlist">
@@ -4279,7 +4355,7 @@ This request uses the hourly pay-as-you-go (PAYGO) subscription as indicated in 
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
