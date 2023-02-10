@@ -3590,7 +3590,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-11 16:04:06 +0000">11/11/2022</time>
+    <time datetime="2023-02-09 13:35:00 +0000">02/09/2023</time>
     
   
 
@@ -3619,7 +3619,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>This section describes existing data format definitions.</p>
+<p>The data definitions are used when making REST API calls.</p>
 </div>
 </div>
 </div>
@@ -10677,7 +10677,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataEncryptionType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of encryption to use for this working environment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (NONE,  AWS,  ONTAP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (NONE,  AWS)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -11905,50 +11905,6 @@
 </table>
 </div>
 <div class="sect2">
-<h3 id="createsyncrequest">CreateSyncRequest</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">volumeNames</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Volume&#8217;s name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string array</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">s3Location</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">S3 path location (i.e. s3://BucketName/Folder1/Folder11), maximum length - 255 characters</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataBrokerNetworkInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Broker Network information</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#databrokernetworkinformation">DataBrokerNetworkInformation</a></p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
 <h3 id="createvsaworkingenvironmentrequest">CreateVSAWorkingEnvironmentRequest</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -12035,7 +11991,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataEncryptionType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Type of encryption to use for this working environment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (NONE,  AWS,  ONTAP)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (NONE,  AWS)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -12529,57 +12485,6 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">url</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="databrokernetworkinformation">DataBrokerNetworkInformation</h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Name</th>
-<th class="tableblock halign-left valign-top">Description</th>
-<th class="tableblock halign-left valign-top">Required</th>
-<th class="tableblock halign-left valign-top">Schema</th>
-<th class="tableblock halign-left valign-top">Default</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vpcId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Broker Vpc Id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">subnetId</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Broker Subnet Id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keyPair</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Broker Key pair</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">region</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data Broker Region</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -13433,8 +13338,8 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">position</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Position</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">containerType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Container type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -17578,14 +17483,14 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oCCMInstance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vsaInstance</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">vsaInstance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oCCMInstance</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -20825,14 +20730,14 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keystoneSubscription</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spaceReportingLogical</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">spaceReportingLogical</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keystoneSubscription</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -22941,6 +22846,13 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">svmPeerAliasName</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Svm Peer Alias Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">nodeName</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Node name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
@@ -23344,14 +23256,14 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">tieringTarget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">backupTarget</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">backupTarget</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tieringTarget</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -25109,6 +25021,13 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#cvsserviceinformation">CvsServiceInformation</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platformServiceInformation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#serviceinformationurl">ServiceInformationUrl</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -25329,6 +25248,20 @@
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">wormWithComposeSupported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wormWithBackupSupported</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">azureFlashcacheSupported</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
@@ -26090,7 +26023,7 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">updateType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">System update type. System update can be performed by providing either: an external URL from which ONTAP will download the image file, a local image already in ONTAP or a name of an image provided by Cloud Manager</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">enum (EXTERNAL_FILE,  LOCAL_IMAGE,  OCCM_PROVIDED)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">enum (EXTERNAL_FILE,  OCCM_PROVIDED)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -27281,21 +27214,21 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volumeTotalInodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Total volume inodes size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">volumeUsedInodes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used volume inodes size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mountPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mount Point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27407,7 +27340,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">parentSnapshot</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The snapshot name the volume is based on</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27428,7 +27361,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">providerVolumeType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud provider volume type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27449,70 +27382,70 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">primaryNoFailoverMountPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Primary mount point without failover</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">secondaryNoFailoverMountPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secondary mount point without failover</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">capacityTier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Capacity tier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enum ([S3,  Blob])</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">capacityTierUsedSize</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Capacity tier used size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#capacity">Capacity</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">cifsShareAccessPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">CIFS share access point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">primaryCifsShareAccessPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Primary CIFS share access point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">secondaryCifsShareAccessPoint</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secondary CIFS share access point</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tieringPolicy</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering policy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">string</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tierInactiveUserData</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tier inactive user data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#capacity">Capacity</a></p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">tierInactiveUserDataPercent</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tier inactive user data percent</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27533,7 +27466,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">snaplockType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Snaplock type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enum (non_snaplock,  compliance,  enterprise)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27561,7 +27494,7 @@
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">minimumCoolingDays</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Tiering minimum cooling days</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">integer (int32)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -27573,14 +27506,14 @@
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">flexGroupVolume</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iscsiEnabled</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iscsiEnabled</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">flexGroupVolume</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">boolean</p></td>
