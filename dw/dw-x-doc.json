@@ -26,7 +26,7 @@
     "/license/licenses": {
       "get": {
         "x-doc": {
-          "title": "Retrieve a licence by type",
+          "title": "Retrieve a license by type",
           "category": "License",
           "filename": "get-license-licenses.html"
         }
@@ -53,7 +53,7 @@
     "/license/exchange": {
       "post": {
         "x-doc": {
-          "title": "Exchange a cloud volume ontap license",
+          "title": "Exchange a Cloud Volumes ONTAP license",
           "category": "License",
           "filename": "post-license-exchange.html"
         }
@@ -135,6 +135,22 @@
           "filename": "get-license-subscriptions-account-.html",
           "explorer": false
         }
+      },
+      "delete": {
+        "x-doc": {
+          "title": "Delete a subscription",
+          "category": "Subscription",
+          "filename": "delete-license-subscriptions-account-.html",
+          "explorer": false
+        }
+      },
+      "post": {
+        "x-doc": {
+          "title": "Associate a subscription",
+          "category": "Subscription",
+          "filename": "post-license-subscriptions-account-.html",
+          "explorer": false
+        }
       }
     },
     "/license/subscriptions/subscription/{subscriptionId}": {
@@ -171,6 +187,24 @@
           "title": "Associate a subscription",
           "category": "Subscription",
           "filename": "post-license-subscriptions-subscription-account-.html",
+          "explorer": false
+        }
+      }
+    },
+    "/license/subscriptions/subscription": {
+      "get": {
+        "x-doc": {
+          "title": "Retrieve subscription information ",
+          "category": "Subscription",
+          "filename": "get-license-subscriptions-subscription.html",
+          "explorer": false
+        }
+      },
+      "patch": {
+        "x-doc": {
+          "title": "Update a subscription expiration date",
+          "category": "Subscription",
+          "filename": "patch-license-subscriptions-subscription.html",
           "explorer": false
         }
       }
