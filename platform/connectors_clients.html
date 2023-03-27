@@ -3726,24 +3726,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-10-25 20:48:27 +0000">10/25/2022</time>
+    <time datetime="2023-03-21 15:41:35 +0000">03/21/2023</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/dmp-netapp">
-    <img  class="avatar avatar-small"
-          alt="dmp-netapp"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/50704017?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ranuk">
     <img  class="avatar avatar-small"
           alt="netapp-ranuk"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/80323433?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/dmp-netapp">
+    <img  class="avatar avatar-small"
+          alt="dmp-netapp"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/50704017?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3759,15 +3759,14 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="connector">Connector</h3>
+<div class="sect1">
+<h2 id="connector">Connector</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>A Connector is a type of agent deployed in the public cloud on behalf of a customer. It executes commands and other actions on behalf of BlueXP as part of managing the local cloud environment. For example, a Connector is can be used to access to one or more Cloud Volumes ONTAP instances.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="connector-id">Connector ID</h3>
 <div class="paragraph">
+<div class="title">Connector ID</div>
 <p>Every Connector is assigned a unique identifier. This value is carried in the HTTP <code>x-agent-id</code> request header to identify the request destination.</p>
 </div>
 <div class="listingblock">
@@ -3777,8 +3776,10 @@
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="client-id">Client ID</h3>
+</div>
+<div class="sect1">
+<h2 id="client-id">Client ID</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>In general, a client ID uniquely identifies a client and can be used in several different ways with the BlueXP REST APIs.</p>
 </div>
@@ -3797,6 +3798,7 @@
 <p>You can derive the client ID from the associated Connector ID by simply removing the suffix <code>clients</code>. This value is used when accessing the Connector directly (not through the SaaS model).</p>
 </dd>
 </dl>
+</div>
 </div>
 </div>
 

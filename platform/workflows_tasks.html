@@ -3726,7 +3726,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 12:31:07 +0000">11/17/2022</time>
+    <time datetime="2023-03-21 15:41:35 +0000">03/21/2023</time>
     
   
 
@@ -3768,7 +3768,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Also See <a href="../cm/workflow_processes.html">Cloud Volumes ONTAP workflow processes</a> for more details about the extensive set of workflow examples included with the Cloud Volumes ONTAP REST API.</p>
+<p>See <a href="../cm/workflow_processes.html">Cloud Volumes ONTAP workflow processes</a> for more details about the extensive set of workflow examples included with the Cloud Volumes ONTAP REST API.</p>
 </div>
 </div>
 </div>
@@ -3776,7 +3776,7 @@
 <h2 id="workflows">Workflows</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A <em>workflow</em> is most typically a sequence of one or more steps needed to accomplish a specific administrative task or goal. For the BlueXP platform, each of the workflow steps can be one of the following:</p>
+<p>A <em>workflow</em> is most typically a sequence of one or more steps needed to accomplish a specific administrative task or goal. For BlueXP, each of the workflow steps can be one of the following:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -3794,8 +3794,11 @@
 <div class="paragraph">
 <p>The workflows provided with this documentation include the minimum steps and parameters needed to accomplish each task. You can use these workflows as a starting point and customize them for your environment as needed.</p>
 </div>
-<div class="sect2">
-<h3 id="base-urls-and-rest-endpoint-paths">Base URLs and REST endpoint paths</h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="base-urls-and-rest-endpoint-paths">Base URLs and REST endpoint paths</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The REST API calls in the workflows use different URLs and URL formats depending on the desired service and resource.</p>
 </div>
@@ -3811,18 +3814,15 @@ Every API call used in the workflows includes the resource path to the REST endp
 </tr>
 </table>
 </div>
-<div class="sect4">
-<h5 id="bluexp-endpoints">BlueXP endpoints</h5>
 <div class="paragraph">
+<div class="title">BlueXP endpoints</div>
 <p>The majority of the workflow REST API calls are made to the <strong>NetApp BlueXP</strong> service. The base URL of the SaaS interface is:</p>
 </div>
 <div class="paragraph">
 <p><code><a href="https://cloudmanager.netapp.com/" class="bare">https://cloudmanager.netapp.com/</a></code></p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="auth0-authentication-service">Auth0 authentication service</h5>
 <div class="paragraph">
+<div class="title">Auth0 authentication service</div>
 <p>Some of the REST API calls used in the identity workflows are made to the <strong>Auth0</strong> token authentication service. The base URL is:</p>
 </div>
 <div class="paragraph">
@@ -3830,14 +3830,14 @@ Every API call used in the workflows includes the resource path to the REST endp
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="common-parameters-and-variables">Common parameters and variables</h3>
+<div class="sect1">
+<h2 id="common-parameters-and-variables">Common parameters and variables</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>There are several parameters or variables common among the workflows.</p>
 </div>
-<div class="sect4">
-<h5 id="request-headers">Request headers</h5>
 <div class="paragraph">
+<div class="title">Request headers</div>
 <p>Most of the REST API calls used in the workflows require the following request headers. Rather than cite these headers as a prerequisite in every REST API call, they are considered a universal requirement. If a workflow does not use these headers or has different prerequisites, they are indicated as appropriate.</p>
 </div>
 <div class="dlist">
@@ -3854,8 +3854,9 @@ Every API call used in the workflows includes the resource path to the REST endp
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="presentation-of-common-tokens-and-identifiers">Presentation of common tokens and identifiers</h3>
+<div class="sect1">
+<h2 id="presentation-of-common-tokens-and-identifiers">Presentation of common tokens and identifiers</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Most of the variable tokens, identifiers, and other variables used in the sample REST API calls consist of long strings of letters, numbers, and special characters. In most case they are <em>opaque</em> with no easily discernible content or meaning. Therefore, rather than including the actual strings, smaller reserved keywords are used instead. For example, <strong>&lt;ACCESS_TOKEN&gt;</strong> is a shorthand notation for an OAuth2 access token used to establish identity.</p>
 </div>
@@ -3865,7 +3866,7 @@ Every API call used in the workflows includes the resource path to the REST endp
 <div class="ulist">
 <ul>
 <li>
-<p>The cURL and JSON samples are simpler and easier to understand.</p>
+<p>The curl and JSON samples are simpler and easier to understand.</p>
 </li>
 <li>
 <p>Because all keywords use a common format, you can quickly identify the content to insert or extract.</p>
@@ -3875,12 +3876,9 @@ Every API call used in the workflows includes the resource path to the REST endp
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="json-input-for-curl-command">JSON input for curl command</h3>
 <div class="paragraph">
-<p>In many cases, a workflow step accepts JSON input in the request body of the REST API call. This input is indicated in the curl command through the <code>-d</code> option, with the corresponding sample typically included in the <strong>JSON input example</strong> section.</p>
-</div>
+<div class="title">JSON input for curl command</div>
+<p>In many cases, a workflow step accepts JSON input in the request body of the REST API call. This input is indicated in the curl command through the <code>-d</code> option, with the corresponding sample typically included in the <strong>JSON input example</strong>.</p>
 </div>
 </div>
 </div>

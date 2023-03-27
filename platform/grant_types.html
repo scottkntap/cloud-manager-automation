@@ -3726,24 +3726,24 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-17 12:31:07 +0000">11/17/2022</time>
+    <time datetime="2023-03-21 15:41:35 +0000">03/21/2023</time>
     
   
 
 <span>Contributors
-  <a target="_blank" class="ext-link-indicator" href="https://github.com/dmp-netapp">
-    <img  class="avatar avatar-small"
-          alt="dmp-netapp"
-          width="20" height="20"
-          src="https://avatars.githubusercontent.com/u/50704017?v=4"
-          style="border-radius: 50%;"/>
-  </a>
-  
   <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-ranuk">
     <img  class="avatar avatar-small"
           alt="netapp-ranuk"
           width="20" height="20"
           src="https://avatars.githubusercontent.com/u/80323433?v=4"
+          style="border-radius: 50%;"/>
+  </a>
+  
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/dmp-netapp">
+    <img  class="avatar avatar-small"
+          alt="dmp-netapp"
+          width="20" height="20"
+          src="https://avatars.githubusercontent.com/u/50704017?v=4"
           style="border-radius: 50%;"/>
   </a>
   
@@ -3771,8 +3771,9 @@ The refresh token grant is the most secure option when requesting a user access 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="refresh-token">Refresh token</h3>
+<div class="sect1">
+<h2 id="refresh-token">Refresh token</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This grant type generates a token used with either federated or non-federated authentication. You need to provide the OAuth2-compliant refresh token to the authentication endpoint to generate a long-lived access token. The generated token can be used to access resources across multiple domains. Here is an example of the JSON input used when requesting the token with a description of each parameter.</p>
 </div>
@@ -3815,8 +3816,10 @@ The refresh token grant is the most secure option when requesting a user access 
 <p>The OAuth server verifies the Client ID and confirms that the request came from an authorized client. It also makes sure the refresh token is valid. After the request is validated, the server returns a response with the refresh token.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="password">Password</h3>
+</div>
+<div class="sect1">
+<h2 id="password">Password</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>This grant type generates a token used with non-federated authentication to access resources within a single domain. You need to provide the username and password login credentials to the authentication endpoint when requesting the access token.  Here&#8217;s an example of the JSON input used when requesting the token with a description of each parameter.</p>
 </div>
@@ -3866,8 +3869,10 @@ The refresh token grant is the most secure option when requesting a user access 
 </tbody>
 </table>
 </div>
-<div class="sect2">
-<h3 id="client-credentials">Client credentials</h3>
+</div>
+<div class="sect1">
+<h2 id="client-credentials">Client credentials</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>In some cases, static clients or applications need to acquire an access token to perform operations on behalf of a user. Applications need to obtain an access token for their own service account without user intervention. In these situations you can use the client credentials grant type. Here is an example of the JSON input used when requesting the token with a description of each parameter.</p>
 </div>
@@ -3914,6 +3919,7 @@ The refresh token grant is the most secure option when requesting a user access 
 </table>
 <div class="paragraph">
 <p>The OAuth2 server verifies the application through the client ID with client secret and returns an access token in the response.</p>
+</div>
 </div>
 </div>
 
